@@ -26,6 +26,7 @@ export function getSortedPostsData() {
       ...matterResult.data,
     };
   });
+  console.log("console.log HI", allPostsData);
   // Sort posts by date
   return allPostsData.sort(({ date: a }: any, { date: b }: any) => {
     if (a < b) {
@@ -63,7 +64,7 @@ export function getAllPostIds() {
   });
 }
 
-export async function getPostData(id: any) {
+export async function getPostData(id: string) {
   const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
