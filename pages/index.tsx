@@ -1,39 +1,16 @@
 import Layout from "../components/layout";
 import utilStyles from "../styles/utils.module.scss";
 
-import { getSortedPostsData } from "../lib/posts";
-import Link from "next/link";
-
-export default function Home({ allPostsData }: any) {
+export default function Home() {
   return (
     <Layout home>
-      {/* Keep the existing code here */}
+      {/* 기존 코드를 여기에 유지 */}
 
-      {/* Add this <section> tag below the existing <section> tag */}
+      {/* 기존 <section> 태그 아래에 이 <section> 태그를 추가합니다. */}
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <p>Next.js 공식문서 공부하기!</p>
-        <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }: any) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>
-                <a>{title}</a>
-              </Link>
-              <br />
-              <small className={utilStyles.lightText}>{date}</small>
-            </li>
-          ))}
-        </ul>
       </section>
     </Layout>
   );
-}
-
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
-  return {
-    props: {
-      allPostsData,
-    },
-  };
 }

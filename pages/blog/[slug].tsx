@@ -1,6 +1,7 @@
 import Layout from "../../components/layout";
 import Head from "next/head";
-import { getAllPostIds, getPostData } from "../../lib/posts";
+import { getAllPostSlugs, getPostData } from "../../lib/posts";
+import { postsBlogDirectory } from "../../lib/blog";
 
 export default function Post({ postData }: any) {
   console.log(postData);
@@ -11,7 +12,7 @@ export default function Post({ postData }: any) {
       </Head>
       {postData?.title}
       <br />
-      {postData?.id}
+      {postData?.slug}
       <br />
       {postData?.date}
       <br />
@@ -21,8 +22,8 @@ export default function Post({ postData }: any) {
 }
 
 export async function getStaticPaths() {
-  // Return a list of possible value for id
-  const paths = getAllPostIds();
+  // slug에 대한 가능한 값의 목록을 반환합니다.
+  const paths = getAllPostSlugs(postsBlogDirectory);
   return {
     paths,
     fallback: false,
@@ -30,9 +31,9 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }: any) {
-  // Fetch necessary data for the blog post using params.id
-  // Add the "await" keyword like this:
-  const postData = await getPostData(params.id);
+  // params.slug를 사용하여 블로그 게시물에 필요한 데이터를 가져옵니다.
+  // 다음과 같이 "await" 키워드를 추가합니다.
+  const postData = await getPostData(postsBlogDirectory, params.slug);
   return {
     props: {
       postData,
