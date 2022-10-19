@@ -4,16 +4,20 @@ import styles from "./nav.module.scss";
 
 const Nav = () => {
   return (
-    <nav className={styles.nav}>
-      <div>WaterHumanB</div>
+    <div className={styles.nav}>
       <div>
+        <Link href="/">
+          <div>Home</div>
+        </Link>
+      </div>
+      <nav className={styles.navLinks}>
         {navlinks.map(nav => (
           <Link href={nav.link} key={nav.title}>
-            <a>{nav.title}</a>
+            <div>{nav.title}</div>
           </Link>
         ))}
-      </div>
-    </nav>
+      </nav>
+    </div>
   );
 };
 
