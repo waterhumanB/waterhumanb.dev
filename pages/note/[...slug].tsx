@@ -4,6 +4,7 @@ import { getAllPostSlugs, getPostData } from "../../lib/posts";
 import { postsBlogDirectory } from "../../lib/blog";
 
 export default function Post({ postData }: any) {
+  console.log(postData);
   return (
     <Layout>
       <Head>

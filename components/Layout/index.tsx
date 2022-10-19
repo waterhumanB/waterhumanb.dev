@@ -1,13 +1,12 @@
 import Head from "next/head";
-import styles from "./layout.module.scss";
 import Link from "next/link";
-import Header from "./header";
+import Header from "../Layout/Header";
 
 export const siteTitle = "Next.js Sample Website";
 
 export default function Layout({ children, home }: any) {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -23,10 +22,10 @@ export default function Layout({ children, home }: any) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <Header home></Header>
+      <Header></Header>
       <main>{children}</main>
       {!home && (
-        <div className={styles.backToHome}>
+        <div>
           <Link href="/">
             <a>← Back to home</a>
           </Link>
