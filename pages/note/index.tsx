@@ -1,26 +1,22 @@
 import React from "react";
 import Link from "next/link";
-import { postsBlogDirectory } from "../../lib/blog";
-import { getSortedPostsData } from "../../lib/posts";
+import { getSortedNotesData } from "../../lib/note";
 import Layout from "../../components/Layout";
 
 const Note = ({ allPostsData }: any) => {
+  console.log(allPostsData);
+
+  const notePost = allPostsData.map(({ noteName }: any) => {
+    return noteName;
+  });
+  console.log("ddd", notePost);
+  const moreMap = notePost.map((data: any) => {
+    return data;
+  });
   return (
     <Layout home>
-      <h2>Note</h2>
-      <main>
-        <ul>
-          {allPostsData.map(({ slug, date, title }: any) => (
-            <li key={slug}>
-              <Link href={`/blog/${slug}`}>
-                <a>{title}</a>
-              </Link>
-              <br />
-              <small>{date}</small>
-            </li>
-          ))}
-        </ul>
-      </main>
+      <h2>Note!</h2>
+      <main></main>
     </Layout>
   );
 };
@@ -28,7 +24,7 @@ const Note = ({ allPostsData }: any) => {
 export default Note;
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData(postsBlogDirectory);
+  const allPostsData = getSortedNotesData();
   return {
     props: {
       allPostsData,

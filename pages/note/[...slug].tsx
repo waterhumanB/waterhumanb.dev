@@ -1,13 +1,11 @@
 import Layout from "../../components/Layout";
 import Head from "next/head";
-import { getAllPostSlugs, getPostData } from "../../lib/posts";
-import { postsBlogDirectory } from "../../lib/blog";
+import { getAllNoteSlugs, getNoteData } from "../../lib/note";
 
 export default function Post({ postData }: any) {
-  console.log(postData);
   return (
     <Layout>
-      <Head>
+      {/* <Head>
         <title>{postData.title}</title>
       </Head>
       {postData?.title}
@@ -16,14 +14,14 @@ export default function Post({ postData }: any) {
       <br />
       {postData?.date}
       <br />
-      <div dangerouslySetInnerHTML={{ __html: postData?.contentHtml }} />
+      <div dangerouslySetInnerHTML={{ __html: postData?.contentHtml }} /> */}
     </Layout>
   );
 }
 
 export async function getStaticPaths() {
   // slug에 대한 가능한 값의 목록을 반환합니다.
-  const paths = getAllPostSlugs(postsBlogDirectory);
+  const paths = getAllNoteSlugs();
   return {
     paths,
     fallback: false,
@@ -33,7 +31,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }: any) {
   // params.slug를 사용하여 블로그 게시물에 필요한 데이터를 가져옵니다.
   // 다음과 같이 "await" 키워드를 추가합니다.
-  const postData = await getPostData(postsBlogDirectory, params.slug);
+  const postData = await getNoteData(params.slug);
   return {
     props: {
       postData,
