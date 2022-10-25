@@ -5,25 +5,21 @@ import { remark } from "remark";
 import html from "remark-html";
 
 // path.join("안에","값들로 경로를 받는다.") , process.cwd() 메소드는 node.js 프로세스의 현재 작업 디렉터리를 지정하여 문자열로 반환 합니다.
-// const postsDirectory = path.join(process.cwd(), "posts");
+const postsBlogDirectory = path.join(process.cwd(), "posts/blog");
 
-export function getSortedPostsData(postsDirectory: string) {
+export function getSortedPostsData() {
   // /posts에서 파일 이름 가져오기
-  const fileNames = fs.readdirSync(postsDirectory);
+  const fileNames = fs.readdirSync(postsBlogDirectory);
   const allPostsData = fileNames.map(fileName => {
     // 파일 이름에서 ".md"를 제거하여 slug를 가져옵니다.
     const slug = fileName.replace(/\.md$/, "");
-    console.log("파일 이름", fileName, typeof fileName);
 
     // 마크다운 파일을 문자열로 읽습니다.
-    const fullPath = path.join(postsDirectory, fileName);
-    console.log("풀 경로", fullPath);
+    const fullPath = path.join(postsBlogDirectory, fileName);
     const fileContents = fs.readFileSync(fullPath, "utf8");
-    console.log("파일 디테일", fileContents);
 
     // gray-matter을 사용하여 게시물 메타데이터 섹션을 구문 분석합니다.
     const matterResult = matter(fileContents);
-    console.log("그레이새꺄", matterResult);
 
     // 데이터를 slug와 결합
     return {
@@ -31,7 +27,6 @@ export function getSortedPostsData(postsDirectory: string) {
       ...matterResult.data,
     };
   });
-  console.log("올포원", allPostsData);
   // 날짜별로 게시물 정렬
   return allPostsData.sort(({ date: a }: any, { date: b }: any) => {
     if (a < b) {
@@ -44,8 +39,8 @@ export function getSortedPostsData(postsDirectory: string) {
   });
 }
 
-export function getAllPostSlugs(postsDirectory: string) {
-  const fileNames = fs.readdirSync(postsDirectory);
+export function getAllPostSlugs() {
+  const fileNames = fs.readdirSync(postsBlogDirectory);
 
   // 다음과 같은 배열을 반환합니다.
   // [
@@ -69,8 +64,8 @@ export function getAllPostSlugs(postsDirectory: string) {
   });
 }
 
-export async function getPostData(postsDirectory: string, slug: string) {
-  const fullPath = path.join(postsDirectory, `${slug}.md`);
+export async function getPostData(slug: string) {
+  const fullPath = path.join(postsBlogDirectory, `${slug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
   // gary-matter을 사용하여 게시물 메타데이터 섹션 구문 분석

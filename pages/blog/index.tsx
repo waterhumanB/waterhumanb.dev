@@ -1,7 +1,6 @@
 import Link from "next/link";
 import React from "react";
 import Layout from "../../components/Layout";
-import { postsBlogDirectory } from "../../lib/blog";
 import { getSortedPostsData } from "../../lib/posts";
 
 const Blog = ({ allPostsData }: any) => {
@@ -28,7 +27,7 @@ const Blog = ({ allPostsData }: any) => {
 export default Blog;
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData(postsBlogDirectory);
+  const allPostsData = getSortedPostsData();
   return {
     props: {
       allPostsData,
