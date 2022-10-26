@@ -1,9 +1,10 @@
 import Head from "next/head";
-import Header from "../Layout/Header";
+import Header from "./Header";
 import styles from "./layout.module.scss";
 
 export const siteTitle = "Next.js Sample Website";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function Layout({ children }: any) {
   return (
     <div className={styles.container}>
@@ -22,7 +23,7 @@ export default function Layout({ children }: any) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <Header></Header>
+      <Header />
       <main>{children}</main>
     </div>
   );

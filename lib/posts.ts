@@ -28,14 +28,15 @@ export function getSortedPostsData() {
     };
   });
   // 날짜별로 게시물 정렬
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return allPostsData.sort(({ date: a }: any, { date: b }: any) => {
     if (a < b) {
       return 1;
-    } else if (a > b) {
-      return -1;
-    } else {
-      return 0;
     }
+    if (a > b) {
+      return -1;
+    }
+    return 0;
   });
 }
 

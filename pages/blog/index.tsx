@@ -3,7 +3,8 @@ import React from "react";
 import Layout from "../../components/Layout";
 import { getSortedPostsData } from "../../lib/posts";
 
-const Blog = ({ allPostsData }: any) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function Blog({ allPostsData }: any) {
   return (
     <Layout home>
       <h2>Blog</h2>
@@ -12,6 +13,7 @@ const Blog = ({ allPostsData }: any) => {
           {allPostsData.map(({ slug, date, title }: any) => (
             <li key={slug}>
               <Link href={`/blog/${slug}`}>
+                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                 <a>{title}</a>
               </Link>
               <br />
@@ -22,7 +24,7 @@ const Blog = ({ allPostsData }: any) => {
       </main>
     </Layout>
   );
-};
+}
 
 export default Blog;
 

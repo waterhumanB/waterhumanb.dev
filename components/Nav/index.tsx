@@ -1,8 +1,8 @@
-import navlinks from "../../data/navlinks";
 import Link from "next/link";
+import navlinks from "../../data/navlinks";
 import styles from "./nav.module.scss";
 
-const Nav = () => {
+function Nav() {
   return (
     <div className={styles.nav}>
       <div>
@@ -19,6 +19,6 @@ const Nav = () => {
       </nav>
     </div>
   );
-};
+}
 
 export default Nav;
