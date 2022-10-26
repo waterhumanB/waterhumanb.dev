@@ -2,6 +2,7 @@ import Head from "next/head";
 import Layout from "../../components/Layout";
 import { getAllPostSlugs, getPostData } from "../../lib/posts";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function Post({ postData }: any) {
   return (
     <Layout>
@@ -29,6 +30,7 @@ export async function getStaticPaths() {
   };
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function getStaticProps({ params }: any) {
   // params.slug를 사용하여 블로그 게시물에 필요한 데이터를 가져옵니다.
   // 다음과 같이 "await" 키워드를 추가합니다.

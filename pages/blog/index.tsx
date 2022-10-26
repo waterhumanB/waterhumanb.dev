@@ -10,6 +10,7 @@ function Blog({ allPostsData }: any) {
       <h2>Blog</h2>
       <main>
         <ul>
+          {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
           {allPostsData.map(({ slug, date, title }: any) => (
             <li key={slug}>
               <Link href={`/blog/${slug}`}>
