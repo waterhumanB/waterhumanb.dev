@@ -28,6 +28,7 @@ export function getSortedNotesData() {
       };
     });
     const realFileContents = fileContents.sort(
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       ({ date: a }: any, { date: b }: any) => (a > b ? 1 : -1),
     );
 
@@ -57,7 +58,7 @@ export function getAllNoteSlugs() {
         },
       };
     });
-    return fileContents.flat();
+    return fileContents;
   });
   return allNotesSlugData.flat();
 }
