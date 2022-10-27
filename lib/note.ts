@@ -6,17 +6,13 @@ import html from "remark-html";
 
 const postsNoteFileDirectory = path.join(process.cwd(), "posts/note");
 
-const postsNoteDirectory = (file: string) => {
-  return path.join(process.cwd(), `posts/note/${file}`);
-};
-
 export function getSortedNotesData() {
   const fileNames = fs.readdirSync(postsNoteFileDirectory);
   const allNotesData = fileNames.map(fileName => {
-    const noteName = postsNoteDirectory(fileName).split("\\")[8];
-    const nowFile = path.join(process.cwd(), `posts/note/${noteName}`);
+    const nowFile = path.join(process.cwd(), `posts/note/${fileName}`);
+    const noteName = fileName;
     const fileContents = fs.readdirSync(nowFile, "utf8").map(data => {
-      const mdFile = fs.readFileSync(`posts/note/${noteName}/${data}`, "utf8");
+      const mdFile = fs.readFileSync(`posts/note/${fileName}/${data}`, "utf8");
 
       const slug = data.replace(/\.md$/, "");
 
@@ -43,14 +39,11 @@ export function getSortedNotesData() {
 export function getAllNoteSlugs() {
   const fileNames = fs.readdirSync(postsNoteFileDirectory);
   const allNotesSlugData = fileNames.map(fileName => {
-    const noteNames = postsNoteDirectory(fileName).split("\\")[8];
-
-    const nowFile = path.join(process.cwd(), `posts/note/${noteNames}`);
-
+    const nowFile = path.join(process.cwd(), `posts/note/${fileName}`);
     const fileContents = fs.readdirSync(nowFile, "utf8").map(data => {
       const slug = data.replace(/\.md$/, "");
+      const noteName = fileName;
 
-      const noteName = postsNoteDirectory(fileName).split("\\")[8];
       // noteName 보내주기
       return {
         params: {
