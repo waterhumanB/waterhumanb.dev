@@ -15,6 +15,7 @@ module.exports = {
     "airbnb",
     "airbnb-typescript",
     "plugin:prettier/recommended",
+    "plugin:@next/next/recommended",
   ],
   rules: {
     // 'React' must be in scope when using JSX 에러 지우기(Next.js)
