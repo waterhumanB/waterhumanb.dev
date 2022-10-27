@@ -24,7 +24,7 @@ function Note({ allNotesData }: any) {
                       <div key={title}>
                         <Link href={`/note/${noteName}/${slug}`}>
                           {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                          <a>{title}</a>
+                          <div>{title}</div>
                         </Link>
                       </div>
                     );

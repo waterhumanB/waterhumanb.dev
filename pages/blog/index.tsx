@@ -16,7 +16,7 @@ function Blog({ allPostsData }: any) {
             <li key={slug}>
               <Link href={`/blog/${slug}`}>
                 {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                <a>{title}</a>
+                <div>{title}</div>
               </Link>
               <br />
               <small>{date}</small>
