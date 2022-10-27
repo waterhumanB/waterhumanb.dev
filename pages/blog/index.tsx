@@ -1,3 +1,4 @@
+import { GetStaticProps } from "next";
 import Link from "next/link";
 import React from "react";
 import Layout from "../../components/Layout";
@@ -29,11 +30,11 @@ function Blog({ allPostsData }: any) {
 
 export default Blog;
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = () => {
   const allPostsData = getSortedPostsData();
   return {
     props: {
       allPostsData,
     },
   };
-}
+};

@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { GetStaticProps } from "next";
 import { getSortedNotesData } from "../../lib/note";
 import Layout from "../../components/Layout";
 
@@ -40,11 +41,11 @@ function Note({ allNotesData }: any) {
 
 export default Note;
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = () => {
   const allNotesData = getSortedNotesData();
   return {
     props: {
       allNotesData,
     },
   };
-}
+};
