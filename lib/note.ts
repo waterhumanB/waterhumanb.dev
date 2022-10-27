@@ -43,13 +43,14 @@ export function getSortedNotesData() {
 export function getAllNoteSlugs() {
   const fileNames = fs.readdirSync(postsNoteFileDirectory);
   const allNotesSlugData = fileNames.map(fileName => {
-    const noteName = postsNoteDirectory(fileName).split("\\")[8];
+    const noteNames = postsNoteDirectory(fileName).split("\\")[8];
 
-    const nowFile = path.join(process.cwd(), `posts/note/${noteName}`);
+    const nowFile = path.join(process.cwd(), `posts/note/${noteNames}`);
 
     const fileContents = fs.readdirSync(nowFile, "utf8").map(data => {
       const slug = data.replace(/\.md$/, "");
 
+      const noteName = postsNoteDirectory(fileName).split("\\")[8];
       // noteName 보내주기
       return {
         params: {
