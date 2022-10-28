@@ -1,8 +1,6 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { remark } from "remark";
-import html from "remark-html";
 
 // path.join("안에","값들로 경로를 받는다.") , process.cwd() 메소드는 node.js 프로세스의 현재 작업 디렉터리를 지정하여 문자열로 반환 합니다.
 const postsBlogDirectory = path.join(process.cwd(), "posts/blog");
@@ -72,11 +70,7 @@ export async function getPostData(slug: string) {
   // gary-matter을 사용하여 게시물 메타데이터 섹션 구문 분석
   const matterResult = matter(fileContents);
 
-  // remark를 사용하여 마크다운을 HTML 문자열로 변환
-  const processedContent = await remark()
-    .use(html)
-    .process(matterResult.content);
-  const contentHtml = processedContent.toString();
+  const contentHtml = matterResult.content;
 
   // 데이터를 slug 및 contentHtml과 결합
   return {

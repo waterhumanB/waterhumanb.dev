@@ -1,6 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import Layout from "../../components/Layout";
+import ContentHtml from "../../components/Section/contentHtml";
 import { getAllPostSlugs, getPostData } from "../../lib/posts";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -17,7 +18,7 @@ export default function Post({ postData }: any) {
       {postData?.date}
       <br />
       {/* eslint-disable-next-line react/no-danger */}
-      <div dangerouslySetInnerHTML={{ __html: postData?.contentHtml }} />
+      <ContentHtml content={postData?.contentHtml} />
     </Layout>
   );
 }
@@ -36,8 +37,6 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
   // params.slug를 사용하여 블로그 게시물에 필요한 데이터를 가져옵니다.
   // 다음과 같이 "await" 키워드를 추가합니다.
   const postData = await getPostData(params.slug);
-  // eslint-disable-next-line no-console
-  console.log("blog", postData);
   return {
     props: { postData },
   };

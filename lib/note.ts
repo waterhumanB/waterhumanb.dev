@@ -1,8 +1,6 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { remark } from "remark";
-import html from "remark-html";
 
 const postsNoteFileDirectory = path.join(process.cwd(), "posts/note");
 
@@ -43,8 +41,6 @@ export function getAllNoteSlugs() {
     const fileContents = fs.readdirSync(nowFile, "utf8").map(data => {
       const slug = data.replace(/\.md$/, "");
       const noteName = fileName;
-
-      // noteName 보내주기
       return {
         params: {
           noteName,
@@ -60,17 +56,9 @@ export function getAllNoteSlugs() {
 export async function getNoteData(slug: string, noteName: string) {
   const fullPath = path.join(postsNoteFileDirectory, `${noteName}/${slug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
-
-  // gary-matter을 사용하여 게시물 메타데이터 섹션 구문 분석
   const matterResult = matter(fileContents);
+  const contentHtml = matterResult.content;
 
-  // remark를 사용하여 마크다운을 HTML 문자열로 변환
-  const processedContent = await remark()
-    .use(html)
-    .process(matterResult.content);
-  const contentHtml = processedContent.toString();
-
-  // 데이터를 slug 및 contentHtml과 결합
   return {
     slug,
     contentHtml,

@@ -1,5 +1,5 @@
 /* stylelint-disable value-no-vendor-prefix */
-
+@use "../../styles/constants/colors.scss";
 * {
   box-sizing: border-box;
   padding: 0;
@@ -27,6 +27,7 @@ img {
 
 a {
   text-decoration: none;
+  color: colors.$BLACK;
 }
 
 select,
@@ -68,8 +69,8 @@ button {
   }
 }
 
-input:is([type='button'], [type='submit'], [type='reset']),
-input[type='file']::file-selector-button,
+input:is([type="button"], [type="submit"], [type="reset"]),
+input[type="file"]::file-selector-button,
 button {
   color: initial;
 } // override safari default blue
