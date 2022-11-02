@@ -36,5 +36,21 @@
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.7.1",
     "typescript": "^4.8.4"
-  }
+  },
+  "description": "Next.js 공식문서에서 기본 튜트리얼 공부 및 Blog 만들기",
+  "main": ".eslintrc.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/waterhumanB/waterhumanB.dev.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/waterhumanB/waterhumanB.dev/issues"
+  },
+  "homepage": "https://github.com/waterhumanB/waterhumanB.dev#readme"
 }
