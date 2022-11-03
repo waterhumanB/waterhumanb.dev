@@ -8,7 +8,7 @@ const postsBlogDirectory = path.join(process.cwd(), "posts/blog");
 export function getSortedPostsData() {
   // /posts에서 파일 이름 가져오기
   const fileNames = fs.readdirSync(postsBlogDirectory);
-  const allPostsData = fileNames.map(fileName => {
+  const allPostsData = fileNames.map((fileName) => {
     // 파일 이름에서 ".md"를 제거하여 slug를 가져옵니다.
     const slug = fileName.replace(/\.md$/, "");
 
@@ -27,15 +27,9 @@ export function getSortedPostsData() {
   });
   // 날짜별로 게시물 정렬
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return allPostsData.sort(({ date: a }: any, { date: b }: any) => {
-    if (a < b) {
-      return 1;
-    }
-    if (a > b) {
-      return -1;
-    }
-    return 0;
-  });
+  return allPostsData.sort(({ date: a }: any, { date: b }: any) =>
+    a > b ? -1 : 1,
+  );
 }
 
 export function getAllPostSlugs() {
@@ -54,7 +48,7 @@ export function getAllPostSlugs() {
   //     }
   //   }
   // ]
-  return fileNames.map(fileName => {
+  return fileNames.map((fileName) => {
     return {
       params: {
         slug: fileName.replace(/\.md$/, ""),

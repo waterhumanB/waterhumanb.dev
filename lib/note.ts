@@ -6,10 +6,10 @@ const postsNoteFileDirectory = path.join(process.cwd(), "posts/note");
 
 export function getSortedNotesData() {
   const fileNames = fs.readdirSync(postsNoteFileDirectory);
-  const allNotesData = fileNames.map(fileName => {
+  const allNotesData = fileNames.map((fileName) => {
     const nowFile = path.join(process.cwd(), `posts/note/${fileName}`);
     const noteName = fileName;
-    const fileContents = fs.readdirSync(nowFile, "utf8").map(data => {
+    const fileContents = fs.readdirSync(nowFile, "utf8").map((data) => {
       const mdFile = fs.readFileSync(`posts/note/${fileName}/${data}`, "utf8");
 
       const slug = data.replace(/\.md$/, "");
@@ -36,9 +36,9 @@ export function getSortedNotesData() {
 
 export function getAllNoteSlugs() {
   const fileNames = fs.readdirSync(postsNoteFileDirectory);
-  const allNotesSlugData = fileNames.map(fileName => {
+  const allNotesSlugData = fileNames.map((fileName) => {
     const nowFile = path.join(process.cwd(), `posts/note/${fileName}`);
-    const fileContents = fs.readdirSync(nowFile, "utf8").map(data => {
+    const fileContents = fs.readdirSync(nowFile, "utf8").map((data) => {
       const slug = data.replace(/\.md$/, "");
       const noteName = fileName;
       return {
