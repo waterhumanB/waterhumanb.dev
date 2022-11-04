@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { ReactNode } from "react";
+import Footer from "./Footer";
 import Header from "./Header";
 import styles from "./layout.module.scss";
 
@@ -29,6 +30,7 @@ export default function Layout({ children }: Props) {
       </Head>
       <Header />
       <main>{children}</main>
+      <Footer />
     </div>
   );
 }

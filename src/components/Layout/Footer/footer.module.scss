@@ -1,0 +1,32 @@
+@use "src/styles/constants/colors.scss";
+
+.footerContainer {
+  height: 20px;
+  max-width: 300px;
+  margin: 60px auto auto auto;
+  text-align: center;
+  border-top: 1px solid colors.$BORDER;
+  div {
+    margin: auto;
+    height: 30px;
+    width: 100%;
+  }
+
+  .Logo {
+    margin: 30px auto 15px auto;
+    display: flex;
+    width: 60px;
+    justify-content: space-between;
+    a {
+      fill: colors.$GRAY;
+
+      :hover {
+        fill: colors.$BLUE;
+      }
+    }
+  }
+
+  .Copy {
+    font-size: 14px;
+  }
+}
