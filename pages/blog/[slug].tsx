@@ -4,8 +4,8 @@ import useSWR, {
   useSWRConfig,
   unstable_serialize as unstableSerialize,
 } from "swr";
-import Layout from "../../components/Layout/Layout";
-import ContentHtml from "../../components/section/contentHtml/ContentHtml";
+import Layout from "../../components/Layout";
+import ContentHtml from "../../components/section/contentHtml";
 import { getAllPostSlugs, getPostData } from "../../lib/posts";
 
 interface Props {

@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { GetStaticProps } from "next";
 import { getSortedNotesData } from "../../lib/note";
-import Layout from "../../components/Layout/Layout";
+import Layout from "../../components/Layout";
 import { IPost } from "../../types/post";
 
 function Note({ allNotesData }: IPost) {

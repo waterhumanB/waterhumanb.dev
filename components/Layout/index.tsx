@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { ReactNode } from "react";
-import { Header } from "./index";
+import Header from "./header";
 import styles from "./layout.module.scss";
 
 export const siteTitle = "Next.js Sample Website";

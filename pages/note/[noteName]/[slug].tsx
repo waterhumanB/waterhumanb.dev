@@ -4,8 +4,8 @@ import useSWR, {
   unstable_serialize as unstableSerialize,
   useSWRConfig,
 } from "swr";
-import Layout from "../../../components/Layout/Layout";
-import ContentHtml from "../../../components/section/contentHtml/ContentHtml";
+import Layout from "../../../components/Layout";
+import ContentHtml from "../../../components/section/contentHtml";
 import { getAllNoteSlugs, getNoteData } from "../../../lib/note";
 
 interface Props {

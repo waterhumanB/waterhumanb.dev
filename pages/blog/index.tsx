@@ -1,7 +1,7 @@
 import { GetStaticProps } from "next";
 import Link from "next/link";
 import React from "react";
-import Layout from "../../components/Layout/Layout";
+import Layout from "../../components/Layout";
 import { getSortedPostsData } from "../../lib/posts";
 import { IPost } from "../../types/post";
 
