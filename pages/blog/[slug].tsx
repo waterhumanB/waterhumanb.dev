@@ -1,11 +1,31 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
-import Layout from "../../components/Layout";
-import ContentHtml from "../../components/Section/contentHtml";
+import useSWR, {
+  useSWRConfig,
+  unstable_serialize as unstableSerialize,
+} from "swr";
+import Layout from "../../components/Layout/Layout";
+import ContentHtml from "../../components/section/contentHtml/ContentHtml";
 import { getAllPostSlugs, getPostData } from "../../lib/posts";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export default function Post({ postData }: any) {
+interface Props {
+  slug: string;
+}
+
+export default function Post({ slug }: Props) {
+  const { cache } = useSWRConfig();
+  const { data: postData, isValidating } = useSWR(["Props", slug]);
+
+  // eslint-disable-next-line no-console
+  console.log("SWR", postData);
+  // eslint-disable-next-line no-console
+  const check = cache.get(["Props", slug]);
+  // eslint-disable-next-line no-console
+  console.log("Cache", check);
+
+  if (isValidating) {
+    return <div>validating...</div>;
+  }
   return (
     <Layout>
       <Head>
@@ -17,7 +37,6 @@ export default function Post({ postData }: any) {
       <br />
       {postData?.date}
       <br />
-      {/* eslint-disable-next-line react/no-danger */}
       <ContentHtml content={postData?.contentHtml} />
     </Layout>
   );
@@ -38,6 +57,11 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
   // 다음과 같이 "await" 키워드를 추가합니다.
   const postData = await getPostData(params.slug);
   return {
-    props: { postData },
+    props: {
+      slug: postData.slug,
+      fallback: {
+        [unstableSerialize(["Props", postData.slug])]: postData,
+      },
+    },
   };
 };

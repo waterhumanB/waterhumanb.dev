@@ -1,8 +1,8 @@
-import Layout from "../components/Layout";
+import Layout from "../components/Layout/Layout";
 
 export default function Home() {
   return (
-    <Layout home>
+    <Layout>
       <section>
         <h2>Home</h2>
         <p>Front-End Developer 블로그입니다!</p>

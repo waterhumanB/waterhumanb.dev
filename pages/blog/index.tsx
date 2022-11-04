@@ -1,13 +1,13 @@
 import { GetStaticProps } from "next";
 import Link from "next/link";
 import React from "react";
-import Layout from "../../components/Layout";
+import Layout from "../../components/Layout/Layout";
 import { getSortedPostsData } from "../../lib/posts";
+import { IPost } from "../../types/post";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function Blog({ allPostsData }: any) {
+function Blog({ allPostsData }: IPost) {
   return (
-    <Layout home>
+    <Layout>
       <h2>Blog</h2>
       <main>
         <ul>
@@ -15,7 +15,6 @@ function Blog({ allPostsData }: any) {
           {allPostsData.map(({ slug, date, title }: any) => (
             <li key={slug}>
               <Link href={`/blog/${slug}`}>
-                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                 <div>{title}</div>
               </Link>
               <br />

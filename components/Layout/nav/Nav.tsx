@@ -1,5 +1,5 @@
 import Link from "next/link";
-import navlinks from "../../../../data/navlinks";
+import navlinks from "../../../data/navlinks";
 import styles from "./nav.module.scss";
 
 function Nav() {

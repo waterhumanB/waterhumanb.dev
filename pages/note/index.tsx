@@ -2,13 +2,13 @@ import React from "react";
 import Link from "next/link";
 import { GetStaticProps } from "next";
 import { getSortedNotesData } from "../../lib/note";
-import Layout from "../../components/Layout";
+import Layout from "../../components/Layout/Layout";
+import { IPost } from "../../types/post";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function Note({ allNotesData }: any) {
+function Note({ allNotesData }: IPost) {
   // map 컴포넌트 뺴주기
   return (
-    <Layout home>
+    <Layout>
       <h2>Note!</h2>
       <main>
         <ul>

@@ -18,9 +18,11 @@ Next.js 공식문서에서 기본 튜트리얼 공부 및 블로그 만들기
     - [] 왼쪽에 카테고리 메뉴
     - [] 게시물 Data : slug, title, date, description
   - [] GitHub 댓글 기능
+  - [] TOC (table of contents)
   - [] Project 페이지 : notion api로 연결 시켜 내가 했던 프로젝트들 정리
   - [] About 페이지 : 저를 소개합니다.
   - [] 상세 포스터에서 목차 기능
+- [] RSS
 - [] Google, Naver, Daum, Bing 사이트에 블로그 노출 시키기
 - [] 다크모드 기능
 
