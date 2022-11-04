@@ -1,9 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
-import useSWR, {
-  unstable_serialize as unstableSerialize,
-  useSWRConfig,
-} from "swr";
+import useSWR, { unstable_serialize as unstableSerialize } from "swr";
 import Layout from "../../../components/Layout";
 import ContentHtml from "../../../components/section/contentHtml";
 import { getAllNoteSlugs, getNoteData } from "../../../lib/note";
@@ -13,19 +10,8 @@ interface Props {
 }
 
 export default function Post({ slug }: Props) {
-  const { cache } = useSWRConfig();
-  const { data: postData, isValidating } = useSWR(["Props", slug]);
+  const { data: postData } = useSWR(["Props", slug]);
 
-  // eslint-disable-next-line no-console
-  console.log("SWR", postData);
-  // eslint-disable-next-line no-console
-  const check = cache.get(["Props", slug]);
-  // eslint-disable-next-line no-console
-  console.log("Cache", check);
-
-  if (isValidating) {
-    return <div>validating...</div>;
-  }
   return (
     <Layout>
       <Head>
