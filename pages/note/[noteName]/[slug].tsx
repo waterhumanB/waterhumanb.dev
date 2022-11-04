@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import useSWR, { unstable_serialize as unstableSerialize } from "swr";
 import Layout from "../../../components/Layout";
-import ContentHtml from "../../../components/section/contentHtml";
+import ContentHtml from "../../../components/Section/ContentHtml";
 import { getAllNoteSlugs, getNoteData } from "../../../lib/note";
 
 interface Props {
