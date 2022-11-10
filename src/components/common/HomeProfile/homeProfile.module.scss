@@ -1,0 +1,29 @@
+@use "src/styles/constants/colors.scss";
+
+.homeContainer {
+  max-width: 720px;
+  margin: 40px auto auto auto;
+}
+
+.profileBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  img {
+    width: 270px;
+    height: 270px;
+    border-radius: 25px;
+    border: 5px double colors.$GRAY;
+  }
+  h1 {
+    font-size: 38px;
+    margin: 35px auto;
+    font-family: SecularOne;
+    font-weight: 700;
+  }
+  span {
+    font-size: 18px;
+    line-height: 30px;
+  }
+}

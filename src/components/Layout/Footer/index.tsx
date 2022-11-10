@@ -15,6 +15,15 @@ function Footer() {
         </Link>
       </div>
       <div className={styles.Copy}>Copyright © 2022 WaterHumanB</div>
+      <div className={styles.devBox}>
+        <Link
+          className={styles.dev}
+          href='https://github.com/waterhumanB/waterhumanb.dev'
+          target='_blank'
+        >
+          <div>WaterHumanB.dev</div>
+        </Link>
+      </div>
     </footer>
   );
 }
