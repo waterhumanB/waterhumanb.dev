@@ -12,11 +12,15 @@
   align-items: center;
   backdrop-filter: blur(7px);
   border-bottom: 1px solid colors.$BORDER;
+  z-index: 1;
 
   div {
-    margin-left: 20px;
+    margin-right: 20px;
   }
   :hover {
+    color: colors.$BLUE;
+  }
+  .active {
     color: colors.$BLUE;
   }
 }

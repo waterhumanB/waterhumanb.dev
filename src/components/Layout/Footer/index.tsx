@@ -1,6 +1,6 @@
 import Link from "next/link";
-import GitLogo from "../../../assets/icons/gitHubLogo.svg";
-import RssLogo from "../../../assets/icons/RssLogo.svg";
+import RssLogo from "../../../../public/assets/icons/RssLogo.svg";
+import GitLogo from "../../../../public/assets/icons/gitHubLogo.svg";
 import styles from "./footer.module.scss";
 
 function Footer() {
@@ -10,7 +10,7 @@ function Footer() {
         <Link href='https://github.com/waterhumanB' target='_blank'>
           <GitLogo />
         </Link>
-        <Link href='/' target='_blank'>
+        <Link href='/'>
           <RssLogo />
         </Link>
       </div>
