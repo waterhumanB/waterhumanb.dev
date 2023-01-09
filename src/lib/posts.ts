@@ -26,7 +26,6 @@ export function getSortedPostsData() {
     };
   });
   // 날짜별로 게시물 정렬
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return allPostsData.sort(({ date: a }: any, { date: b }: any) =>
     a > b ? -1 : 1,
   );

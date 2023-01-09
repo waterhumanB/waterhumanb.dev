@@ -4,7 +4,6 @@ date: "2022-10-13"
 description: "Start Markdown"
 thumbnail: "/images/blog/example.jpg"
 category: "markdown"
-slug: "example"
 ---
 
 ---

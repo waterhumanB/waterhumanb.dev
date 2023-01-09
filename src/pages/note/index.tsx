@@ -12,18 +12,15 @@ function Note({ allNotesData }: IPost) {
       <h2>Note!</h2>
       <main>
         <ul>
-          {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
           {allNotesData.map(({ noteName, note }: any) => {
             return (
               <li key={noteName}>
                 {noteName}
                 <div>
-                  {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                   {note.map(({ title, slug }: any) => {
                     return (
                       <div key={title}>
                         <Link href={`/note/${noteName}/${slug}`}>
-                          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                           <div>{title}</div>
                         </Link>
                       </div>
