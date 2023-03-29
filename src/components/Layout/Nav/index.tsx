@@ -1,7 +1,13 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import navLinks from "../../../data/navLinks";
 import styles from "./nav.module.scss";
+
+const navLinks: { title: string; link: string }[] = [
+  { title: "Blog", link: "/blog" },
+  { title: "Note", link: "/note" },
+  { title: "About", link: "/about" },
+  { title: "Project", link: "/project" },
+];
 
 function Nav() {
   const router = useRouter();
