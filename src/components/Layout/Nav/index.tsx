@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import navlinks from "../../../data/navlinks";
+import navLinks from "../../../data/navLinks";
 import styles from "./nav.module.scss";
 
 function Nav() {
@@ -15,7 +15,7 @@ function Nav() {
         </Link>
       </div>
       <nav className={styles.navLinks}>
-        {navlinks.map((nav) => (
+        {navLinks.map((nav) => (
           <Link href={nav.link} key={nav.title}>
             <div
               className={

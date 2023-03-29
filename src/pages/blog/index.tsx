@@ -13,23 +13,24 @@ function Blog({ allPostsData }: IPost) {
   const handleFilter = (e: MouseEvent<HTMLButtonElement>) => {
     setCat(e.currentTarget.innerText);
   };
-  const entries = Object.entries(allPostsData).map((data) => {
-    return data;
-  });
+  // const entries = Object.entries(allPostsData).map((data) => {
+  //   return data;
+  // });
 
-  const maping = allPostsData.map((data: any) => data.category);
+  // const mapping = allPostsData.map((data: any) => data.category);
 
-  console.log(
-    allPostsData.filter(
-      (data: any, index) => maping.indexOf(data.category) === index,
-    ),
-  );
+  // console.log(
+  //   allPostsData.filter(
+  //     (data: any, index) => mapping.indexOf(data.category) === index,
+  //   ),
+  //   entries,
+  // );
   // filter로 인덱스를 돌아 같은 것들은 걸러주고 나머지만 뽑아준다.
   return (
     <Layout>
       <h2>Blog</h2>
       <section>
-        <div className={styles.catBox}>
+        <div className={styles.categoryBox}>
           {allPostsData.map(({ slug, category }: any) => (
             <button type='button' onClick={handleFilter} key={slug}>
               {category}
