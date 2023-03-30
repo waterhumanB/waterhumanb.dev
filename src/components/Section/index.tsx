@@ -1,7 +1,23 @@
+import useSWR from "swr";
+
 import React from "react";
 
-function Section() {
-  return <div>section</div>;
+import styles from "./section.module.scss";
+import Content from "./Content";
+
+interface Props {
+  slug: string;
+}
+
+function Section({ slug }: Props) {
+  const { data: post } = useSWR(["Props", slug]);
+
+  return (
+    <article className={styles.container}>
+      <time className={styles.date}>{post?.date}</time>
+      <Content content={post?.content} />
+    </article>
+  );
 }
 
 export default Section;

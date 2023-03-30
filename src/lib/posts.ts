@@ -63,12 +63,12 @@ export async function getPostData(slug: string) {
   // gary-matter을 사용하여 게시물 메타데이터 섹션 구문 분석
   const matterResult = matter(fileContents);
 
-  const contentHtml = matterResult.content;
+  const { content } = matterResult;
 
   // 데이터를 slug 및 contentHtml과 결합
   return {
     slug,
-    contentHtml,
+    content,
     ...matterResult.data,
   };
 }

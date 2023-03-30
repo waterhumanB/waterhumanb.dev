@@ -56,11 +56,11 @@ export async function getNoteData(slug: string, noteName: string) {
   const fullPath = path.join(postsNoteFileDirectory, `${noteName}/${slug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const matterResult = matter(fileContents);
-  const contentHtml = matterResult.content;
+  const { content } = matterResult;
 
   return {
     slug,
-    contentHtml,
+    content,
     ...matterResult.data,
   };
 }

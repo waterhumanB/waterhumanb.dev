@@ -6,10 +6,10 @@ export interface IPost {
 
 export interface IPostData {
   slug: string;
-  contentHtml?: ReactElement;
+  content?: ReactElement;
   title: string;
   date: string;
-  desciption: string;
+  description: string;
   thumbnail?: string;
   category?: string;
   index?: number;

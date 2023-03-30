@@ -42,7 +42,7 @@ const customComponents = {
   },
 };
 
-function ContentHtml({ content }: Props) {
+function Content({ content }: Props) {
   return (
     <article className={styles.container}>
       <ReactMarkdown components={customComponents}>{content}</ReactMarkdown>
@@ -50,4 +50,4 @@ function ContentHtml({ content }: Props) {
   );
 }
 
-export default ContentHtml;
+export default Content;

@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import useSWR, { unstable_serialize as unstableSerialize } from "swr";
 import Layout from "../../components/Layout";
-import ContentHtml from "../../components/Section/ContentHtml";
+import Section from "../../components/Section";
 import { getAllPostSlugs, getPostData } from "../../lib/posts";
 
 interface Props {
@@ -23,7 +23,7 @@ export default function Post({ slug }: Props) {
       <br />
       {postData?.date}
       <br />
-      <ContentHtml content={postData?.contentHtml} />
+      <Section slug={slug} />
     </Layout>
   );
 }
