@@ -4,13 +4,14 @@ import React from "react";
 
 import styles from "./section.module.scss";
 import Content from "./Content";
+import { IPostData } from "../../types/post";
 
 interface Props {
   slug: string;
 }
 
 function Section({ slug }: Props) {
-  const { data: post } = useSWR(["Props", slug]);
+  const { data: post } = useSWR<IPostData>(["Props", slug]);
 
   return (
     <article className={styles.container}>

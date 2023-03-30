@@ -1,28 +1,21 @@
 import { GetStaticPaths, GetStaticProps } from "next";
-import Head from "next/head";
 import useSWR, { unstable_serialize as unstableSerialize } from "swr";
 import Layout from "../../components/Layout";
+import Title from "../../components/Layout/Title";
 import Section from "../../components/Section";
 import { getAllPostSlugs, getPostData } from "../../lib/posts";
+import { IPostData } from "../../types/post";
 
 interface Props {
   slug: string;
 }
 
 export default function Post({ slug }: Props) {
-  const { data: postData } = useSWR(["Props", slug]);
+  const { data: postData } = useSWR<IPostData>(["Props", slug]);
 
   return (
     <Layout>
-      <Head>
-        <title>{postData.title}</title>
-      </Head>
-      {postData?.title}
-      <br />
-      {postData?.slug}
-      <br />
-      {postData?.date}
-      <br />
+      <Title title={postData?.title} category={postData?.category} />
       <Section slug={slug} />
     </Layout>
   );
