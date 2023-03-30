@@ -4,18 +4,18 @@ import Layout from "../../../components/Layout";
 import Title from "../../../components/Layout/Title";
 import Section from "../../../components/Section";
 import { getAllNoteSlugs, getNoteData } from "../../../lib/note";
-import { IPostData } from "../../../types/post";
+import { INoteItem } from "../../../types/note";
 
 interface Props {
   slug: string;
 }
 
 export default function Post({ slug }: Props) {
-  const { data: noteData } = useSWR<IPostData>(["Props", slug]);
+  const { data: noteData } = useSWR<INoteItem>(["Props", slug]);
 
   return (
     <Layout>
-      <Title title={noteData?.title} category={noteData?.category} />
+      <Title title={noteData?.title} />
       <Section slug={slug} />
     </Layout>
   );

@@ -2,10 +2,10 @@ import styles from "./title.module.scss";
 
 interface TitleProps {
   title: string | undefined;
-  category: string | undefined;
+  category?: string | undefined;
 }
 
-function Title({ title, category }: TitleProps) {
+function Title({ title, category = "" }: TitleProps) {
   return (
     <header className={styles.container}>
       <div>{category}</div>

@@ -1,3 +1,6 @@
+export interface IPost {
+  [key: string]: IPostData[];
+}
 export interface IPostData {
   slug: string;
   content?: string;

@@ -3,21 +3,19 @@ import Link from "next/link";
 import { GetStaticProps } from "next";
 import { getSortedNotesData } from "../../lib/note";
 import Layout from "../../components/Layout";
-import { IPost } from "../../types/post";
+import { INote, INoteData, INoteItem } from "../../types/note";
 
-function Note({ allNotesData }: IPost) {
-  // map 컴포넌트 뺴주기
+function Note({ allNoteData }: INote) {
   return (
     <Layout>
-      <h2>Note!</h2>
       <main>
         <ul>
-          {allNotesData.map(({ noteName, note }: any) => {
+          {allNoteData.map(({ noteName, note }: INoteData) => {
             return (
               <li key={noteName}>
                 {noteName}
                 <div>
-                  {note.map(({ title, slug }: any) => {
+                  {note.map(({ title, slug }: INoteItem) => {
                     return (
                       <div key={title}>
                         <Link href={`/note/${noteName}/${slug}`}>
@@ -39,10 +37,10 @@ function Note({ allNotesData }: IPost) {
 export default Note;
 
 export const getStaticProps: GetStaticProps = () => {
-  const allNotesData = getSortedNotesData();
+  const allNoteData = getSortedNotesData();
   return {
     props: {
-      allNotesData,
+      allNoteData,
     },
   };
 };

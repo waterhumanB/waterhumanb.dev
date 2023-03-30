@@ -5,7 +5,7 @@ import { coy } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import styles from "./content.module.scss";
 
 interface Props {
-  content: string | undefined;
+  content: string;
 }
 
 const customComponents = {
@@ -42,14 +42,12 @@ const customComponents = {
   },
 };
 
-function Content({ content }: Props) {
+function ContentHtml({ content }: Props) {
   return (
     <article className={styles.container}>
-      <ReactMarkdown components={customComponents}>
-        {content ?? ""}
-      </ReactMarkdown>
+      <ReactMarkdown components={customComponents}>{content}</ReactMarkdown>
     </article>
   );
 }
 
-export default Content;
+export default ContentHtml;

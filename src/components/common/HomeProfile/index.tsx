@@ -9,7 +9,7 @@ function HomeProfile() {
         <div className={styles.introduceBox}>
           <h1>SuIn Bae</h1>
           <span>
-            전자공학과를 나와 반도체회사에서 근무,
+            전자공학과를 전공 반도체회사에서 근무,
             <br />
             디지털마케팅에 관심이 생겨 마케터가 되고, <br />
             콘텐츠가 아닌 어떠한 제품, 서비스를 위한 <br />
