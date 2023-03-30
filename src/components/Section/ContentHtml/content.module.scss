@@ -1,0 +1,119 @@
+@use "src/styles/constants/colors.scss";
+
+.container {
+  margin: 40px 0;
+  white-space: pre-line;
+
+  p {
+    font-weight: 300;
+    line-height: 2;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 20px 0;
+  }
+
+  h1 {
+    font-size: 32px;
+    font-weight: 400;
+  }
+
+  h2 {
+    font-size: 30px;
+    font-weight: 400;
+  }
+
+  h3 {
+    font-size: 28px;
+    font-weight: 400;
+  }
+
+  h4 {
+    font-size: 24px;
+    font-weight: 300;
+  }
+
+  h5 {
+    font-size: 22px;
+    font-weight: 300;
+  }
+
+  h6 {
+    font-size: 20px;
+    font-weight: 300;
+  }
+
+  strong {
+    font-weight: 500;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  s {
+    text-decoration: line-through;
+  }
+
+  mark {
+    background-color: colors.$BG_ELEMENT;
+  }
+
+  a {
+    color: colors.$PRIMARY;
+    border-bottom: 1px solid colors.$BORDER_PRIMARY;
+
+    :hover {
+      color: colors.$PRIMARY;
+    }
+  }
+
+  blockquote {
+    padding: 0 16px;
+    background-color: colors.$BG_ELEMENT;
+    border-left: 4px solid colors.$PRIMARY;
+    border-radius: 4px;
+  }
+
+  ul,
+  ol {
+    position: relative;
+    left: 12px;
+    padding-left: 16px;
+    margin-top: 0;
+    margin-bottom: 0;
+    white-space: normal;
+  }
+
+  li {
+    font-weight: 300;
+    line-height: 2;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  pre,
+  code {
+    font-family: Menlo, Monaco, "Courier New", monospace !important;
+  }
+
+  pre {
+    overflow-x: scroll;
+    font-size: 14px;
+  }
+
+  p code,
+  li code {
+    padding: 1px 2px;
+    white-space: pre-wrap;
+    border: 1px solid colors.$BORDER_SECONDARY;
+    border-radius: 4px;
+  }
+}

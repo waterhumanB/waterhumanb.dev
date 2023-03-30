@@ -2,11 +2,13 @@ import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { coy } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
+import styles from "./content.module.scss";
+
 interface Props {
   content: string;
 }
 
-const customCompoents = {
+const customComponents = {
   p(paragraph: any) {
     const { node } = paragraph;
     if (node.children[0].tagName === "img") {
@@ -42,8 +44,8 @@ const customCompoents = {
 
 function ContentHtml({ content }: Props) {
   return (
-    <article>
-      <ReactMarkdown components={customCompoents}>{content}</ReactMarkdown>
+    <article className={styles.container}>
+      <ReactMarkdown components={customComponents}>{content}</ReactMarkdown>
     </article>
   );
 }

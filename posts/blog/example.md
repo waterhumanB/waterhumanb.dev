@@ -2,7 +2,7 @@
 title: "Markdown Example"
 date: "2022-10-13"
 description: "Start Markdown"
-thumbnail: "/images/blog/example.jpg"
+thumbnail: ""
 category: "markdown"
 ---
 
@@ -120,17 +120,16 @@ Syntax highlighting
 var foo = function (bar) {
   return bar++;
 };
-
 console.log(foo(5));
 ```
 
 ## Tables
 
-| Option | Description                                                               |
-| ------ | ------------------------------------------------------------------------- |
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default.    |
-| ext    | extension to be used for dest files.                                      |
+| 메인 화면 | 퀴즈 풀기 |
+| :-------: | :-------: |
+|   dddd    |   dddd    |
+| 결과 화면 | 오답 노트 |
+|  ddddddd  |   aaaa    |
 
 Right aligned columns
 
@@ -150,11 +149,15 @@ Autoconverted link https://github.com/nodeca/pica (enable linkify to see)
 
 ## Images
 
+![Minion](https://img.khan.co.kr/news/2021/06/01/l_2021060101000088400003661.webp)
+
 Like links, Images also have a footnote style syntax
 
 ![Alt text][id]
 
 With a reference later in the document defining the URL location:
+
+[id]: https://img.khan.co.kr/news/2021/06/01/l_2021060101000088400003661.webp "The Dojocat"
 
 ## Plugins
 
@@ -163,13 +166,10 @@ The killer feature of `markdown-it` is very effective support of
 
 ### [Emojies](https://github.com/markdown-it/markdown-it-emoji)
 
-☺️
-
 > Classic markup: :wink: :crush: :cry: :tear: :laughing: :yum:
 >
 > Shortcuts (emoticons): :-) :-( 8-) ;)
-
-see [how to change output](https://github.com/markdown-it/markdown-it-emoji#change-output) with twemoji.
+> see [how to change output](https://github.com/markdown-it/markdown-it-emoji#change-output) with twemoji.
 
 ### [Subscript](https://github.com/markdown-it/markdown-it-sub) / [Superscript](https://github.com/markdown-it/markdown-it-sup)
 
