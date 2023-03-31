@@ -6,58 +6,68 @@ import Layout from "../../components/Layout";
 import { getSortedPostsData } from "../../lib/posts";
 import { IPost } from "../../types/post";
 import styles from "./blog.module.scss";
+import { categoryFilter } from "../../utils/categoryFilter";
 
 function Blog({ allPostsData }: IPost) {
   const [cat, setCat] = useState("");
 
+  const filteredData = categoryFilter(allPostsData);
+
   const handleFilter = (e: MouseEvent<HTMLButtonElement>) => {
-    setCat(e.currentTarget.innerText);
+    setCat(e.currentTarget.name);
   };
-  // const entries = Object.entries(allPostsData).map((data) => {
-  //   return data;
-  // });
 
-  // const mapping = allPostsData.map((data: any) => data.category);
-
-  // console.log(
-  //   allPostsData.filter(
-  //     (data: any, index) => mapping.indexOf(data.category) === index,
-  //   ),
-  //   entries,
-  // );
-  // filter로 인덱스를 돌아 같은 것들은 걸러주고 나머지만 뽑아준다.
   return (
     <Layout>
-      <h2>Blog</h2>
-      <section>
+      <section className={styles.container}>
+        <div className={styles.blogTitle}>
+          <h2>Blog</h2>
+          <p>
+            개발하면서 느낀점, 생각 등을 공유하거나 복습하고 싶은 기술들을
+            정리하는 곳입니다.
+          </p>
+        </div>
         <div className={styles.categoryBox}>
-          {allPostsData.map(({ slug, category }: any) => (
-            <button type='button' onClick={handleFilter} key={slug}>
-              {category}
+          <button
+            className={cat === "" ? styles.focus : ""}
+            type='button'
+            onClick={() => setCat("")}
+          >
+            #All
+          </button>
+          {filteredData.map((data) => (
+            <button
+              className={cat === data ? styles.focus : ""}
+              type='button'
+              onClick={handleFilter}
+              key={data}
+              name={data}
+            >
+              {`#${data}`}
             </button>
           ))}
         </div>
-        <ul>
+        <div>
           {allPostsData
-            .filter(({ category }: any) => cat === category)
-            .map(({ slug, date, title }: any) => (
-              <li className={styles.postBox} key={slug}>
+            .filter(({ category }) => cat === category)
+            .map(({ slug, date, title }) => (
+              <div className={styles.postBox} key={slug}>
                 <Link href={`/blog/${slug}`}>
                   <div>{title}</div>
                 </Link>
                 <small>{date}</small>
-              </li>
+              </div>
             ))}
           {cat === "" &&
-            allPostsData.map(({ slug, date, title }: any) => (
-              <li className={styles.postBox} key={slug}>
+            allPostsData.map(({ slug, date, title }) => (
+              <div className={styles.postBox} key={slug}>
                 <Link href={`/blog/${slug}`}>
                   <div>{title}</div>
                 </Link>
                 <small>{date}</small>
-              </li>
+              </div>
             ))}
-        </ul>
+        </div>
       </section>
     </Layout>
   );

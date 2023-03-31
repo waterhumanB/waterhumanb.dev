@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import useSWR, { unstable_serialize as unstableSerialize } from "swr";
 import Layout from "../../components/Layout";
 import Title from "../../components/Layout/Title";
-import Section from "../../components/Section";
+import Section from "../../components/domain/Section";
 import { getAllPostSlugs, getPostData } from "../../lib/posts";
 import { IPostData } from "../../types/post";
 

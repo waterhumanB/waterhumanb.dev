@@ -1,5 +1,7 @@
 .container {
   width: 100%;
+  min-height: calc(100vh - 9.1rem);
+  margin: auto;
   a {
     text-decoration: none;
     outline: none;
@@ -8,9 +10,5 @@
     a:active {
       text-decoration: none;
     }
-  }
-
-  main {
-    width: 100%;
   }
 }

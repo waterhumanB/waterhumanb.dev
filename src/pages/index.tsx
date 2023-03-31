@@ -1,5 +1,5 @@
 import Layout from "../components/Layout";
-import HomeProfile from "../components/common/HomeProfile";
+import HomeProfile from "../components/domain/HomeProfile";
 
 export default function Home() {
   return (
