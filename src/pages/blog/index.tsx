@@ -2,7 +2,7 @@ import { GetStaticProps } from "next";
 import Image from "next/image";
 import React, { MouseEvent, useState } from "react";
 import Link from "next/link";
-import altImg from "../../../public/assets/images/waterhuman.png";
+import altImg from "../../../public/assets/images/waterhumanb.png";
 
 import Layout from "../../components/Layout";
 import { getSortedPostsData } from "../../lib/posts";
