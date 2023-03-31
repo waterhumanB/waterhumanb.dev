@@ -4,7 +4,7 @@ import React from "react";
 
 import styles from "./section.module.scss";
 import Content from "./Content";
-import { IPostData } from "../../types/post";
+import { IPostData } from "../../../types/post";
 
 interface Props {
   slug: string;
