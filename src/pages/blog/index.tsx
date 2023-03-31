@@ -2,6 +2,7 @@ import { GetStaticProps } from "next";
 import Image from "next/image";
 import React, { MouseEvent, useState } from "react";
 import Link from "next/link";
+import altImg from "../../../public/assets/images/waterhuman.png";
 
 import Layout from "../../components/Layout";
 import { getSortedPostsData } from "../../lib/posts";
@@ -59,8 +60,10 @@ function Blog({ allPostsData }: IPost) {
               >
                 <Image
                   className={styles.imgBox}
-                  src={thumbnail ?? ""}
+                  src={thumbnail || altImg}
                   alt={slug}
+                  width={120}
+                  height={120}
                 />
                 <p className={styles.descBox}>
                   <p className={styles.title}>{title}</p>
