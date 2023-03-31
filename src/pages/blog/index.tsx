@@ -1,4 +1,5 @@
 import { GetStaticProps } from "next";
+import Image from "next/image";
 import React, { MouseEvent, useState } from "react";
 import Link from "next/link";
 
@@ -47,25 +48,29 @@ function Blog({ allPostsData }: IPost) {
             </button>
           ))}
         </div>
-        <div>
+        <div className={styles.postBox}>
           {allPostsData
-            .filter(({ category }) => cat === category)
-            .map(({ slug, date, title }) => (
-              <div className={styles.postBox} key={slug}>
-                <Link href={`/blog/${slug}`}>
-                  <div>{title}</div>
-                </Link>
-                <small>{date}</small>
-              </div>
-            ))}
-          {cat === "" &&
-            allPostsData.map(({ slug, date, title }) => (
-              <div className={styles.postBox} key={slug}>
-                <Link href={`/blog/${slug}`}>
-                  <div>{title}</div>
-                </Link>
-                <small>{date}</small>
-              </div>
+            .filter((data) => (cat === "" ? data : cat === data.category))
+            .map(({ slug, date, title, description, thumbnail, category }) => (
+              <Link
+                key={slug}
+                className={styles.postItem}
+                href={`/blog/${slug}`}
+              >
+                <Image
+                  className={styles.imgBox}
+                  src={thumbnail ?? ""}
+                  alt={slug}
+                />
+                <p className={styles.descBox}>
+                  <p className={styles.title}>{title}</p>
+                  <p className={styles.dateBox}>
+                    <p className={styles.category}>{category}</p>
+                    <p className={styles.date}>{date}</p>
+                  </p>
+                  <p className={styles.desc}>{description}</p>
+                </p>
+              </Link>
             ))}
         </div>
       </section>

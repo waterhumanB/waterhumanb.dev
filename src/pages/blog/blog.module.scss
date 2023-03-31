@@ -5,6 +5,7 @@
   min-height: 100%;
   padding: 20px;
   margin: 0 auto;
+  word-break: keep-all;
 }
 
 .blogTitle {
@@ -13,14 +14,14 @@
   flex-direction: column;
   flex-wrap: wrap;
   margin: auto;
-  word-break: keep-all;
-  line-height: 60px;
 
   h2 {
     font-size: 50px;
     font-weight: 600;
+    margin-bottom: 30px;
   }
   p {
+    min-height: 45px;
     vertical-align: text-bottom;
     font-size: 20px;
   }
@@ -28,9 +29,12 @@
 
 .categoryBox {
   border: 1px solid colors.$GRAY;
-  margin: auto;
+  margin: 5px auto 20px auto;
   padding: 10px;
 
+  &:hover {
+    border: 1px solid colors.$BLACK;
+  }
   button {
     font-size: 18px;
     margin-right: 10px;
@@ -44,8 +48,66 @@
 }
 
 .postBox {
-  width: 200px;
-  height: 50px;
-  border: solid 1px colors.$BLUE;
-  margin: 10px auto;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.postItem {
+  width: 360px;
+  height: 140px;
+  border: solid 1px colors.$GRAY;
+  margin: 10px 0;
+  display: flex;
+
+  &:hover {
+    border: solid 1px colors.$BLACK;
+  }
+}
+
+.imgBox {
+  min-width: 120px;
+  height: 120px;
+  margin: auto 10px;
+  border: 1px solid colors.$GRAY;
+}
+
+.descBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 7px 10px auto;
+
+  .title {
+    max-height: 50px;
+    font-weight: 600;
+    font-size: 22px;
+  }
+
+  .dateBox {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    align-items: center;
+
+    .category {
+      font-size: 14px;
+      font-weight: 600;
+      color: colors.$WHITE;
+      padding: 4px;
+      background: colors.$BLACK;
+    }
+    .date {
+      text-align: right;
+      color: colors.$BORDER_SECONDARY;
+    }
+  }
+
+  .desc {
+    height: 30px;
+    font-size: 15px;
+    margin-top: auto;
+    overflow: hidden;
+  }
 }

@@ -1,6 +1,6 @@
 ---
 title: "Markdown Example"
-date: "2022-10-13"
+date: "2022.10.13"
 description: "Start Markdown"
 thumbnail: ""
 category: "Markdown"
