@@ -9,6 +9,7 @@ import { getSortedPostsData } from "../../lib/posts";
 import { IPost } from "../../types/post";
 import styles from "./blog.module.scss";
 import { categoryFilter } from "../../utils/categoryFilter";
+import { categoryList } from "../../constants/category";
 
 function Blog({ allPostsData }: IPost) {
   const [cat, setCat] = useState("");
@@ -65,14 +66,22 @@ function Blog({ allPostsData }: IPost) {
                   width={120}
                   height={120}
                 />
-                <p className={styles.descBox}>
-                  <p className={styles.title}>{title}</p>
-                  <p className={styles.dateBox}>
-                    <p className={styles.category}>{category}</p>
-                    <p className={styles.date}>{date}</p>
-                  </p>
-                  <p className={styles.desc}>{description}</p>
-                </p>
+                <div className={styles.descBox}>
+                  <div className={styles.title}>{title}</div>
+                  <div className={styles.dateBox}>
+                    <div
+                      className={`${styles.category} ${
+                        categoryList.includes(`${category}`)
+                          ? styles[`${category}`]
+                          : styles.default
+                      }`}
+                    >
+                      {category}
+                    </div>
+                    <div className={styles.date}>{date}</div>
+                  </div>
+                  <div className={styles.desc}>{description}</div>
+                </div>
               </Link>
             ))}
         </div>

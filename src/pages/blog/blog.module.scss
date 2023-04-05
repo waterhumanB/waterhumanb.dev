@@ -94,9 +94,8 @@
     .category {
       font-size: 14px;
       font-weight: 600;
-      color: colors.$WHITE;
+      color: colors.$BACKGROUND;
       padding: 4px;
-      background: colors.$BLACK;
     }
     .date {
       text-align: right;
@@ -110,4 +109,36 @@
     margin-top: auto;
     overflow: hidden;
   }
+}
+
+.default {
+  background: colors.$BLACK;
+}
+
+.CSS {
+  background: colors.$CSS_COLOR;
+}
+
+.HTML {
+  background: colors.$HTML_COLOR;
+}
+
+.JavaScript {
+  background: colors.$JAVASCRIPT_COLOR;
+}
+
+.React {
+  background: colors.$REACT_COLOR;
+}
+
+.TypeScript {
+  background: colors.$TYPESCRIPT_COLOR;
+}
+
+.Storybook {
+  background: colors.$STORYBOOK_COLOR;
+}
+
+.SASS {
+  background: colors.$SASS_COLOR;
 }
