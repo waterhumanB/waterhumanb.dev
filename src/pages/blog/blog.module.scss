@@ -1,5 +1,25 @@
 @use "src/styles/constants/colors.scss";
 
+$mobile-max: 360px;
+$tablet-min: 780px;
+$desktop-min: 1024px;
+
+@mixin mobile {
+  @media (max-width: $mobile-max) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (max-width: $tablet-min) and (min-width: $mobile-max) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: $desktop-min) {
+    @content;
+  }
+}
+
 .container {
   max-width: 800px;
   min-height: 100%;
@@ -22,8 +42,9 @@
   }
   p {
     min-height: 45px;
-    vertical-align: text-bottom;
     font-size: 20px;
+    line-height: 30px;
+    vertical-align: text-bottom;
   }
 }
 
@@ -60,6 +81,10 @@
   border: solid 1px colors.$GRAY;
   margin: 10px 0;
   display: flex;
+
+  @include tablet {
+    width: 100%;
+  }
 
   &:hover {
     border: solid 1px colors.$BLACK;
