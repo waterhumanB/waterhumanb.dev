@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import useSWR, { unstable_serialize as unstableSerialize } from "swr";
 import Layout from "../../components/Layout";
 import Title from "../../components/Layout/Title";
-import Section from "../../components/domain/Section";
+import Section from "../../components/domain/Article";
 import { getAllPostSlugs, getPostData } from "../../lib/posts";
 import { IPostData } from "../../types/post";
 
@@ -21,7 +21,7 @@ export default function Post({ slug }: Props) {
   );
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = () => {
   // slug에 대한 가능한 값의 목록을 반환합니다.
   const paths = getAllPostSlugs();
   return {
@@ -32,7 +32,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }: any) => {
   // params.slug를 사용하여 블로그 게시물에 필요한 데이터를 가져옵니다.
-  // 다음과 같이 "await" 키워드를 추가합니다.
   const postData = await getPostData(params.slug);
   return {
     props: {

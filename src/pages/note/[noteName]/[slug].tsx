@@ -2,8 +2,12 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import useSWR, { unstable_serialize as unstableSerialize } from "swr";
 import Layout from "../../../components/Layout";
 import Title from "../../../components/Layout/Title";
-import Section from "../../../components/domain/Section";
-import { getAllNoteSlugs, getNoteData } from "../../../lib/note";
+import Section from "../../../components/domain/Article";
+import {
+  getAllNoteSlugs,
+  getNoteData,
+  getSortedNotesData,
+} from "../../../lib/note";
 import { INoteItem } from "../../../types/note";
 
 interface Props {
@@ -31,9 +35,11 @@ export const getStaticPaths: GetStaticPaths = () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }: any) => {
   const noteData = await getNoteData(params.slug, params.noteName);
+  const allNoteData = await getSortedNotesData();
   return {
     props: {
       slug: noteData.slug,
+      allNoteData,
       fallback: {
         [unstableSerialize(["Props", noteData.slug])]: noteData,
       },
