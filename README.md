@@ -19,7 +19,7 @@ Next.js 공식문서에서 기본 튜트리얼 공부 및 블로그 만들기
     - [] 게시물 Data : slug, title, date, description
   - [] GitHub 댓글 기능
   - [] TOC (table of contents)
-  - [] Project 페이지 : notion api로 연결 시켜 내가 했던 프로젝트들 정리
+  - [] Project 페이지 : 개인, 팀 프로젝트 정리
   - [] About 페이지 : 저를 소개합니다.
   - [] 상세 포스터에서 목차 기능
 - [] RSS

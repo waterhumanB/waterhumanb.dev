@@ -9,4 +9,5 @@ export interface IPostData {
   description: string;
   thumbnail?: string;
   category?: string;
+  update?: string;
 }

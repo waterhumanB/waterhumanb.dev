@@ -2,11 +2,11 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import styles from "./nav.module.scss";
 
-const navLinks: { title: string; link: string }[] = [
+const HEADER_MENU: { title: string; link: string }[] = [
   { title: "Blog", link: "/blog" },
-  { title: "Note", link: "/note" },
-  { title: "About", link: "/about" },
-  { title: "Project", link: "/project" },
+  // { title: "Note", link: "/note" },
+  // { title: "About", link: "/about" },
+  // { title: "Project", link: "/project" },
 ];
 
 function Nav() {
@@ -21,7 +21,7 @@ function Nav() {
         </Link>
       </div>
       <nav className={styles.navLinks}>
-        {navLinks.map((nav) => (
+        {HEADER_MENU.map((nav) => (
           <Link href={nav.link} key={nav.title}>
             <div
               className={
