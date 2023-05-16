@@ -1,5 +1,5 @@
 import Link from "next/link";
-import RssLogo from "../../../../public/assets/icons/RssLogo.svg";
+// import RssLogo from "../../../../public/assets/icons/RssLogo.svg";
 import GitLogo from "../../../../public/assets/icons/gitHubLogo.svg";
 import styles from "./footer.module.scss";
 
@@ -10,9 +10,9 @@ function Footer() {
         <Link href='https://github.com/waterhumanB' target='_blank'>
           <GitLogo />
         </Link>
-        <Link href='/'>
+        {/* <Link href='/'>
           <RssLogo />
-        </Link>
+        </Link> */}
       </div>
       <div className={styles.copy}>Copyright © 2023 WaterHumanB</div>
       <div className={styles.devBox}>
