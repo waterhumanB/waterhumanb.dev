@@ -13,13 +13,11 @@ Next.js 공식문서에서 기본 튜트리얼 공부 및 블로그 만들기
     - [x] 메인 페이지 위에 카테고리 분리
     - [x] 게시물 Data : slug, title, date, description, thumbnail, category
     - [] 페이지 하단에 같은 카테고리 별 글들 메뉴 페이지네이션
-    - [] GitHub 댓글 기능
   - [x] Note 페이지 : 강의, 책 들 공부한 것들 순서대로 정리
     - [] 왼쪽에 카테고리 메뉴
     - [] 게시물 Data : slug, title, date, description
-  - [] GitHub 댓글 기능
   - [] TOC (table of contents)
-  - [] Project 페이지 : 개인, 팀 프로젝트 정리
+  - [] Project 페이지 : 개인, 팀 프로젝트 정리 노션 api 활용
   - [] About 페이지 : 저를 소개합니다.
   - [] 상세 포스터에서 목차 기능
 - [] RSS
