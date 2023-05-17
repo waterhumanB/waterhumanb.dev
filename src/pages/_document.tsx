@@ -1,4 +1,4 @@
-import { Head, Html } from "next/document";
+import { Head, Html, Main, NextScript } from "next/document";
 
 export default function MyDocument() {
   return (
@@ -12,20 +12,11 @@ export default function MyDocument() {
           name='naver-site-verification'
           content='5b4676776e4bf7929cd196996b0da94331749653'
         />
-        {/* Global Site Tag (gtag.js) - Google Analytics */}
-        {process.env.NODE_ENV !== "development" && (
-          <script
-            // eslint-disable-next-line react/no-danger
-            dangerouslySetInnerHTML={{
-              __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-              `,
-            }}
-          />
-        )}
       </Head>
+      <body>
+        <Main />
+        <NextScript />
+      </body>
     </Html>
   );
 }
