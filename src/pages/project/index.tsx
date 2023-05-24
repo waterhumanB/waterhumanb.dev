@@ -1,4 +1,4 @@
-import Layout from "../../components/Layout";
+import Layout from "../../components/Layout"
 
 function Project() {
   return (
@@ -6,7 +6,7 @@ function Project() {
       <h2>Project</h2>
       <main>노션 api 연결 할 예정</main>
     </Layout>
-  );
+  )
 }
 
-export default Project;
+export default Project
