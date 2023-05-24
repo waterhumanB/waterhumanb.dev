@@ -1,10 +1,10 @@
-import { ReactNode } from "react";
-import Footer from "./Footer";
-import Header from "./Header";
-import styles from "./layout.module.scss";
+import { ReactNode } from "react"
+import Footer from "./Footer"
+import Header from "./Header"
+import styles from "./layout.module.scss"
 
 interface Props {
-  children: ReactNode;
+  children: ReactNode
 }
 
 export default function Layout({ children }: Props) {
@@ -14,5 +14,5 @@ export default function Layout({ children }: Props) {
       <main className={styles.container}>{children}</main>
       <Footer />
     </>
-  );
+  )
 }

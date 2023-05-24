@@ -1,13 +1,14 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
-import styles from "./nav.module.scss";
+import Link from "next/link"
+import { useRouter } from "next/router"
+import styles from "./nav.module.scss"
 
 const HEADER_MENU: { title: string; link: string }[] = [
   { title: "Blog", link: "/blog" },
-];
+  { title: "Note", link: "/note" },
+]
 
 function Nav() {
-  const router = useRouter();
+  const router = useRouter()
   return (
     <div className={styles.nav}>
       <div>
@@ -31,7 +32,7 @@ function Nav() {
         ))}
       </nav>
     </div>
-  );
+  )
 }
 
-export default Nav;
+export default Nav

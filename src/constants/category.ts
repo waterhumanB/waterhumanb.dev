@@ -6,4 +6,4 @@ export const categoryList = [
   "TypeScript",
   "Storybook",
   "SASS",
-];
+]

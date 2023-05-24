@@ -1,13 +1,13 @@
-import "../styles/globals.scss";
-import type { AppProps } from "next/app";
-import { SWRConfig } from "swr";
-import Script from "next/script";
-import * as gtag from "../lib/gtag";
+import "../styles/globals.scss"
+import type { AppProps } from "next/app"
+import { SWRConfig } from "swr"
+import Script from "next/script"
+import * as gtag from "../lib/gtag"
 
 function MyApp({ Component, pageProps }: AppProps) {
-  gtag.useGtag();
+  gtag.useGtag()
 
-  const { fallback } = pageProps;
+  const { fallback } = pageProps
   return (
     <SWRConfig value={{ fallback }}>
       {process.env.NODE_ENV !== "development" && (
@@ -35,7 +35,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       )}
       <Component {...pageProps} />
     </SWRConfig>
-  );
+  )
 }
 
-export default MyApp;
+export default MyApp

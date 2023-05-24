@@ -1,48 +1,51 @@
-import { GetStaticPaths, GetStaticProps } from "next";
-import useSWR, { unstable_serialize as unstableSerialize } from "swr";
-import Layout from "../../../components/Layout";
-import Title from "../../../components/Layout/Title";
-import Section from "../../../components/domain/Article";
+import { GetStaticPaths, GetStaticProps } from "next"
+import useSWR, { unstable_serialize as unstableSerialize } from "swr"
+import Layout from "../../../components/Layout"
+import Title from "../../../components/Layout/Title"
+import Section from "../../../components/domain/Article"
 import {
   getAllNoteSlugs,
   getNoteData,
   getSortedNotesData,
-} from "../../../lib/note";
-import { INoteItem } from "../../../types/note";
+} from "../../../lib/note"
+import { INoteData, INoteItem } from "../../../types/note"
+import NoteLayout from "../../../components/domain/NoteLayout"
 
 interface Props {
-  slug: string;
+  slug: string
+  allNoteData: INoteData[]
 }
 
-export default function Post({ slug }: Props) {
-  const { data: noteData } = useSWR<INoteItem>(["Props", slug]);
+export default function Post({ slug, allNoteData }: Props) {
+  const { data: noteItem } = useSWR<INoteItem>(["Props", slug])
 
   return (
     <Layout>
-      <Title title={noteData?.title} />
+      <NoteLayout allNoteData={allNoteData} noteItem={noteItem} />
+      <Title title={noteItem?.title} />
       <Section slug={slug} />
     </Layout>
-  );
+  )
 }
 
 export const getStaticPaths: GetStaticPaths = () => {
-  const paths = getAllNoteSlugs();
+  const paths = getAllNoteSlugs()
   return {
     paths,
     fallback: false,
-  };
-};
+  }
+}
 
 export const getStaticProps: GetStaticProps = async ({ params }: any) => {
-  const noteData = await getNoteData(params.slug, params.noteName);
-  const allNoteData = await getSortedNotesData();
+  const noteItem = await getNoteData(params.slug, params.noteName)
+  const allNoteData = await getSortedNotesData()
   return {
     props: {
-      slug: noteData.slug,
+      slug: noteItem.slug,
       allNoteData,
       fallback: {
-        [unstableSerialize(["Props", noteData.slug])]: noteData,
+        [unstableSerialize(["Props", noteItem.slug])]: noteItem,
       },
     },
-  };
-};
+  }
+}

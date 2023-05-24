@@ -1,24 +1,24 @@
-import { GetStaticProps } from "next";
-import Image from "next/image";
-import React, { MouseEvent, useState } from "react";
-import Link from "next/link";
-import altImg from "../../../public/assets/images/waterhumanb.png";
+import { GetStaticProps } from "next"
+import Image from "next/image"
+import React, { MouseEvent, useState } from "react"
+import Link from "next/link"
+import altImg from "../../../public/assets/images/waterhumanb.png"
 
-import Layout from "../../components/Layout";
-import { getSortedPostsData } from "../../lib/posts";
-import { IPost } from "../../types/post";
-import styles from "./blog.module.scss";
-import { categoryFilter } from "../../utils/categoryFilter";
-import { categoryList } from "../../constants/category";
+import Layout from "../../components/Layout"
+import { getSortedPostsData } from "../../lib/posts"
+import { IPost } from "../../types/post"
+import styles from "./blog.module.scss"
+import { categoryFilter } from "../../utils/categoryFilter"
+import { categoryList } from "../../constants/category"
 
 function Blog({ allPostsData }: IPost) {
-  const [cat, setCat] = useState("");
+  const [cat, setCat] = useState("")
 
-  const filteredData = categoryFilter(allPostsData);
+  const filteredData = categoryFilter(allPostsData)
 
   const handleFilter = (e: MouseEvent<HTMLButtonElement>) => {
-    setCat(e.currentTarget.name);
-  };
+    setCat(e.currentTarget.name)
+  }
 
   return (
     <Layout>
@@ -87,16 +87,16 @@ function Blog({ allPostsData }: IPost) {
         </div>
       </section>
     </Layout>
-  );
+  )
 }
 
-export default Blog;
+export default Blog
 
 export const getStaticProps: GetStaticProps = () => {
-  const allPostsData = getSortedPostsData();
+  const allPostsData = getSortedPostsData()
   return {
     props: {
       allPostsData,
     },
-  };
-};
+  }
+}

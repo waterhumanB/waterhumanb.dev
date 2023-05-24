@@ -1,8 +1,8 @@
-import styles from "./title.module.scss";
+import styles from "./title.module.scss"
 
 interface TitleProps {
-  title: string | undefined;
-  category?: string | undefined;
+  title: string | undefined
+  category?: string | undefined
 }
 
 function Title({ title, category = "" }: TitleProps) {
@@ -11,7 +11,7 @@ function Title({ title, category = "" }: TitleProps) {
       <div>{category}</div>
       <h1>{title}</h1>
     </header>
-  );
+  )
 }
 
-export default Title;
+export default Title

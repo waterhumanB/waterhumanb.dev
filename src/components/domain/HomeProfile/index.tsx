@@ -1,5 +1,5 @@
-import Image from "next/image";
-import styles from "./homeProfile.module.scss";
+import Image from "next/image"
+import styles from "./homeProfile.module.scss"
 
 function HomeProfile() {
   return (
@@ -14,12 +14,14 @@ function HomeProfile() {
             디지털마케팅에 관심이 생겨 마케터가 되고, <br />
             콘텐츠가 아닌 어떠한 제품, 서비스를 위한 <br />
             웹사이트를 개발하기 위해 프론트엔드 개발자가 되었습니다. <br />
-            <mark>즐겁고 재미있는 서비스와 SEO에 관심이 많습니다!</mark>
+            <mark>
+              즐겁고 재미있는 서비스를 만드는 제품에 특화된 개발자가 목표입니다
+            </mark>
           </span>
         </div>
       </div>
     </section>
-  );
+  )
 }
 
-export default HomeProfile;
+export default HomeProfile

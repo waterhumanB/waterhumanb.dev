@@ -7,7 +7,9 @@ module.exports = {
     createDefaultProgram: true,
   },
   env: {
+    browser: true, // document나 window 인식되게 함
     node: true,
+    es6: true,
   },
   extends: [
     "plugin:@typescript-eslint/recommended",
@@ -15,6 +17,7 @@ module.exports = {
     "airbnb-typescript",
     "plugin:prettier/recommended",
     "plugin:@next/next/recommended",
+    "prettier",
   ],
   rules: {
     // 'React' must be in scope when using JSX 에러 지우기(Next.js)
@@ -26,4 +29,4 @@ module.exports = {
     "@typescript-eslint/no-explicit-any": "off",
     "import/prefer-default-export": "off",
   },
-};
+}
