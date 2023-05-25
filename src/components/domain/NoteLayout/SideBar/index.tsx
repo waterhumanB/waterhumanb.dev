@@ -1,8 +1,9 @@
 import React, { useState, MouseEvent } from "react"
 import Link from "next/link"
-import styles from "./sideBar.module.scss"
+// import styles from "./sideBar.module.scss"
 
 import { INote, INoteData, INoteItem } from "../../../../types/note"
+import ToggleBtn from "./ToggleBtn"
 
 function SideBar({ allNoteData }: INote) {
   const [toggle, setToggle] = useState(true)
@@ -26,33 +27,7 @@ function SideBar({ allNoteData }: INote) {
 
   return (
     <aside>
-      <div
-        className={`${styles.toggleBtnBox} ${
-          toggle ? styles.bookBorder : styles.videoBorder
-        }`}
-      >
-        <button
-          className={`${!toggle ? styles.toggleBtn : styles.toggle}`}
-          name='book'
-          type='button'
-          onClick={toggleBtnHandler}
-        >
-          BOOK
-        </button>
-        <button
-          className={`${toggle ? styles.toggleBtn : styles.toggle}`}
-          name='video'
-          type='button'
-          onClick={toggleBtnHandler}
-        >
-          VIDEO
-        </button>
-        <div
-          className={`${styles.toggleDiv} ${
-            toggle ? styles.book : styles.video
-          }`}
-        />
-      </div>
+      <ToggleBtn toggle={toggle} toggleBtnHandler={toggleBtnHandler} />
       <div>
         {allNoteData.map(({ noteName, note }: INoteData) => {
           return (
