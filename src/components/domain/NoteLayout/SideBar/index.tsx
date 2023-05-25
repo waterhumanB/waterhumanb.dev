@@ -1,29 +1,26 @@
-import React, { useState, MouseEvent } from "react"
+import React from "react"
 import Link from "next/link"
 // import styles from "./sideBar.module.scss"
 
 import { INote, INoteData, INoteItem } from "../../../../types/note"
 import ToggleBtn from "./ToggleBtn"
+import { useToggleBtn } from "../../../../hooks/useToggleBtn"
 
 function SideBar({ allNoteData }: INote) {
-  const [toggle, setToggle] = useState(true)
-  // console.log(
-  //   "all",
-  //   allNoteData
-  //     .flatMap((data) => data.note)
-  //     .filter((item) => item.education === "book"),
-  // )
+  const { toggle, toggleBtnHandler } = useToggleBtn("toggle", true)
+  const filter = allNoteData
+    .flatMap((data) => data.note)
+    .filter((item) => item.education === "book")
 
-  console.log(allNoteData)
-  const toggleBtnHandler = (e: MouseEvent<HTMLButtonElement>) => {
-    const { name } = e.currentTarget
-    if (name === "book") {
-      setToggle(true)
-    }
-    if (name === "video") {
-      setToggle(false)
-    }
-  }
+  console.log("all", filter)
+
+  console.log("note", allNoteData)
+  console.log(
+    "filter",
+    allNoteData.filter((data) =>
+      data.note.some((item: INoteItem) => filter.includes(item)),
+    ),
+  )
 
   return (
     <aside>
