@@ -2,6 +2,7 @@ import { INoteData, INoteItem } from "../../../types/note"
 import Title from "../../Layout/Title"
 import Section from "../Article"
 import SideBar from "./SideBar"
+import styles from "./noteLayout.module.scss"
 
 interface Props {
   allNoteData: INoteData[]
@@ -9,15 +10,15 @@ interface Props {
 }
 
 function NoteLayout({ allNoteData, noteItem }: Props) {
-  // console.log("all", allNoteData)
-  // console.log("data", noteItem)
   return (
-    <div>
-      <SideBar allNoteData={allNoteData} />
-      <div>
-        <Title title={noteItem?.title} />
-        <Section slug={noteItem?.slug} />
-      </div>
+    <div className={styles.noteContainer}>
+      <section className={styles.noteBox}>
+        <SideBar allNoteData={allNoteData} />
+        <div className={styles.note}>
+          <Title title={noteItem?.title} />
+          <Section slug={noteItem?.slug} />
+        </div>
+      </section>
     </div>
   )
 }

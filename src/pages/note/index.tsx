@@ -4,12 +4,23 @@ import { getSortedNotesData } from "../../lib/note"
 import Layout from "../../components/Layout"
 import { INote } from "../../types/note"
 import SideBar from "../../components/domain/NoteLayout/SideBar"
+import styles from "./note.module.scss"
 
 function Note({ allNoteData }: INote) {
   return (
     <Layout>
-      <SideBar allNoteData={allNoteData} />
-      <section>note 소개</section>
+      <div className={styles.noteContainer}>
+        <div className={styles.noteBox}>
+          <SideBar allNoteData={allNoteData} />
+          <section className={styles.noteInfo}>
+            <div>
+              note information note information note information note
+              information note information note information note information
+              note information note information note information
+            </div>
+          </section>
+        </div>
+      </div>
     </Layout>
   )
 }

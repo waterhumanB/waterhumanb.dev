@@ -1,5 +1,5 @@
 export interface INote {
-  [key: string]: NoteData[]
+  [key: string]: INoteData[]
 }
 
 export interface INoteData {

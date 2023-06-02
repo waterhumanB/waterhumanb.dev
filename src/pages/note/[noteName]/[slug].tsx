@@ -1,8 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from "next"
 import useSWR, { unstable_serialize as unstableSerialize } from "swr"
 import Layout from "../../../components/Layout"
-import Title from "../../../components/Layout/Title"
-import Section from "../../../components/domain/Article"
 import {
   getAllNoteSlugs,
   getNoteData,
@@ -22,8 +20,6 @@ export default function Post({ slug, allNoteData }: Props) {
   return (
     <Layout>
       <NoteLayout allNoteData={allNoteData} noteItem={noteItem} />
-      <Title title={noteItem?.title} />
-      <Section slug={slug} />
     </Layout>
   )
 }

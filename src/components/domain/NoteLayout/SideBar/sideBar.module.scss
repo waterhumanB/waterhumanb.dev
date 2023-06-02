@@ -1,0 +1,11 @@
+.sideBarContainer {
+  max-width: 160px;
+  height: 100%;
+  position: sticky;
+  top: 50px;
+}
+
+.sideBar {
+  border-right: 1px solid black;
+  min-height: calc(100vh - 9.1rem);
+}
