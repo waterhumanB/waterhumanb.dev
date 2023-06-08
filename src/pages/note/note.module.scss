@@ -13,20 +13,36 @@
 }
 
 .noteInfo {
-  width: 100%;
+  max-width: 800px;
   height: 100%;
   display: flex;
+}
 
+.noteTitle {
   div {
-    max-width: 800px;
-    height: 2000px;
+    width: 100%;
+    padding: 25px;
+
+    h2 {
+      font-size: 50px;
+      font-weight: 600;
+      margin: auto auto 30px auto;
+    }
+    p {
+      min-height: 45px;
+      font-size: 20px;
+      line-height: 30px;
+      vertical-align: text-bottom;
+    }
   }
 }
 
 .borderBook {
   border-left: solid 2px colors.$TEAL;
+  transition: 0.6s;
 }
 
 .borderVideo {
   border-left: solid 2px colors.$ORANGE;
+  transition: 0.6s;
 }
