@@ -1,3 +1,5 @@
+@use "src/styles/constants/colors.scss";
+
 .noteContainer {
   width: 100%;
   display: flex;
@@ -19,4 +21,12 @@
     max-width: 800px;
     height: 2000px;
   }
+}
+
+.borderBook {
+  border-left: solid 2px colors.$TEAL;
+}
+
+.borderVideo {
+  border-left: solid 2px colors.$ORANGE;
 }

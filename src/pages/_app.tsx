@@ -3,6 +3,7 @@ import type { AppProps } from "next/app"
 import { SWRConfig } from "swr"
 import Script from "next/script"
 import * as gtag from "../lib/gtag"
+import { ToggleProvider } from "../contexts/toggleContext"
 
 function MyApp({ Component, pageProps }: AppProps) {
   gtag.useGtag()
@@ -33,7 +34,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           />
         </>
       )}
-      <Component {...pageProps} />
+      <ToggleProvider>
+        <Component {...pageProps} />
+      </ToggleProvider>
     </SWRConfig>
   )
 }

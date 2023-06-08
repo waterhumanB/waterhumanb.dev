@@ -4,10 +4,10 @@ import styles from "./sideBar.module.scss"
 
 import { INote, INoteData, INoteItem } from "../../../../types/note"
 import ToggleBtn from "./ToggleBtn"
-import { useToggleBtn } from "../../../../hooks/useToggleBtn"
+import { useToggleStateContext } from "../../../../contexts/toggleContext"
 
 function SideBar({ allNoteData }: INote) {
-  const { toggle, toggleBtnHandler } = useToggleBtn("toggle", true)
+  const { toggle } = useToggleStateContext()
 
   const noteDataFilter = (noteData: INoteData[], toggleValue: boolean) => {
     const toggleList = noteData
@@ -24,12 +24,12 @@ function SideBar({ allNoteData }: INote) {
 
   return (
     <aside className={styles.sideBarContainer}>
-      <ToggleBtn toggle={toggle} toggleBtnHandler={toggleBtnHandler} />
+      <ToggleBtn />
       <div className={styles.sideBar}>
         {noteDataFilter(allNoteData, toggle).map(
           ({ noteName, note }: INoteData) => {
             return (
-              <div key={noteName}>
+              <div className={styles.noteData} key={noteName}>
                 {noteName}
                 <div>
                   {note.map(({ title, slug }: INoteItem) => {

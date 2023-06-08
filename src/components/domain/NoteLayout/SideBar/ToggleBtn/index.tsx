@@ -1,23 +1,23 @@
-import React, { MouseEventHandler } from "react"
+import {
+  useToggleDispatch,
+  useToggleStateContext,
+} from "../../../../../contexts/toggleContext"
 import styles from "./toggleBtn.module.scss"
 
-interface Props {
-  toggle: boolean
-  toggleBtnHandler: MouseEventHandler<HTMLButtonElement>
-}
+function ToggleBtn() {
+  const { toggle } = useToggleStateContext()
+  const dispatch = useToggleDispatch()
 
-function ToggleBtn({ toggle, toggleBtnHandler }: Props) {
+  const setBook = () => dispatch({ type: "Book", toggle: true })
+  const setVideo = () => dispatch({ type: "Video", toggle: false })
+
   return (
-    <div
-      className={`${styles.toggleBtnBox} ${
-        toggle ? styles.bookBorder : styles.videoBorder
-      }`}
-    >
+    <div className={styles.toggleBtnBox}>
       <button
         className={`${!toggle ? styles.toggleBtn : styles.toggle}`}
         name='book'
         type='button'
-        onClick={toggleBtnHandler}
+        onClick={setBook}
       >
         BOOK
       </button>
@@ -25,10 +25,11 @@ function ToggleBtn({ toggle, toggleBtnHandler }: Props) {
         className={`${toggle ? styles.toggleBtn : styles.toggle}`}
         name='video'
         type='button'
-        onClick={toggleBtnHandler}
+        onClick={setVideo}
       >
         VIDEO
       </button>
+
       <div
         className={`${styles.toggleDiv} ${toggle ? styles.book : styles.video}`}
       />
