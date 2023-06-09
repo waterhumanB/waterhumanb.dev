@@ -12,14 +12,11 @@
   align-self: flex-start;
 }
 
-.noteInfo {
+.noteTitle {
   max-width: 800px;
   height: 100%;
-  display: flex;
-}
 
-.noteTitle {
-  div {
+  .title {
     width: 100%;
     padding: 25px;
 
@@ -30,11 +27,17 @@
     }
     p {
       min-height: 45px;
-      font-size: 20px;
+      font-size: 21px;
       line-height: 30px;
       vertical-align: text-bottom;
     }
   }
+}
+
+.noteDropDownBox {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
 }
 
 .borderBook {
@@ -45,4 +48,15 @@
 .borderVideo {
   border-left: solid 2px colors.$ORANGE;
   transition: 0.6s;
+}
+
+@media (max-width: 768px) {
+  .borderBook,
+  .borderVideo {
+    border-width: 0;
+    transition: none;
+  }
+  .noteDropDownBox {
+    flex-direction: column;
+  }
 }

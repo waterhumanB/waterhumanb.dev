@@ -25,3 +25,11 @@
 .borderVideo {
   border-left: solid 2px colors.$ORANGE;
 }
+
+@media (max-width: 768px) {
+  .borderBook,
+  .borderVideo {
+    border-width: 0;
+    transition: none;
+  }
+}
