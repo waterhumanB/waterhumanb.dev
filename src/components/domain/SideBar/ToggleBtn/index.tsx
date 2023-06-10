@@ -1,7 +1,7 @@
 import {
   useToggleDispatch,
   useToggleStateContext,
-} from "../../../../../contexts/toggleContext"
+} from "../../../../contexts/toggleContext"
 import styles from "./toggleBtn.module.scss"
 
 function ToggleBtn() {

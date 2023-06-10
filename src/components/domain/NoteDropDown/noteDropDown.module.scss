@@ -43,3 +43,21 @@
   color: colors.$ORANGE;
   fill: colors.$ORANGE;
 }
+
+.noteItem {
+  margin-top: 7px;
+  color: colors.$BORDER_PRIMARY;
+  font-weight: 600;
+}
+
+.bookHover {
+  :hover {
+    color: colors.$TEAL;
+  }
+}
+
+.videoHover {
+  :hover {
+    color: colors.$ORANGE;
+  }
+}

@@ -2,10 +2,10 @@ import React from "react"
 import Link from "next/link"
 import styles from "./sideBar.module.scss"
 
-import { INote, INoteData, INoteItem } from "../../../../types/note"
+import { INote, INoteData, INoteItem } from "../../../types/note"
 import ToggleBtn from "./ToggleBtn"
-import { useToggleStateContext } from "../../../../contexts/toggleContext"
-import { noteDataFilter } from "../../../../utils/noteDataFilter"
+import { useToggleStateContext } from "../../../contexts/toggleContext"
+import { noteDataFilter } from "../../../utils/noteDataFilter"
 
 function SideBar({ allNoteData }: INote) {
   const { toggle } = useToggleStateContext()

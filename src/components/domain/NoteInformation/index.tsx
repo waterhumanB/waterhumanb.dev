@@ -2,8 +2,8 @@ import React from "react"
 import styles from "./noteInformation.module.scss"
 import { INote } from "../../../types/note"
 import { useToggleStateContext } from "../../../contexts/toggleContext"
-import NoteDropDown from "./NoteDropDown"
-import SideBar from "../NoteLayout/SideBar"
+import NoteDropDown from "../NoteDropDown"
+import SideBar from "../SideBar"
 
 function NoteInformation({ allNoteData }: INote) {
   const { toggle } = useToggleStateContext()
