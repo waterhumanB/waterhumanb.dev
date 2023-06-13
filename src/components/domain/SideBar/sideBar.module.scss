@@ -6,7 +6,6 @@
   position: sticky;
   top: 50px;
   transition: 0.6s;
-  margin-right: 15px;
 }
 
 @media (max-width: 768px) {
@@ -17,7 +16,6 @@
 
 .sideBar {
   transition: 0.6s;
-  padding-right: 13px;
 }
 
 @keyframes blink-animation {
@@ -29,6 +27,64 @@
   }
 }
 
-.noteData {
+.dropDownBox {
+  width: 100%;
+  margin: auto;
+}
+.dropDown {
+  width: 180px;
+  min-height: 30px;
+  display: flex;
+  justify-content: left;
   animation: blink-animation 0.6s;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    path {
+      transform: translateY(10px);
+    }
+  }
+
+  p {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: left;
+    padding-bottom: 10px;
+  }
+
+  .arrow {
+    min-width: 20px;
+  }
+}
+
+.bookColor {
+  color: colors.$TEAL;
+  fill: colors.$TEAL;
+}
+
+.videoColor {
+  color: colors.$ORANGE;
+  fill: colors.$ORANGE;
+}
+
+.noteItem {
+  color: colors.$BORDER_PRIMARY;
+  font-weight: 600;
+  padding: 0 0 12px 15px;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.bookHover {
+  :hover {
+    color: colors.$TEAL;
+  }
+}
+
+.videoHover {
+  :hover {
+    color: colors.$ORANGE;
+  }
 }

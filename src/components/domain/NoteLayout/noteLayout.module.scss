@@ -16,14 +16,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-}
-
-.borderBook {
-  border-left: solid 2px colors.$TEAL;
-}
-
-.borderVideo {
-  border-left: solid 2px colors.$ORANGE;
+  border-left: solid 1px colors.$BORDER;
 }
 
 @media (max-width: 768px) {

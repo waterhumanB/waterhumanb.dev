@@ -34,7 +34,7 @@ function NoteDropDown({ education, allNoteData }: NoteDropDownProps) {
               {data.isDropDown ? <UpArrow /> : <DownArrow />}
             </button>
             {data.isDropDown &&
-              data.note.map((item) => {
+              data.note.map((item, idx) => {
                 return (
                   <div key={item.slug}>
                     <Link
@@ -45,7 +45,9 @@ function NoteDropDown({ education, allNoteData }: NoteDropDownProps) {
                       }`}
                       href={`/note/${data.noteName}/${item.slug}`}
                     >
-                      <div className={styles.noteItem}>{item.slug}</div>
+                      <div className={styles.noteItem}>{`${idx + 1}. ${
+                        item.slug
+                      }`}</div>
                     </Link>
                   </div>
                 )

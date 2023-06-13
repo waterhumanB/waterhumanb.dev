@@ -1,22 +1,16 @@
 import React from "react"
 import styles from "./noteInformation.module.scss"
 import { INote } from "../../../types/note"
-import { useToggleStateContext } from "../../../contexts/toggleContext"
 import NoteDropDown from "../NoteDropDown"
 import SideBar from "../SideBar"
 
 function NoteInformation({ allNoteData }: INote) {
-  const { toggle } = useToggleStateContext()
   return (
     <section>
       <div className={styles.noteContainer}>
         <div className={styles.noteBox}>
           <SideBar allNoteData={allNoteData} />
-          <article
-            className={`${styles.noteTitle} ${
-              toggle ? styles.borderBook : styles.borderVideo
-            }`}
-          >
+          <article className={styles.noteTitle}>
             <div className={styles.title}>
               <h2>Note</h2>
               <p>

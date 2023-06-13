@@ -1,16 +1,21 @@
-import { useState, MouseEvent } from "react"
+import { useState, MouseEvent, useEffect } from "react"
 import { noteDataFilter } from "../utils/noteDataFilter"
-import { INoteData } from "../types/note"
+import { INoteData, INoteDropDown } from "../types/note"
 
 export const useDropDownNote = (
   allNoteData: INoteData[],
   education: string,
 ) => {
-  const [dropDown, setDropDown] = useState(
-    noteDataFilter(allNoteData, education).map((data) => {
-      return { ...data, isDropDown: false }
-    }),
-  )
+  const [dropDown, setDropDown] = useState<INoteDropDown[]>([])
+
+  useEffect(() => {
+    const filteredData = noteDataFilter(allNoteData, education)
+    const updatedDropDown = filteredData.map((data) => ({
+      ...data,
+      isDropDown: false,
+    }))
+    setDropDown(updatedDropDown)
+  }, [education])
 
   const toggleDropDown = (e: MouseEvent<HTMLButtonElement>) => {
     const { name } = e.currentTarget

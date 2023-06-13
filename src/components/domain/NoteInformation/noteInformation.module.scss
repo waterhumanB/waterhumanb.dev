@@ -16,6 +16,7 @@
 .noteTitle {
   max-width: 800px;
   min-height: calc(100vh - 50px);
+  border-left: solid 1px colors.$BORDER;
 
   .title {
     width: 100%;
@@ -39,16 +40,6 @@
   display: flex;
   justify-content: space-between;
   padding: 25px;
-}
-
-.borderBook {
-  border-left: solid 2px colors.$TEAL;
-  transition: 0.6s;
-}
-
-.borderVideo {
-  border-left: solid 2px colors.$ORANGE;
-  transition: 0.6s;
 }
 
 @media (max-width: 768px) {
