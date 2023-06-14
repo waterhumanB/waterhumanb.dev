@@ -14,8 +14,8 @@ function NoteInformation({ allNoteData }: INote) {
             <div className={styles.title}>
               <h2>Note</h2>
               <p>
-                개발도서와 개발강의로 학습하고 익힌 내용을 노트에 필기하듯 정리
-                및 기록합니다.
+                개발도서와 개발강의로 학습하고 익힌 내용을 노트에 복습을
+                목적으로 기록합니다.
               </p>
             </div>
             <div className={styles.noteDropDownBox}>

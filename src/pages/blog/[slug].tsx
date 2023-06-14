@@ -13,8 +13,28 @@ interface Props {
 export default function Post({ slug }: Props) {
   const { data: postData } = useSWR<IPostData>(["Props", slug])
 
+  const metaData = {
+    title: postData?.title,
+    description: postData?.description,
+    openGraph: {
+      type: "website",
+      locale: "ko_KR",
+      url: `waterhumanb-blog.vercel.app/blog/${slug}`,
+      title: postData?.title,
+      site_name: "waterhumanb.dev",
+      images: [
+        {
+          url: postData?.thumbnail,
+          width: 285,
+          height: 167,
+          alt: "이미지",
+        },
+      ],
+    },
+  }
+
   return (
-    <Layout>
+    <Layout metaData={metaData}>
       <Title title={postData?.title} category={postData?.category} />
       <Section slug={slug} />
     </Layout>

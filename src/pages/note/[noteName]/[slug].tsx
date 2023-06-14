@@ -17,8 +17,27 @@ interface Props {
 export default function Post({ slug, allNoteData }: Props) {
   const { data: noteItem } = useSWR<INoteItem>(["Props", slug])
 
+  const metaData = {
+    title: noteItem?.title,
+    description: noteItem?.description,
+    openGraph: {
+      type: "website",
+      locale: "ko_KR",
+      url: `waterhumanb-blog.vercel.app/blog/${noteItem?.slug}`,
+      title: noteItem?.title,
+      site_name: "waterhumanb.dev",
+      images: [
+        {
+          width: 285,
+          height: 167,
+          alt: "이미지",
+        },
+      ],
+    },
+  }
+
   return (
-    <Layout>
+    <Layout metaData={metaData}>
       <NoteLayout allNoteData={allNoteData} noteItem={noteItem} />
     </Layout>
   )
