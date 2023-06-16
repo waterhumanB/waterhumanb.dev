@@ -46,7 +46,7 @@
   width: 420px;
   height: 100%;
   padding: 10px;
-  border: 1px solid colors.$GRAY;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
   position: relative;
   background: colors.$BACKGROUND;
   &:hover .desBox {
