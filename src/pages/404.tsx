@@ -1,3 +1,10 @@
+import Layout from "../components/Layout"
+import ErrorPage from "../components/domain/ErrorPage"
+
 export default function Custom404() {
-  return <h1>404 - Page Not Found</h1>
+  return (
+    <Layout>
+      <ErrorPage />
+    </Layout>
+  )
 }
