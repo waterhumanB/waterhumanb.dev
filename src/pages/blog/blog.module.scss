@@ -52,13 +52,17 @@ $desktop-min: 1024px;
   border: 1px solid colors.$GRAY;
   margin: 5px auto 20px auto;
   padding: 10px;
+  transition: 0.3s;
+  &:hover {
+    border: 1px solid colors.$BLACK;
+  }
 
   button {
     font-size: 18px;
     margin-right: 10px;
     letter-spacing: 1px;
     color: colors.$GRAY;
-
+    transition: 0.3s;
     &:hover {
       color: colors.$BLACK;
     }
@@ -89,6 +93,9 @@ $desktop-min: 1024px;
 
   &:hover {
     border: solid 1px colors.$BLACK;
+    img {
+      border: solid 1px colors.$BLACK;
+    }
   }
 }
 

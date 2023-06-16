@@ -5,6 +5,7 @@ import styles from "./nav.module.scss"
 const HEADER_MENU: { title: string; link: string }[] = [
   { title: "Blog", link: "/blog" },
   { title: "Note", link: "/note" },
+  { title: "Project", link: "/project" },
 ]
 
 function Nav() {
