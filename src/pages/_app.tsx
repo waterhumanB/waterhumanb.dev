@@ -2,8 +2,10 @@ import "../styles/globals.scss"
 import type { AppProps } from "next/app"
 import { SWRConfig } from "swr"
 import Script from "next/script"
+import { DefaultSeo } from "next-seo"
 import * as gtag from "../lib/gtag"
 import { ToggleProvider } from "../contexts/toggleContext"
+import { defaultMetaData } from "../../next-seo.config"
 
 function MyApp({ Component, pageProps }: AppProps) {
   gtag.useGtag()
@@ -11,6 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   const { fallback } = pageProps
   return (
     <SWRConfig value={{ fallback }}>
+      <DefaultSeo {...defaultMetaData} />
       {process.env.NODE_ENV !== "development" && (
         <>
           {/* Global Site Tag (gtag.js) - Google Analytics */}

@@ -35,5 +35,3 @@ Next.js 공식문서에서 기본 튜트리얼 공부 및 블로그 만들기
   - [ ] 페이지 마다 meta tag 추가하기
     - [ ] \_app.tsx에 defaultSEO로 meta tag 추가하고, 다른 page는 nextSEO로 추가해주기
 - [ ] 다크모드 기능
-
-각 기능들은 블로그를 통해 과정들을 글로 작성할 예정
