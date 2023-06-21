@@ -1,12 +1,12 @@
 @use "src/styles/constants/colors.scss";
 
 .sideBarContainer {
-  width: 180px;
+  width: 190px;
   height: 100%;
   position: sticky;
   top: 50px;
   transition: 0.6s;
-  margin-left: 10px;
+  margin: 0 10px;
 }
 
 @media (max-width: 768px) {
@@ -34,10 +34,14 @@
 }
 .dropDown {
   width: 180px;
-  min-height: 30px;
+  min-height: 35px;
+  border-radius: 0px 1rem 1rem 0px;
   display: flex;
   justify-content: left;
+  align-items: center;
   animation: blink-animation 0.6s;
+  padding-left: 5px;
+  margin-bottom: 5px;
 
   svg {
     width: 20px;
@@ -52,7 +56,6 @@
     font-size: 16px;
     font-weight: 600;
     text-align: left;
-    padding-bottom: 10px;
   }
 
   .arrow {
@@ -88,4 +91,20 @@
   :hover {
     color: colors.$ORANGE;
   }
+}
+
+.bookBackground {
+  background: rgba(73, 190, 183, 0.1);
+}
+
+.videoBackground {
+  background: rgba(255, 138, 92, 0.1);
+}
+
+.bookTextColor {
+  color: colors.$TEAL;
+}
+
+.videoTextColor {
+  color: colors.$ORANGE;
 }
