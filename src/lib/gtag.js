@@ -1,11 +1,10 @@
 import { useRouter } from "next/router"
 import { useEffect } from "react"
 
-export const GA_TRACKING_ID = "G-DWHXJZJXTE"
+export const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_ID
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
-export const pageview = (url) => {
-  // eslint-disable-next-line no-undef
+export const pageView = (url) => {
   window.gtag("config", GA_TRACKING_ID, {
     page_path: url,
   })
@@ -13,7 +12,6 @@ export const pageview = (url) => {
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/events
 export const event = ({ action, category, label, value }) => {
-  // eslint-disable-next-line no-undef
   window.gtag("event", action, {
     event_category: category,
     event_label: label,
@@ -29,7 +27,7 @@ export const useGtag = () => {
     if (process.env.NODE_ENV === "development") return
 
     const handleRouteChange = (url) => {
-      pageview(url)
+      pageView(url)
     }
 
     router.events.on("routeChangeComplete", handleRouteChange)
