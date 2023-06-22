@@ -46,7 +46,7 @@ function NoteDropDown({ education, allNoteData }: NoteDropDownProps) {
                       href={`/note/${data.noteName}/${item.slug}`}
                     >
                       <div className={styles.noteItem}>{`${idx + 1}. ${
-                        item.slug
+                        item.title
                       }`}</div>
                     </Link>
                   </div>

@@ -60,7 +60,7 @@ function SideBar({ allNoteData }: INote) {
                               ? styles.bookTextColor
                               : styles.videoTextColor)
                           }`}
-                        >{`${idx + 1}. ${item.slug}`}</div>
+                        >{`${idx + 1}. ${item.title}`}</div>
                       </Link>
                     </div>
                   )

@@ -111,9 +111,12 @@
 
   p code,
   li code {
-    padding: 1px 2px;
+    padding: 2px 4px;
     white-space: pre-wrap;
-    border: 1px solid colors.$BORDER_SECONDARY;
+    background: rgba(0, 128, 255, 0.15);
     border-radius: 4px;
+    margin: 1px;
+    color: colors.$BLUE;
+    font-weight: 600;
   }
 }
