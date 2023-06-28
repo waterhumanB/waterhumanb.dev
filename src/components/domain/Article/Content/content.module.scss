@@ -49,7 +49,9 @@
   }
 
   strong {
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 18px;
+    color: colors.$BLUE;
   }
 
   em {
@@ -64,12 +66,18 @@
     background-color: colors.$BG_ELEMENT;
   }
 
-  a {
-    color: colors.$PRIMARY;
-    border-bottom: 1px solid colors.$BORDER_PRIMARY;
+  hr {
+    border: 1px solid colors.$PRIMARY;
+  }
 
-    :hover {
-      color: colors.$PRIMARY;
+  a {
+    color: colors.$LINK;
+    border-bottom: 1px solid colors.$PRIMARY;
+
+    &:hover {
+      color: colors.$LINK;
+      font-weight: 600;
+      border-bottom: none;
     }
   }
 
@@ -118,5 +126,23 @@
     margin: 1px;
     color: colors.$BLUE;
     font-weight: 600;
+  }
+
+  table {
+    text-align: center;
+
+    th {
+      padding: 10px 15px;
+      font-size: 18px;
+      background: colors.$TH_BACKGROUND;
+      border: 1px solid colors.$BACKGROUND;
+    }
+    td {
+      padding: 4px 12px;
+      background: colors.$TD_BACKGROUND;
+      border: 1px solid colors.$BACKGROUND;
+      vertical-align: middle;
+      line-height: 1.5;
+    }
   }
 }

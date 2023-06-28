@@ -1,12 +1,13 @@
 @use "src/styles/constants/colors.scss";
 
 .sideBarContainer {
-  width: 190px;
+  width: 200px;
   height: 100%;
   position: sticky;
   top: 50px;
   transition: 0.6s;
   margin: 0 10px;
+  word-break: keep-all;
 }
 
 @media (max-width: 768px) {
@@ -33,15 +34,16 @@
   margin: auto;
 }
 .dropDown {
-  width: 180px;
+  width: 200px;
   min-height: 35px;
   border-radius: 0px 1rem 1rem 0px;
   display: flex;
   justify-content: left;
   align-items: center;
   animation: blink-animation 0.6s;
-  padding-left: 5px;
+  padding: 2px 5px 2px 0;
   margin-bottom: 5px;
+  word-break: keep-all;
 
   svg {
     width: 20px;
@@ -60,6 +62,7 @@
 
   .arrow {
     min-width: 20px;
+    padding-left: 2px;
   }
 }
 
@@ -76,9 +79,13 @@
 .noteItem {
   color: colors.$BORDER_PRIMARY;
   font-weight: 600;
-  padding: 0 0 12px 15px;
+  padding: 0 0 12px 5px;
   font-size: 14px;
   line-height: 17px;
+  display: flex;
+  :nth-child(1) {
+    padding-right: 5px;
+  }
 }
 
 .bookHover {

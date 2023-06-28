@@ -41,7 +41,7 @@ function SideBar({ allNoteData }: INote) {
                 onClick={toggleDropDown}
               >
                 <p className={styles.arrow}>{data.isDropDown ? "⎖ " : "➤ "}</p>
-                <p>{data.noteName}</p>
+                <p>{data.noteName.replace("-", " ")}</p>
               </button>
               {data.isDropDown &&
                 data.note.map((item, idx) => {
@@ -60,7 +60,10 @@ function SideBar({ allNoteData }: INote) {
                               ? styles.bookTextColor
                               : styles.videoTextColor)
                           }`}
-                        >{`${idx + 1}. ${item.title}`}</div>
+                        >
+                          <div>{`${idx + 1}.`}</div>
+                          <div>{item.title}</div>
+                        </div>
                       </Link>
                     </div>
                   )

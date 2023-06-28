@@ -1,4 +1,5 @@
 import ReactMarkdown from "react-markdown"
+import remarkGfm from "remark-gfm"
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 import { coy } from "react-syntax-highlighter/dist/cjs/styles/prism"
 
@@ -45,7 +46,7 @@ const customComponents = {
 function ContentHtml({ content }: Props) {
   return (
     <article className={styles.container}>
-      <ReactMarkdown components={customComponents}>
+      <ReactMarkdown remarkPlugins={[remarkGfm]} components={customComponents}>
         {content ?? ""}
       </ReactMarkdown>
     </article>
