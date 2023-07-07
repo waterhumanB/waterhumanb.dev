@@ -52,7 +52,6 @@ $desktop-min: 1024px;
   border: 1px solid colors.$GRAY;
   margin: 5px auto 20px auto;
   padding: 10px;
-  transition: 0.3s;
   &:hover {
     border: 1px solid colors.$BLACK;
   }
@@ -62,7 +61,6 @@ $desktop-min: 1024px;
     margin-right: 10px;
     letter-spacing: 1px;
     color: colors.$GRAY;
-    transition: 0.3s;
     &:hover {
       color: colors.$BLACK;
     }
@@ -113,10 +111,20 @@ $desktop-min: 1024px;
   margin: 10px 7px 10px auto;
 
   .title {
+    width: 211px;
     max-height: 50px;
     font-weight: 600;
-    font-size: 22px;
+    font-size: 21px;
     line-height: 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+    @include tablet {
+      width: 100%;
+    }
   }
 
   .dateBox {
@@ -138,12 +146,10 @@ $desktop-min: 1024px;
   }
 
   .desc {
-    height: 100%;
-    font-size: 15px;
+    font-size: 14px;
     margin: auto 0;
     overflow: hidden;
     line-height: 18px;
-    overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 2;

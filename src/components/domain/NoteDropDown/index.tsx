@@ -30,7 +30,7 @@ function NoteDropDown({ education, allNoteData }: NoteDropDownProps) {
               name={data.noteName}
               onClick={toggleDropDown}
             >
-              <p>{data.noteName}</p>
+              <p>{data.noteName.replace("-", " ")}</p>
               {data.isDropDown ? <UpArrow /> : <DownArrow />}
             </button>
             {data.isDropDown &&

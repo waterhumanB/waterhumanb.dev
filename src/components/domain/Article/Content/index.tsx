@@ -1,8 +1,8 @@
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
-import { coy } from "react-syntax-highlighter/dist/cjs/styles/prism"
-
+import light from "react-syntax-highlighter/dist/cjs/styles/prism/one-light"
+import Image from "next/image"
 import styles from "./content.module.scss"
 
 interface Props {
@@ -15,8 +15,13 @@ const customComponents = {
     if (node.children[0].tagName === "img") {
       const image = node.children[0]
       return (
-        <div>
-          <img src={image.properties.src} alt={image.alt} />
+        <div className={styles.imgBox}>
+          <Image
+            src={image.properties.src}
+            alt={image.alt}
+            width={500}
+            height={500}
+          />
         </div>
       )
     }
@@ -34,7 +39,7 @@ const customComponents = {
     const language = /language-(\w+)/.exec(className || "") // language-tsx => tsx
 
     return language ? (
-      <SyntaxHighlighter style={coy} language={language[1]} {...props}>
+      <SyntaxHighlighter style={light} language={language[1]} {...props}>
         {String(children).replace(/\n$/, "")}
       </SyntaxHighlighter>
     ) : (

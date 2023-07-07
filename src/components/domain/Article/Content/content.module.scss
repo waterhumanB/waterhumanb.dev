@@ -3,6 +3,7 @@
 .container {
   margin: 40px 0;
   white-space: pre-line;
+  word-break: keep-all;
 
   p {
     font-weight: 300;
@@ -15,37 +16,36 @@
   h4,
   h5,
   h6 {
-    margin: 20px 0;
+    margin: 10px 0;
   }
 
   h1 {
-    font-size: 32px;
-    font-weight: 400;
+    font-size: 36px;
+    line-height: 42px;
   }
 
   h2 {
     font-size: 30px;
-    font-weight: 400;
+    color: colors.$LINK;
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 20px;
   }
 
   h3 {
-    font-size: 28px;
-    font-weight: 400;
+    font-size: 26px;
   }
 
   h4 {
     font-size: 24px;
-    font-weight: 300;
   }
 
   h5 {
     font-size: 22px;
-    font-weight: 300;
   }
 
   h6 {
     font-size: 20px;
-    font-weight: 300;
   }
 
   strong {
@@ -71,13 +71,10 @@
   }
 
   a {
-    color: colors.$LINK;
-    border-bottom: 1px solid colors.$PRIMARY;
-
+    border-bottom: 1px solid;
+    transition: 0.2s;
     &:hover {
       color: colors.$LINK;
-      font-weight: 600;
-      border-bottom: none;
     }
   }
 
@@ -103,17 +100,13 @@
     line-height: 2;
   }
 
-  img {
-    width: 100%;
-  }
-
   pre,
   code {
-    font-family: Menlo, Monaco, "Courier New", monospace !important;
+    font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    overflow: scroll;
   }
 
   pre {
-    overflow-x: scroll;
     font-size: 14px;
   }
 
@@ -144,5 +137,13 @@
       vertical-align: middle;
       line-height: 1.5;
     }
+  }
+}
+.imgBox {
+  display: flex;
+  justify-content: center;
+  img {
+    max-width: 100%;
+    height: auto;
   }
 }
