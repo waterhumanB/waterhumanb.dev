@@ -37,3 +37,4 @@ Next.js 공식문서에서 기본 튜트리얼 공부 및 블로그 만들기
     - [x] \_app.tsx에 defaultSEO로 meta tag 추가하고, 다른 page는 nextSEO로 추가해주기
 - [ ] 다크모드 기능
 - [ ] Note, Blog 페이지에 git 댓글 기능
+- [ ] 전체적으로 인터렉션한 웹으로 UI 개선하기

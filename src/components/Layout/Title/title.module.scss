@@ -9,10 +9,11 @@
   font-weight: 400;
   text-align: center;
   word-break: keep-all;
+  line-height: 55px;
 
   div {
-    font-size: 16px;
+    font-size: 18px;
     color: colors.$GRAY;
-    padding-bottom: 5px;
+    line-height: 25px;
   }
 }

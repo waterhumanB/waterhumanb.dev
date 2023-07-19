@@ -1,6 +1,6 @@
 ---
 title: "Redux와 데이터정규화"
-date: "2023.5.3"
+date: "2023.5.03"
 description: "점진적 과부하 프로젝트에서 사용했던 리덕스와 데이터 정규화"
 thumbnail: ""
 category: "DataBase"
