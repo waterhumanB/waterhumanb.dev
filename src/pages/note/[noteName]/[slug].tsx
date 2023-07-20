@@ -8,6 +8,7 @@ import {
 } from "../../../lib/note"
 import { INoteData, INoteItem } from "../../../types/note"
 import NoteLayout from "../../../components/domain/NoteLayout"
+import { ToggleProvider } from "../../../contexts/toggleContext"
 
 interface Props {
   slug: string
@@ -38,7 +39,9 @@ export default function Post({ slug, allNoteData }: Props) {
 
   return (
     <Layout metaData={metaData}>
-      <NoteLayout allNoteData={allNoteData} noteItem={noteItem} />
+      <ToggleProvider>
+        <NoteLayout allNoteData={allNoteData} noteItem={noteItem} />
+      </ToggleProvider>
     </Layout>
   )
 }

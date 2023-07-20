@@ -18,7 +18,7 @@ const customComponents = {
         <div className={styles.imgBox}>
           <Image
             src={image.properties.src}
-            alt={image.alt}
+            alt={image.alt ?? "alt"}
             width={500}
             height={500}
           />

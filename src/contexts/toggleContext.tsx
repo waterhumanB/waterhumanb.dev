@@ -12,11 +12,11 @@ interface State {
 
 type Action =
   | {
-      type: "Book"
+      type: "book"
       toggle: true
     }
   | {
-      type: "Video"
+      type: "video"
       toggle: false
     }
 
@@ -26,9 +26,9 @@ const INIT_TOGGLE = {
 
 const toggleReducer = (state: State, action: Action) => {
   switch (action.type) {
-    case "Book":
+    case "book":
       return { toggle: action.toggle }
-    case "Video":
+    case "video":
       return { toggle: action.toggle }
     default:
       return state

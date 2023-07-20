@@ -8,6 +8,7 @@ export const useDropDownNote = (
   education: string,
 ) => {
   const [dropDown, setDropDown] = useState<INoteDropDown[]>([])
+
   const router = useRouter()
 
   const toggleDropDown = (e: MouseEvent<HTMLButtonElement>) => {
@@ -30,25 +31,10 @@ export const useDropDownNote = (
     const filteredData = noteDataFilter(allNoteData, education)
     const updatedDropDown = filteredData.map((data) => ({
       ...data,
-      isDropDown: false,
+      isDropDown: data.noteName === router?.query?.noteName,
     }))
     setDropDown(updatedDropDown)
-  }, [education])
-
-  useEffect(() => {
-    setDropDown((prevNotes) => {
-      const updatedNotes = prevNotes.map((note) => {
-        if (note.noteName === router?.query?.noteName) {
-          return {
-            ...note,
-            isDropDown: true,
-          }
-        }
-        return note
-      })
-      return updatedNotes
-    })
-  }, [router, education])
+  }, [education, router])
 
   return { dropDown, toggleDropDown }
 }

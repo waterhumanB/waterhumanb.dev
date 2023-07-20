@@ -4,7 +4,6 @@ import { SWRConfig } from "swr"
 import Script from "next/script"
 import { DefaultSeo } from "next-seo"
 import * as gtag from "../lib/gtag"
-import { ToggleProvider } from "../contexts/toggleContext"
 import { defaultMetaData } from "../../next-seo.config"
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -37,9 +36,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           />
         </>
       )}
-      <ToggleProvider>
-        <Component {...pageProps} />
-      </ToggleProvider>
+      <Component {...pageProps} />
     </SWRConfig>
   )
 }

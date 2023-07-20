@@ -1,7 +1,13 @@
+@use "src/styles/constants/colors.scss";
+
 .header {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   height: 50px;
+  border-bottom: 1px solid colors.$BORDER;
+  backdrop-filter: blur(7px);
+  position: fixed;
+  z-index: 1;
 }

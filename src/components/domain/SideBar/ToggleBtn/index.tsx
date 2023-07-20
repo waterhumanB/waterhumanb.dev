@@ -8,8 +8,8 @@ function ToggleBtn() {
   const { toggle } = useToggleStateContext()
   const dispatch = useToggleDispatch()
 
-  const setBook = () => dispatch({ type: "Book", toggle: true })
-  const setVideo = () => dispatch({ type: "Video", toggle: false })
+  const setBook = () => dispatch({ type: "book", toggle: true })
+  const setVideo = () => dispatch({ type: "video", toggle: false })
 
   return (
     <div className={styles.toggleBtnBox}>

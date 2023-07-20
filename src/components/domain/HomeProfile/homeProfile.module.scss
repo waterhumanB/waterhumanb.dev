@@ -3,7 +3,9 @@
 .homeContainer {
   max-width: 720px;
   margin: auto;
+  height: calc(100vh - 130px);
   padding: 40px;
+  display: flex;
 }
 
 .profileBox {
@@ -12,6 +14,8 @@
   justify-content: space-around;
   padding: 7px;
   text-align: center;
+  width: 100%;
+  margin: auto;
 
   img {
     width: 270px;

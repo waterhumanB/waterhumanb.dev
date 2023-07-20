@@ -23,14 +23,14 @@ function NoteDropDown({ education, allNoteData }: NoteDropDownProps) {
         return (
           <div key={data.noteName}>
             <button
-              className={`${styles.dropDown} ${
+              className={`${styles.dropDownBtn} ${
                 education === "book" ? styles.bookColor : styles.videoColor
               }`}
               type='button'
               name={data.noteName}
               onClick={toggleDropDown}
             >
-              <p>{data.noteName.replace("-", " ")}</p>
+              <p>{data.noteName.replaceAll("-", " ")}</p>
               {data.isDropDown ? <UpArrow /> : <DownArrow />}
             </button>
             {data.isDropDown &&

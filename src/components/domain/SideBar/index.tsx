@@ -1,15 +1,19 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Link from "next/link"
 import { useRouter } from "next/router"
 import styles from "./sideBar.module.scss"
 import { INote } from "../../../types/note"
 import ToggleBtn from "./ToggleBtn"
-import { useToggleStateContext } from "../../../contexts/toggleContext"
+import {
+  useToggleDispatch,
+  useToggleStateContext,
+} from "../../../contexts/toggleContext"
 import { noteDataFilter } from "../../../utils/noteDataFilter"
 import { useDropDownNote } from "../../../hooks/useDropDownNote"
 
 function SideBar({ allNoteData }: INote) {
   const router = useRouter()
+  const dispatch = useToggleDispatch()
   const { toggle } = useToggleStateContext()
 
   const education = toggle ? "book" : "video"
@@ -18,6 +22,19 @@ function SideBar({ allNoteData }: INote) {
     noteDataFilter(allNoteData, education),
     education,
   )
+
+  useEffect(() => {
+    const educationMenu = allNoteData.filter(
+      (data) => data.noteName === router?.query?.noteName,
+    )[0]?.note[0].education
+
+    if (educationMenu === "video") {
+      dispatch({ type: "video", toggle: false })
+    }
+    if (educationMenu === "book") {
+      dispatch({ type: "book", toggle: true })
+    }
+  }, [router])
 
   return (
     <aside className={styles.sideBarContainer}>
@@ -41,7 +58,7 @@ function SideBar({ allNoteData }: INote) {
                 onClick={toggleDropDown}
               >
                 <p className={styles.arrow}>{data.isDropDown ? "⎖ " : "➤ "}</p>
-                <p>{data.noteName.replace("-", " ")}</p>
+                <p>{data.noteName.replaceAll("-", " ")}</p>
               </button>
               {data.isDropDown &&
                 data.note.map((item, idx) => {

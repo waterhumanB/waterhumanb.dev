@@ -1,27 +1,32 @@
 @use "src/styles/constants/colors.scss";
 
 .dropDownContainer {
-  width: 374px;
+  max-width: 374px;
   margin-bottom: 20px;
+  word-break: keep-all;
 }
 
 .dropDownTitle {
   font-size: 26px;
   font-weight: 600;
   padding-bottom: 10px;
+  width: 374px;
 }
 
 .dropDownBox {
   display: flex;
 }
 
-.dropDown {
-  height: 30px;
+.dropDownBtn {
+  max-height: 55px;
   display: flex;
-  justify-content: center;
+  width: 100%;
+  max-width: 270px;
+  justify-content: left;
   align-items: center;
 
   svg {
+    min-width: 20px;
     height: 20px;
     path {
       transform: translateY(10px);
@@ -32,6 +37,8 @@
     font-size: 20px;
     font-weight: 600;
     padding-right: 10px;
+    text-align: left;
+    width: auto;
   }
 }
 
