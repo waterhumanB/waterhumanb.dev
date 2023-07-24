@@ -146,5 +146,5 @@ waterHumanB
 
 ### 참고 자료
 
-https://ko.legacy.reactjs.org/docs/forms.html#controlled-components
-https://goshacmd.com/controlled-vs-uncontrolled-inputs-react/
+- https://ko.legacy.reactjs.org/docs/forms.html#controlled-components
+- https://goshacmd.com/controlled-vs-uncontrolled-inputs-react/

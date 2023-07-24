@@ -275,4 +275,4 @@ Rectangle.args = {
 
 ### 참고 자료
 
-https://storybook.js.org/tutorials/intro-to-storybook/react/ko/get-started/
+- https://storybook.js.org/tutorials/intro-to-storybook/react/ko/get-started/

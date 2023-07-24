@@ -110,4 +110,4 @@ posts : {
 
 ### 참고 자료
 
-https://lunit.gitbook.io/redux-in-korean/recipes/structuringreducers/normalizingstateshape
+- https://lunit.gitbook.io/redux-in-korean/recipes/structuringreducers/normalizingstateshape

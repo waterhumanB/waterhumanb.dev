@@ -271,4 +271,4 @@ export default useCustomHook
 
 ### 참고자료
 
-https://ko.legacy.reactjs.org/docs/hooks-intro.html#motivation
+- https://ko.legacy.reactjs.org/docs/hooks-intro.html#motivation

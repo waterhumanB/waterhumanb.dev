@@ -299,5 +299,5 @@ SSR, CSR, SSG는 완전히 이해를 했다고 못하지만, 어느정도 이해
 
 ### 참고 자료
 
-https://swr.vercel.app/ko
-https://nextjs.org/docs/pages/building-your-application/data-fetching/get-static-props
+- https://swr.vercel.app/ko
+- https://nextjs.org/docs/pages/building-your-application/data-fetching/get-static-props
