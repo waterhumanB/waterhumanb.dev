@@ -21,7 +21,7 @@ category: "JavaScript"
 
 # 자바스크립트 TDD
 
-이번에 `Next Step`에서 진행하는 ` TDD Clean Code With JavaScript`` 강의에 참여하게 되었다. 이전  `TDD Clean Code With React`에서는 프론트엔드 개발에 트렌드인 `React`와 `TypeScript`를 사용하여, `Storybook`과
+이번에 `Next Step`에서 진행하는 ` TDD Clean Code With JavaScript` 강의에 참여하게 되었다. 이전`TDD Clean Code With React`에서는 프론트엔드 개발에 트렌드인 `React`와 `TypeScript`를 사용하여, `Storybook`과
 컴포넌트 분리 방법, 목적에 따른 로직 분리 등 Clean Code에 대한 것도 많이 배웠고, 이번에도 기대가 된다.
 
 나는 `Jest`로 테스트 코드를 구현한다는 것은 알고 있지만, 사실 해본적이 없었고, 테스트에 관심이 생긴 지금 앞으로 약 7주 동안
