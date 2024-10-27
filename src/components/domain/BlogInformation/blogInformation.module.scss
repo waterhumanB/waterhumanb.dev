@@ -35,7 +35,7 @@ $desktop-min: 1024px;
   flex-wrap: wrap;
   margin: auto;
 
-  h2 {
+  h1 {
     font-size: 50px;
     font-weight: 600;
     margin-bottom: 30px;
@@ -89,6 +89,10 @@ $desktop-min: 1024px;
     width: 100%;
   }
 
+  @include mobile() {
+    width: 100%;
+  }
+
   &:hover {
     border: solid 1px colors.$BLACK;
     img {
@@ -102,6 +106,10 @@ $desktop-min: 1024px;
   height: 130px;
   margin: auto 10px;
   border: 1px solid colors.$GRAY;
+
+  @include mobile() {
+    display: none;
+  }
 }
 
 .descBox {
@@ -109,6 +117,10 @@ $desktop-min: 1024px;
   display: flex;
   flex-direction: column;
   margin: 10px 7px 10px auto;
+
+  @include mobile() {
+    margin: 10px 7px;
+  }
 
   .title {
     width: 211px;
@@ -125,6 +137,10 @@ $desktop-min: 1024px;
     @include tablet {
       width: 100%;
     }
+
+    @include mobile() {
+      width: 100%;
+    }
   }
 
   .dateBox {
@@ -134,8 +150,8 @@ $desktop-min: 1024px;
     align-items: center;
 
     .category {
-      font-size: 14px;
-      font-weight: 600;
+      font-size: 15px;
+      font-weight: 400;
       color: colors.$BACKGROUND;
       padding: 4px;
     }
@@ -187,4 +203,12 @@ $desktop-min: 1024px;
 
 .SASS {
   background: colors.$SASS_COLOR;
+}
+
+.Python {
+  background: colors.$PYTHON_COLOR;
+}
+
+.React-Native {
+  background: colors.$REACT_NATIVE_COLOR;
 }

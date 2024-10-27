@@ -1,13 +1,15 @@
 @use "src/styles/constants/colors.scss";
 
 .noteContainer {
-  width: 100%;
-
+  max-width: 800px;
+  padding: 20px;
   display: flex;
   justify-content: center;
+  margin: auto;
 }
 
 .noteBox {
+  width: 100%;
   height: auto;
   display: flex;
   align-self: flex-start;
@@ -16,13 +18,13 @@
 .noteTitle {
   max-width: 800px;
   min-height: calc(100vh - 130px);
-  border-left: solid 1px colors.$BORDER;
 
   .title {
     width: 100%;
-    padding: 25px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid colors.$BORDER;
 
-    h2 {
+    h1 {
       font-size: 50px;
       font-weight: 600;
       margin: auto auto 30px auto;
@@ -36,10 +38,64 @@
   }
 }
 
-.noteDropDownBox {
+.note {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.noteData {
+  width: 100%;
+  height: 42px;
+  padding: 5px 10px;
+  margin: 5px 0;
   display: flex;
   justify-content: space-between;
-  padding: 25px;
+}
+
+.noteData:hover {
+  background-color: colors.$TH_BACKGROUND;
+
+  .noteName {
+    color: colors.$BLUE;
+    transform: translateX(10px);
+  }
+
+  .noteStart {
+    color: colors.$CSS_COLOR;
+  }
+
+  .noteEnd {
+    color: colors.$HTML_COLOR;
+  }
+
+  .day {
+    color: colors.$BLACK;
+  }
+}
+
+.noteName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.noteDateBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.noteDate {
+  color: colors.$GRAY;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (max-width: 768px) {

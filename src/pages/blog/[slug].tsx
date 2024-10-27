@@ -1,30 +1,34 @@
 import { GetStaticPaths, GetStaticProps } from "next"
 import useSWR, { unstable_serialize as unstableSerialize } from "swr"
 import Layout from "../../components/Layout"
-import Title from "../../components/Layout/Title"
-import Section from "../../components/domain/Article"
-import { getAllPostSlugs, getPostData } from "../../lib/posts"
-import { IPostData } from "../../types/post"
+import {
+  getAllBlogSlugs,
+  getBlogData,
+  getSortedBlogsData,
+} from "../../lib/blogs"
+import { IBlogData } from "../../types/blog"
+import PostLayout from "../../components/domain/PostLayout"
 
 interface Props {
   slug: string
+  allBlogData: IBlogData[]
 }
 
-export default function Post({ slug }: Props) {
-  const { data: postData } = useSWR<IPostData>(["Props", slug])
+export default function Post({ slug, allBlogData }: Props) {
+  const { data: blogData } = useSWR<IBlogData>(["Props", slug])
 
   const metaData = {
-    title: postData?.title,
-    description: postData?.description,
+    title: blogData?.title,
+    description: blogData?.description,
     openGraph: {
       type: "website",
       locale: "ko_KR",
       url: `waterhumanb-blog.vercel.app/blog/${slug}`,
-      title: postData?.title,
+      title: blogData?.title,
       site_name: "waterhumanb.dev",
       images: [
         {
-          url: postData?.thumbnail,
+          url: blogData?.thumbnail,
           width: 285,
           height: 167,
           alt: "이미지",
@@ -35,15 +39,13 @@ export default function Post({ slug }: Props) {
 
   return (
     <Layout metaData={metaData}>
-      <Title title={postData?.title} category={postData?.category} />
-      <Section slug={slug} />
+      <PostLayout allPostData={allBlogData} postData={blogData} comment />
     </Layout>
   )
 }
 
 export const getStaticPaths: GetStaticPaths = () => {
-  // slug에 대한 가능한 값의 목록을 반환합니다.
-  const paths = getAllPostSlugs()
+  const paths = getAllBlogSlugs()
   return {
     paths,
     fallback: false,
@@ -51,13 +53,14 @@ export const getStaticPaths: GetStaticPaths = () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }: any) => {
-  // params.slug를 사용하여 블로그 게시물에 필요한 데이터를 가져옵니다.
-  const postData = await getPostData(params.slug)
+  const blogData = await getBlogData(params.slug)
+  const allBlogData = await getSortedBlogsData()
   return {
     props: {
-      slug: postData.slug,
+      slug: blogData.slug,
+      allBlogData,
       fallback: {
-        [unstableSerialize(["Props", postData.slug])]: postData,
+        [unstableSerialize(["Props", blogData.slug])]: blogData,
       },
     },
   }

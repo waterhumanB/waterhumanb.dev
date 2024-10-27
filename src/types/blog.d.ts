@@ -1,13 +1,14 @@
-export interface IPost {
-  [key: string]: IPostData[]
+export interface IBlog {
+  [key: string]: IBlogData[]
 }
-export interface IPostData {
+export interface IBlogData {
   slug: string
   content?: string
   title: string
   date: string
-  description: string
+  description?: string
   thumbnail?: string
   category?: string
   update?: string
+  endDate?: string
 }

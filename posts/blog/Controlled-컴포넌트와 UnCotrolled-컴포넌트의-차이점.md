@@ -1,23 +1,12 @@
 ---
 title: "Controlled 컴포넌트와 UnControlled 컴포넌트 차이점"
-date: "2023.4.12"
+date: "2023년 4월 12일"
 description: "React에서 Controlled 컴포넌트와 UnControlled 컴포넌트의 차이점을 알아보자"
 thumbnail: ""
 category: "React"
 ---
 
-### 목차
-
-- Controlled Component
-- UnControlled Component
-- 제어 컴포넌트와 비제어 컴포넌트의 차이점
-- 제어 컴포넌트와 비제어 컴포넌트의 장단점
-  - 장점
-  - 단점
-- 회고
-- 참고 자료
-
-# Controlled Component
+## Controlled Component
 
 > HTML에서 `<input>`, `<textarea>`, `<select>`와 같은 폼 엘리먼트는 일반적으로 사용자의 입력을 기반으로 자신의 state를 관리하고 업데이트합니다. React에서는 변경할 수 있는 state가 일반적으로 컴포넌트의 state 속성에 유지되며 setState()에 의해 업데이트됩니다.
 > 우리는 React state를 “신뢰 가능한 단일 출처 (single source of truth)“로 만들어 두 요소를 결합할 수 있습니다. 그러면 폼을 렌더링하는 React 컴포넌트는 폼에 발생하는 사용자 입력값을 제어합니다. 이러한 방식으로 React에 의해 값이 제어되는 입력 폼 엘리먼트를 “제어 컴포넌트 (controlled component)“라고 합니다.
@@ -28,7 +17,7 @@ category: "React"
 
 아마도 흔히 `React`로 로그인, 회원가입, 게시글, 댓글 등 입력할 수 있는 컴포넌트를 구현할 때, `<input>`를 활용해서 `useState`를 통해 값을 입력받고, 유효성 검사, 서버에 전달 등 기능을 구현합니다.
 
-# UnControlled Component
+## UnControlled Component
 
 비제어 컴포넌트란 무엇인가?
 
@@ -38,7 +27,7 @@ category: "React"
 
 쉽게 말해 `React`에서 `ref`로 컴포넌트를 조작하면 비제어 컴포넌트가 되는 것이죠.
 
-# 제어 컴포넌트와 비제어 컴포넌트의 차이점
+## 제어 컴포넌트와 비제어 컴포넌트의 차이점
 
 그렇다면 제어 컴포넌트와 비제어 컴포넌트의 차이점은 무엇일까?
 
@@ -54,9 +43,9 @@ category: "React"
 
 그렇기 때문에 비제어 컴포넌트라고 합니다.
 
-# 제어 컴포넌트와 비제어 컴포넌트의 장단점
+## 제어 컴포넌트와 비제어 컴포넌트의 장단점
 
-## 장점
+### 장점
 
 **제어 컴포넌트**
 제어 컴포넌트는 주로 유효성 검사를 할 때 사용합니다.
@@ -65,7 +54,7 @@ category: "React"
 **비제어 컴포넌트**
 비제어 컴포넌트는 제어 컴포넌트 처럼 입력한 값을 즉각적으로 판단하지 않고, 필요할 때 입력값을 추출할 경우에 사용합니다. ID나 비밀번호 등 중요한 정보들은 즉각적으로 유효성검사를 해서 사용자에게 바로바로 피드백을 줘야하지만, 만약 자기소개같은 정보는 굳이 데이터와 상태를 동기화 시켜 입력받을 필요는 없기 때문입니다.
 
-## 단점
+### 단점
 
 **제어 컴포넌트**
 제어 컴포넌트의 단점은 단어 하나하나 입력할 때 마다 값이 갱신되어 불필요하게 렌더링이 되어 성능 측면에 좋지 않고, 만약 바로바로 `API`호출이 된다면, 자원 낭비가 되겠죠.
@@ -132,7 +121,7 @@ waterHumanB
 
 뭐든지 상황에 맞게 기능을 구현하는게 정답인거 같네요.
 
-# 회고
+## 회고
 
 처음 제어, 비제어 컴포넌트라는 용어를 들었을 때 아무생각도 들지 않았고 단순히 `state`사용과 `ref`사용 이정도로 끝냈었다.
 
@@ -144,7 +133,7 @@ waterHumanB
 
 아직도 부족하지만, 나의 코드가 어떤 의미이고, 왜 이렇게 했는지 조금은 설명이 더 할 수 있을 것 같다.
 
-### 참고 자료
+#### 참고 자료
 
 - https://ko.legacy.reactjs.org/docs/forms.html#controlled-components
 - https://goshacmd.com/controlled-vs-uncontrolled-inputs-react/

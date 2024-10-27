@@ -1,15 +1,21 @@
 import styles from "./title.module.scss"
 
-interface TitleProps {
+interface Props {
   title: string | undefined
-  category?: string | undefined
+  date?: string | undefined
+  endDate?: string | undefined
 }
 
-function Title({ title, category = "" }: TitleProps) {
+function Title({ title, date, endDate }: Props) {
   return (
     <header className={styles.container}>
-      <div>{category}</div>
       <h1>{title}</h1>
+      {!endDate && <span>{date}</span>}
+      {endDate && (
+        <span>
+          {date} ~ {endDate}
+        </span>
+      )}
     </header>
   )
 }

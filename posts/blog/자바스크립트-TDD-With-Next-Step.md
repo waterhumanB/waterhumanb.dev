@@ -1,33 +1,19 @@
 ---
 title: "자바스크립트 TDD와 jest 기본 사용법"
-date: "2023.7.23"
+date: "2023년 7월 23일"
 description: "자바스크립트 TDD와 Jest 기본 사용 법 및 Next Step 시작"
 thumbnail: ""
 category: "JavaScript"
 ---
 
-### 목차
+## 자바스크립트 TDD
 
-- 자바스크립트 TDD
-  - TDD
-  - Jest Cypress Storybook
-- Jest 기본 사용법
-  - Matchers
-  - 비동기 코드 테스트
-  - 테스트 전후 작업
-  - 목 함수 (Mock Functions)
-- 후기
-- 참고자료
-
-# 자바스크립트 TDD
-
-이번에 `Next Step`에서 진행하는 ` TDD Clean Code With JavaScript` 강의에 참여하게 되었다. 이전`TDD Clean Code With React`에서는 프론트엔드 개발에 트렌드인 `React`와 `TypeScript`를 사용하여, `Storybook`과
+이번에 `Next Step`에서 진행하는 `TDD Clean Code With JavaScript` 강의에 참여하게 되었다. 이전`TDD Clean Code With React`에서는 프론트엔드 개발에 트렌드인 `React`와 `TypeScript`를 사용하여, `Storybook`과
 컴포넌트 분리 방법, 목적에 따른 로직 분리 등 Clean Code에 대한 것도 많이 배웠고, 이번에도 기대가 된다.
 
-나는 `Jest`로 테스트 코드를 구현한다는 것은 알고 있지만, 사실 해본적이 없었고, 테스트에 관심이 생긴 지금 앞으로 약 7주 동안
-과제 구현 및 리뷰, 강의 등 기대가 된다.
+나는 `Jest`로 테스트 코드를 구현한다는 것은 알고 있지만, 사실 해본적이 없었고, 테스트에 관심이 생긴 지금 앞으로 약 7주 동안 과제 구현 및 리뷰, 강의 등 기대가 된다.
 
-## TDD
+### TDD
 
 전에 `Storybook`을 사용항 `TDD`방식을 소개 했는데, 강의에서 좀 더 쉽게 설명해주셨고, 좀 더 개념이나 테스트를 하는 이유에 대해 이해도가 더 높아졌다.
 
@@ -44,7 +30,7 @@ category: "JavaScript"
   - 성공하는 테스트 코드 만들기 : 위에 설명했던 것들을 토대로 이제 기능을 구현하고 내가 만든 테스트를 성공하게 된다면, 요구 사항과 예외 사항을 모두 충족하게 코드를 구현했다는 증거이다.
   - 마지막 리팩토링 : 모든 테스트를 통과 했다면 이제 코드를 개선하고 `Clean Code`로 만들고, 개선된 코드가 테스트까지 성공한다면, 다시 처음 부터 진행하면 된다.
 
-## Jest Cypress Storybook
+### Jest Cypress Storybook
 
 - **Jest**
 
@@ -55,7 +41,7 @@ category: "JavaScript"
 
 - **Cypress**
 
-  - 웹애플리케이션 테스트용으로 설계된 최슨 E2E 테스트 프레임워크로, Jest와 달리 브라우저에서 실행된다.
+  - 웹애플리케이션 테스트용으로 설계된 최신 E2E 테스트 프레임워크로, Jest와 달리 브라우저에서 실행된다.
   - 브라우저에서 직접 테스트를 작성하고 실행할 수 있는 브라우저 자동화 도구로, 브라우저를 다룰 수 있는 별도의 드라이버를 만들어서 사용가능.
   - E2E 뿐만 아니라 통합, 단위 테스트까지 사용 가능.
   - GUI (Graphic User Interface) 도구를 지원, 스펙 관리 및 디버깅이 편리하다.
@@ -69,7 +55,7 @@ category: "JavaScript"
   - 정적 빌드하여 배포 가능, 배포된 페이지를 통해 기획자, 디자이너와 같은 비개발 직군과도 협업이 가능해, UI가 중요한 서비스나 프로젝트에서 효과를 발휘할 것 같다.
   - https://storybook.js.org 공식문서를 통해 자세한 정보를 얻을 수 있다.
 
-# Jest 기본 사용법
+## Jest 기본 사용법
 
 ```js
 const Sum (a,b) => {
@@ -87,7 +73,7 @@ test("Sum 두개의 숫자를 더한 값을 반환한다.", () => {
 
 테스트 실행 방법은 기본 값으로 `npm test`로 실행하면 된다.
 
-## Matchers
+### Matchers
 
 Jest는 매처라는 것을 통해 다양항 방식으로 값을 테스트할 수 있다.
 
@@ -119,7 +105,7 @@ test("Sum 두개의 숫자를 더한 값을 반환한다.", () => {
 
 - 그 밖의 다양한 매처들이 존재하고, 모두 외워서 할 필요는 없다 https://jestjs.io/docs/using-matchers 공식문서에서 확인 하거나, 필요할 때 찾아서 사용하면 된다.
 
-## 비동기 코드 테스트
+### 비동기 코드 테스트
 
 ```js
 
@@ -145,7 +131,7 @@ test("3초 후에 받아온 이름은 waterHumanB 입니다.", (done) => {
 
 테스트 코드를 작성하는데, `done`이라는 인자를 받아 이 `done`은 테스트가 마치지 전에 콜백이 호출될 때 까지 기다리는 역할을 하고,
 
-만약 `done`인자를 받지 않고 사용한다면, `Jest`는 바로 테스틀를 마무리 하기 때문에 비동기나 콜백을 테스트 할 때 `done` 인자를 추가 해야 한다.
+만약 `done`인자를 받지 않고 사용한다면, `Jest`는 바로 테스트를 마무리 하기 때문에 비동기나 콜백을 테스트 할 때 `done` 인자를 추가 해야 한다.
 
 ```js
 const promiseFn = {
@@ -189,7 +175,7 @@ test("3초 후에 받아온 나이는 28 ", async () => {
 
 첫 번째로 기본으로 사용하는 방법과 두 번째로 매처를 사용해서는 방법이다.
 
-## 테스트 전후 작업
+### 테스트 전후 작업
 
 ```js
 let num = 0
@@ -377,7 +363,7 @@ test("0 + 3 은 3이다.", () => {
 
 이때 `skip`이란 키워드를 사용해서, 테스트를 건너 뛸 수 있다.
 
-## 목 함수 (Mock Functions)
+### 목 함수 (Mock Functions)
 
 ```js
 const mockFn = jest.fn()
@@ -397,8 +383,8 @@ test("mock", () => {
 
 여기서 `calls`로 알 수 있는 것은 두가지로 아래와 같다.
 
-- 함수가 총 몇번 호출 되었는지 알 수 있다
-- 함수가 호출할 때 전달된 인수가 무엇인지 알 수 있다.
+1. 함수가 총 몇번 호출 되었는지 알 수 있다
+2. 함수가 호출할 때 전달된 인수가 무엇인지 알 수 있다.
 
 ```js
 const mockFn = jest.fn()
@@ -648,7 +634,7 @@ test("마지막 함수는 30이랑 40을 받았는가?", () => {
 
 위처럼 다양한 호출되는 값으로 테스트를 진행할 수 있다.
 
-# 후기
+## 후기
 
 Next Step 에서 진행하는 TDD Clean Code With JavaScript강의를 시작하면서 TDD를 다시 복습하고 Jest의 기본 사용법과 강의에서 설명했던 내용들을 정리하고 싶어 블로그 글을 쓰게 되었다.
 
@@ -660,7 +646,7 @@ Next Step 에서 진행하는 TDD Clean Code With JavaScript강의를 시작하�
 
 일주일 마다 Next Step 강의를 써보려고 한다. 앞으로 화이팅하자!
 
-# 참고자료
+## 참고자료
 
 - https://jestjs.io
 - https://www.cypress.io

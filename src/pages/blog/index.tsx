@@ -1,8 +1,8 @@
 import { GetStaticProps } from "next"
 import React from "react"
 import Layout from "../../components/Layout"
-import { getSortedPostsData } from "../../lib/posts"
-import { IPost } from "../../types/post"
+import { getSortedBlogsData } from "../../lib/blogs"
+import { IBlog } from "../../types/blog"
 
 import BlogInformation from "../../components/domain/BlogInformation"
 
@@ -28,7 +28,7 @@ const META_DATA = {
   },
 }
 
-function Blog({ allPostsData }: IPost) {
+function Blog({ allPostsData }: IBlog) {
   return (
     <Layout metaData={META_DATA}>
       <BlogInformation allPostsData={allPostsData} />
@@ -39,7 +39,7 @@ function Blog({ allPostsData }: IPost) {
 export default Blog
 
 export const getStaticProps: GetStaticProps = () => {
-  const allPostsData = getSortedPostsData()
+  const allPostsData = getSortedBlogsData()
   return {
     props: {
       allPostsData,

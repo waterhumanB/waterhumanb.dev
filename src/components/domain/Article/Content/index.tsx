@@ -1,5 +1,6 @@
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
+import rehypeSlug from "rehype-slug"
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 import light from "react-syntax-highlighter/dist/cjs/styles/prism/one-light"
 import Image from "next/image"
@@ -51,7 +52,11 @@ const customComponents = {
 function ContentHtml({ content }: Props) {
   return (
     <article className={styles.container}>
-      <ReactMarkdown remarkPlugins={[remarkGfm]} components={customComponents}>
+      <ReactMarkdown
+        remarkPlugins={[remarkGfm]}
+        rehypePlugins={[rehypeSlug]}
+        components={customComponents}
+      >
         {content ?? ""}
       </ReactMarkdown>
     </article>

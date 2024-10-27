@@ -4,16 +4,19 @@
   max-width: 800px;
   height: 100%;
   margin: auto;
-  padding: 25px;
-  font-size: 45px;
-  font-weight: 400;
+  padding: 25px 25px 5px 25px;
   text-align: center;
   word-break: keep-all;
   line-height: 55px;
+  border-bottom: 1px solid colors.$BORDER;
 
-  div {
-    font-size: 18px;
+  h1 {
+    font-size: 36px;
+    font-weight: 600;
+  }
+
+  span {
+    font-size: 14px;
     color: colors.$GRAY;
-    line-height: 25px;
   }
 }

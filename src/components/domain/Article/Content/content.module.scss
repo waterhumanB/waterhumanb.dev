@@ -10,47 +10,32 @@
     line-height: 2;
   }
 
-  h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
     margin: 10px 0;
-  }
-
-  h1 {
-    font-size: 36px;
-    line-height: 42px;
+    scroll-margin-top: 70px;
   }
 
   h2 {
     font-size: 30px;
     color: colors.$LINK;
-    text-align: center;
-    line-height: 40px;
-    margin-bottom: 20px;
+    line-height: 42px;
   }
 
   h3 {
-    font-size: 26px;
+    font-size: 25px;
   }
 
   h4 {
-    font-size: 24px;
-  }
-
-  h5 {
-    font-size: 22px;
-  }
-
-  h6 {
     font-size: 20px;
   }
 
   strong {
     font-weight: 600;
-    font-size: 18px;
+    font-size: 17px;
     color: colors.$BLUE;
   }
 
@@ -71,7 +56,15 @@
   }
 
   a {
+    max-width: 100%;
+    height: 28px;
+    display: inline-block; /* 또는 block */
+    white-space: nowrap; /* 한 줄로 표시 */
+    overflow: hidden; /* 넘치는 부분 숨기기 */
+    text-overflow: ellipsis; /* 넘치는 텍스트를 말줄임표로 표시 */
+    box-sizing: border-box; /* padding과 border를 너비에 포함 */
     border-bottom: 1px solid;
+
     transition: 0.2s;
     &:hover {
       color: colors.$LINK;
@@ -98,6 +91,7 @@
   li {
     font-weight: 300;
     line-height: 2;
+    padding-right: 25px;
   }
 
   pre,
@@ -122,16 +116,20 @@
   }
 
   table {
+    width: 100%;
+    max-width: 100%;
+    table-layout: auto; /* 테이블이 부모 컨테이너를 넘지 않도록 설정 */
+    overflow-x: auto; /* 넘치는 경우 스크롤 발생 */
     text-align: center;
 
     th {
-      padding: 10px 15px;
+      padding: 10px 0;
       font-size: 18px;
       background: colors.$TH_BACKGROUND;
       border: 1px solid colors.$BACKGROUND;
     }
     td {
-      padding: 4px 12px;
+      padding: 4px 0;
       background: colors.$TD_BACKGROUND;
       border: 1px solid colors.$BACKGROUND;
       vertical-align: middle;
@@ -144,6 +142,8 @@
   justify-content: center;
   img {
     max-width: 100%;
+    height: auto; /* 이미지의 비율을 유지하면서 크기를 조절 */
+    display: block; /* 인라인 요소의 특성으로 인한 여백 제거 */
     height: auto;
   }
 }

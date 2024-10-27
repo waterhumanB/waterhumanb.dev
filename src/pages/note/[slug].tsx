@@ -1,14 +1,13 @@
 import { GetStaticPaths, GetStaticProps } from "next"
 import useSWR, { unstable_serialize as unstableSerialize } from "swr"
-import Layout from "../../../components/Layout"
+import Layout from "../../components/Layout"
 import {
   getAllNoteSlugs,
   getNoteData,
   getSortedNotesData,
-} from "../../../lib/note"
-import { INoteData, INoteItem } from "../../../types/note"
-import NoteLayout from "../../../components/domain/NoteLayout"
-import { ToggleProvider } from "../../../contexts/toggleContext"
+} from "../../lib/note"
+import { INoteData } from "../../types/note"
+import PostLayout from "../../components/domain/PostLayout"
 
 interface Props {
   slug: string
@@ -16,16 +15,16 @@ interface Props {
 }
 
 export default function Post({ slug, allNoteData }: Props) {
-  const { data: noteItem } = useSWR<INoteItem>(["Props", slug])
+  const { data: noteData } = useSWR<INoteData>(["Props", slug])
 
   const metaData = {
-    title: noteItem?.title,
-    description: noteItem?.description,
+    title: noteData?.title,
+    description: noteData?.description,
     openGraph: {
       type: "website",
       locale: "ko_KR",
-      url: `waterhumanb-blog.vercel.app/blog/${noteItem?.slug}`,
-      title: noteItem?.title,
+      url: `waterhumanb-blog.vercel.app/blog/${noteData?.slug}`,
+      title: noteData?.title,
       site_name: "waterhumanb.dev",
       images: [
         {
@@ -39,9 +38,11 @@ export default function Post({ slug, allNoteData }: Props) {
 
   return (
     <Layout metaData={metaData}>
-      <ToggleProvider>
-        <NoteLayout allNoteData={allNoteData} noteItem={noteItem} />
-      </ToggleProvider>
+      <PostLayout
+        allPostData={allNoteData}
+        postData={noteData}
+        comment={false}
+      />
     </Layout>
   )
 }
@@ -55,7 +56,7 @@ export const getStaticPaths: GetStaticPaths = () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }: any) => {
-  const noteItem = await getNoteData(params.slug, params.noteName)
+  const noteItem = await getNoteData(params.slug)
   const allNoteData = await getSortedNotesData()
   return {
     props: {

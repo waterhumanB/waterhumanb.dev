@@ -2,12 +2,12 @@ import { useState, MouseEvent } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import altImg from "../../../../public/assets/images/waterhumanb.png"
-import { IPost } from "../../../types/post"
+import { IBlog } from "../../../types/blog"
 import { categoryFilter } from "../../../utils/categoryFilter"
 import styles from "./blogInformation.module.scss"
 import { categoryList } from "../../../constants/category"
 
-function BlogInformation({ allPostsData }: IPost) {
+function BlogInformation({ allPostsData }: IBlog) {
   const [cat, setCat] = useState("")
 
   const filteredData = categoryFilter(allPostsData)
@@ -18,7 +18,7 @@ function BlogInformation({ allPostsData }: IPost) {
   return (
     <section className={styles.container}>
       <div className={styles.blogTitle}>
-        <h2>Blog</h2>
+        <h1>Blog</h1>
         <p>
           개발하면서 느낀점, 생각 등을 공유하거나 복습하고 싶은 기술들을
           정리하는 곳입니다.

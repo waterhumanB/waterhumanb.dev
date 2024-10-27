@@ -1,117 +1,45 @@
 @use "src/styles/constants/colors.scss";
 
 .sideBarContainer {
-  width: 200px;
+  width: 300px;
   height: 100%;
   position: sticky;
-  top: 50px;
-  transition: 0.6s;
-  margin: 0 10px;
-  word-break: keep-all;
+  top: 130px;
+  left: 0;
+  margin: 130px 0 auto auto;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 965px) {
   .sideBarContainer {
     display: none;
   }
 }
 
 .sideBar {
-  transition: 0.6s;
-}
-
-@keyframes blink-animation {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.dropDownBox {
   width: 100%;
-  margin: auto;
-}
-.dropDown {
-  width: 200px;
-  min-height: 35px;
-  border-radius: 0px 1rem 1rem 0px;
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  animation: blink-animation 0.6s;
-  padding: 2px 5px 2px 0;
-  margin-bottom: 5px;
-  word-break: keep-all;
+  padding: 15px;
+  box-sizing: border-box;
 
-  svg {
-    width: 20px;
-    height: 20px;
-    margin-left: 5px;
-    path {
-      transform: translateY(10px);
-    }
-  }
-
-  p {
+  div {
+    width: 100%;
+    margin-bottom: 15px;
     font-size: 16px;
     font-weight: 600;
-    text-align: left;
   }
 
-  .arrow {
-    min-width: 20px;
-    padding-left: 2px;
+  a {
+    width: 100%;
+    display: flex;
+    padding: 2px 0;
+    margin-bottom: 16px;
+    font-size: 13px;
+    color: colors.$GRAY;
   }
-}
-
-.bookColor {
-  color: colors.$TEAL;
-  fill: colors.$TEAL;
-}
-
-.videoColor {
-  color: colors.$ORANGE;
-  fill: colors.$ORANGE;
-}
-
-.noteItem {
-  color: colors.$BORDER_PRIMARY;
-  font-weight: 600;
-  padding: 0 0 12px 5px;
-  font-size: 14px;
-  line-height: 17px;
-  display: flex;
-  :nth-child(1) {
-    padding-right: 5px;
+  a:hover {
+    color: colors.$BLUE;
   }
 }
 
-.bookHover {
-  :hover {
-    color: colors.$TEAL;
-  }
-}
-
-.videoHover {
-  :hover {
-    color: colors.$ORANGE;
-  }
-}
-
-.bookBackground {
-  background: rgba(73, 190, 183, 0.1);
-}
-
-.videoBackground {
-  background: rgba(255, 138, 92, 0.1);
-}
-
-.bookTextColor {
-  color: colors.$TEAL;
-}
-
-.videoTextColor {
-  color: colors.$ORANGE;
+a.hovered {
+  color: colors.$BLUE;
 }

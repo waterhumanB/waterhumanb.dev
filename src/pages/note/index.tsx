@@ -4,7 +4,6 @@ import { getSortedNotesData } from "../../lib/note"
 import Layout from "../../components/Layout"
 import { INote } from "../../types/note"
 import NoteInformation from "../../components/domain/NoteInformation"
-import { ToggleProvider } from "../../contexts/toggleContext"
 
 const META_DATA = {
   title: "Note",
@@ -31,9 +30,7 @@ const META_DATA = {
 function Note({ allNoteData }: INote) {
   return (
     <Layout metaData={META_DATA}>
-      <ToggleProvider>
-        <NoteInformation allNoteData={allNoteData} />
-      </ToggleProvider>
+      <NoteInformation allNoteData={allNoteData} />
     </Layout>
   )
 }

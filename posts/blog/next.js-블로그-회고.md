@@ -1,36 +1,18 @@
 ---
 title: "Next.js 블로그 첫 번째 회고"
-date: "2023.6.25"
+date: "2023년 6월 25일"
 description: "Next.js 블로그 개발 기능 설명 및 첫 번째 회고"
 thumbnail: "/profile.jpg"
 category: "Next.js"
 ---
 
-### 목차
-
-- next.js 블로그
-  - 블로그를 시작한 이유
-  - Home Page
-  - Blog Page
-  - Note Page
-  - Project Page
-- next.js 구현 기능
-  - 기술 스택
-  - 폴더 구조
-  - CSR vs SSR vs SSG
-  - Next.js
-  - SEO
-  - 앞으로 구한 할 기능
-- 회고
-- 참고 자료
-
-# next.js 블로그
+## next.js 블로그
 
 `next.js`로 블로그를 구현 했고 README에 보면 내가 구현한 기능들과 앞으로 구현할 것들을 리스트로 만들었습니다.
 
 처음 시작은 `next.js` 학습을 하려고 `vercel` 페이지에 공식문서와 예제를 보면서 구현을 했고, 이왕 만든거 나의 블로그로 사용하고자 최소한의 모습으로 구현하였습니다.
 
-## 블로그를 시작한 이유
+### 블로그를 시작한 이유
 
 단순 `next.js`에 시작했지만, 개발을 학습하는 방식의 변화를 주기 위해 블로그를 활용하기로 했고, 여러 페이지를 만들어 그 페이지 별로 어떻게 활용할 건지 정하게 되었습니다.
 
@@ -38,7 +20,7 @@ category: "Next.js"
 
 그래서 개발을 공부하고 정리하는 공간과 책이나 강의를 듣고 필기 할곳, 내가 만든 프로젝트를 소개할 곳, 나라는 개발자를 소개할 곳 등 이러한 것들의 필요성을 느끼고 조금씩 블로그를 구현하였습니다.
 
-## Home Page
+### Home Page
 
 https://waterhumanb-blog.vercel.app
 
@@ -48,7 +30,7 @@ https://waterhumanb-blog.vercel.app
 
 디자인 적인 것은 나의 욕심 같은 거라 급하게 생각하지 않고, 천천히 진행중입니다.
 
-## Blog Page
+### Blog Page
 
 https://waterhumanb-blog.vercel.app/blog
 
@@ -60,7 +42,7 @@ https://waterhumanb-blog.vercel.app/blog
 
 간단하게 기능을 설명하면, `Next.js` 파일 기반으로 `SSG`을 구현할 수 있어, 프로젝트 안에 `mark-up` 문서들을 `html`로 페이지를 만들어 웹에서 볼 수 있습니다.
 
-## Note Page
+### Note Page
 
 https://waterhumanb-blog.vercel.app/note
 
@@ -73,7 +55,7 @@ https://waterhumanb-blog.vercel.app/note
 
 블로그 페이지와 같은 기술로 구현을 했습니다.
 
-## Project Page
+### Project Page
 
 https://waterhumanb-blog.vercel.app/project
 
@@ -82,9 +64,9 @@ https://waterhumanb-blog.vercel.app/project
 
 블로그 처럼 글을 보여줄게 아니고 단순하게 다른 링크들을 연결시켜 놓을거라 굳이 `SSG`나 `SSR`로 정보를 받을 필요가 없다고 판단해 이렇게 구현했습니다.
 
-# next.js 구현 기능
+## next.js 구현 기능
 
-## 기술 스택
+### 기술 스택
 
 **기술 스택 :** `Next.js` `TypeScript` `SASS` `SWR`
 
@@ -96,7 +78,7 @@ https://waterhumanb-blog.vercel.app/project
 
 추가로 다른 `css in js`도 공부할 계획입니다.
 
-## 폴더 구조
+### 폴더 구조
 
 이번 프로젝트의 폴더 구조와 간단한 설명입니다.
 
@@ -115,7 +97,7 @@ https://waterhumanb-blog.vercel.app/project
   - styles : 글로벌 스타일과 재사용 할 스타일
   - utils : 재사용할 로직
 
-## CSR vs SSR vs SSG
+### CSR vs SSR vs SSG
 
 - **CSR(Client-Side Rendering)**
 
@@ -148,7 +130,7 @@ https://waterhumanb-blog.vercel.app/project
 | 개발 복잡성      | 렌더링 및 데이터 가져오기는 클라이언트측 책임이므로 낮음        | 서버측 로직 필요로 보통                     | 빌드 시 데이터 가져오기 및 구성 필요로 보통                 |
 | 성능 (후속 로드) | 필요한 클라이언트측 렌더링 및 데이터 가져오기의 양에 따라 다름  | 필요한 클라이언트측 렌더링의 양에 따라 다름 | HTML이 미리 렌더링되고 캐시되므로 빠름                      |
 
-## Next.js
+### Next.js
 
 `Next.js`는 위에 3가지 방법을 모두 사용할 수 있습니다.
 
@@ -219,7 +201,7 @@ export default function Page({
 
 [Next.js 에서 데이터를 가져오는 방법](https://nextjs.org/docs/pages/building-your-application/data-fetching/get-static-props)
 
-## SEO (Search Engine Optimization)
+### SEO (Search Engine Optimization)
 
 검색엔진 최적화라는 의미로 구글이나 네이버 같은 포털사이트에서 나의 블로그, 사이트 등 내가 만든 웹 페이지가 검색시 최상단에서 노출하는 것을 말합니다.
 
@@ -267,7 +249,7 @@ const META_DATA = {
   - `sitemap` 같은 파일도 미리 만들어 내 사이트를 검색 봇이 빨리 파악 할 수 있게 도와줍니다.
   - `next.js`에서는 `next/img` 같은 내장함수로 이미지를 최적화 하는 방법도 있습니다.
 
-## 앞으로 구현 할 기능
+### 앞으로 구현 할 기능
 
 TOC라는 기능도 만들고 README에 있는 기능들도 구현할 예정들이다.
 
@@ -279,7 +261,7 @@ TOC라는 기능도 만들고 README에 있는 기능들도 구현할 예정들�
 
 블로그 겸 저의 포토폴리오, 이력서를 구현하는게 제 최종 목표입니다.
 
-# 회고
+## 회고
 
 아직 next.js의 다양한 기능들도 많이 사용하지 않았다. next.js를 활용한 다른 프로젝트도 하지 않았고,
 
@@ -297,7 +279,7 @@ SSR, CSR, SSG는 완전히 이해를 했다고 못하지만, 어느정도 이해
 
 앞으로 계획 한것들 열심히 하자 블로그도 열심히 해보자!
 
-### 참고 자료
+#### 참고 자료
 
 - https://swr.vercel.app/ko
 - https://nextjs.org/docs/pages/building-your-application/data-fetching/get-static-props

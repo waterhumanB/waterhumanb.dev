@@ -14,7 +14,7 @@ function Footer() {
           <RssLogo />
         </Link> 
       </div> */}
-      <div className={styles.copy}>Copyright © 2023 WaterHumanB</div>
+      <div className={styles.copy}>Copyright © 2024 WaterHumanB</div>
       <div className={styles.devBox}>
         <Link
           className={styles.dev}

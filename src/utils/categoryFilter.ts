@@ -1,6 +1,6 @@
-import { IPostData } from "../types/post"
+import { IBlogData } from "../types/blog"
 
-export const categoryFilter = (postData: IPostData[]) => {
+export const categoryFilter = (postData: IBlogData[]) => {
   const mapping = postData.map((data) => data.category)
 
   return postData

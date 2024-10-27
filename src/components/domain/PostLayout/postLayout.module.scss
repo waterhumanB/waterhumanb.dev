@@ -1,0 +1,23 @@
+@use "src/styles/constants/colors.scss";
+
+.postContainer {
+  width: 100%;
+  display: flex;
+  word-break: keep-all;
+  margin: 0 auto;
+  justify-content: center;
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+
+.postBox {
+  max-width: 800px;
+  height: 100%;
+  margin: auto 0 auto 0;
+}
+
+.comment {
+  max-width: 800px;
+  margin-bottom: 30px;
+}

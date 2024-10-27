@@ -1,21 +1,18 @@
 import useSWR from "swr"
-
 import React from "react"
-
 import styles from "./section.module.scss"
 import Content from "./Content"
-import { IPostData } from "../../../types/post"
+import { IBlogData } from "../../../types/blog"
 
 interface Props {
   slug: string | undefined
 }
 
 function Section({ slug }: Props) {
-  const { data: post } = useSWR<IPostData>(["Props", slug])
+  const { data: post } = useSWR<IBlogData>(["Props", slug])
 
   return (
     <article className={styles.container}>
-      <time className={styles.date}>{post?.date}</time>
       <Content content={post?.content} />
     </article>
   )
