@@ -1,6 +1,6 @@
 module.exports = {
-  // 원하는 도메인으로 업데이트
-  siteUrl: "https://waterhumanb-blog.vercel.app",
+  // GitHub Pages 주소로 업데이트
+  siteUrl: "https://waterhumanb.github.io/waterhumanb.dev",
   generateRobotsTxt: true,
   changefreq: "daily",
   priority: 0.7,
