@@ -2,11 +2,11 @@ export const defaultMetaData = {
   title: "waterHumanB",
   description: "Development blog by waterHumanB",
   author: "waterHumanB",
-  canonical: "https://waterhumanb-blog.vercel.app",
+  canonical: "https://waterhumanb.github.io/waterhumanb.dev",
   openGraph: {
     type: "website",
     locale: "ko_KR",
-    url: "https://waterhumanb-blog.vercel.app",
+    url: "https://waterhumanb.github.io/waterhumanb.dev",
     title: "waterHumanB의 개발 블로그입니다.",
     site_name: "waterhumanb.dev",
     images: [
