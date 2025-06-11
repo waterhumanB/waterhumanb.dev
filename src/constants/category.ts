@@ -8,4 +8,5 @@ export const categoryList = [
   "SASS",
   "React-Native",
   "Python",
+  "Whatever",
 ]

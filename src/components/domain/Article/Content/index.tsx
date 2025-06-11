@@ -1,6 +1,8 @@
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import rehypeSlug from "rehype-slug"
+// eslint-disable-next-line import/no-extraneous-dependencies
+import rehypeRaw from "rehype-raw"
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 import light from "react-syntax-highlighter/dist/cjs/styles/prism/one-light"
 import Image from "next/image"
@@ -54,7 +56,7 @@ function ContentHtml({ content }: Props) {
     <article className={styles.container}>
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
-        rehypePlugins={[rehypeSlug]}
+        rehypePlugins={[rehypeSlug, rehypeRaw]}
         components={customComponents}
       >
         {content ?? ""}

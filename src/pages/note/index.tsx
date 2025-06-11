@@ -8,13 +8,13 @@ import NoteInformation from "../../components/domain/NoteInformation"
 const META_DATA = {
   title: "Note",
   description:
-    "개발도서와 개발강의로 학습하고 익힌 내용을 노트에 복습을 목적으로 기록합니다.",
+    "개발강의와 개발도서의 내용을 의식적 기록을 통해 학습하고 익힌 내용을 기록합니다.",
   openGraph: {
     type: "website",
     locale: "ko_KR",
     url: "waterhumanb-blog.vercel.app/note",
     title:
-      "개발도서와 개발강의로 학습하고 익힌 내용을 노트에 복습을 목적으로 기록합니다.",
+      "개발강의와 개발도서의 내용을 의식적 기록을 통해 학습하고 익힌 내용을 기록합니다.",
     site_name: "waterhumanb.dev",
     images: [
       {

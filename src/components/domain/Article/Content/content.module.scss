@@ -20,17 +20,27 @@
   }
 
   h2 {
-    font-size: 30px;
+    font-size: 32px;
     color: colors.$LINK;
     line-height: 42px;
   }
 
   h3 {
-    font-size: 25px;
+    font-size: 28px;
   }
 
   h4 {
-    font-size: 20px;
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+    color: colors.$RECORD;
+  }
+
+  h5 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+    color: colors.$CHECK;
   }
 
   strong {

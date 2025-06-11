@@ -31,7 +31,7 @@ function PostLayout({ allPostData, postData, comment }: Props) {
             </div>
           )}
         </div>
-        <TOC postData={postData} />
+        <TOC postData={postData} comment={comment} />
       </div>
     </div>
   )

@@ -7,13 +7,27 @@ import { useHeadingsObserver } from "../../../hooks/useHeadingObserver"
 
 interface Props {
   postData: INoteData | IBlogData | undefined
+  comment: boolean
 }
-function TOC({ postData }: Props) {
+function TOC({ postData, comment }: Props) {
   const lines = postData?.content?.split("\n")
 
-  const headers = lines?.filter((line) => line.trim().startsWith("#"))
+  // const headers = lines?.filter((line) => line.trim().startsWith("#"))
 
-  const activeIdList = useHeadingsObserver("h2, h3, h4")
+  const headerFilter = comment ? "h2,h3,h4" : "h2"
+
+  const headers = lines?.filter((line) => {
+    const trimmedLine = line.trim()
+    if (headerFilter.includes("h2") && trimmedLine.startsWith("## "))
+      return true
+    if (headerFilter.includes("h3") && trimmedLine.startsWith("### "))
+      return true
+    if (headerFilter.includes("h4") && trimmedLine.startsWith("#### "))
+      return true
+    return false
+  })
+
+  const activeIdList = useHeadingsObserver(headerFilter)
 
   const handleClick = (
     event: React.MouseEvent<HTMLAnchorElement>,

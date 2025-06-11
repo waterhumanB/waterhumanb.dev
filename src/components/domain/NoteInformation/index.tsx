@@ -13,8 +13,8 @@ function NoteInformation({ allNoteData }: INote) {
             <div className={styles.title}>
               <h1>Note</h1>
               <p>
-                개발도서와 개발강의로 학습하고 익힌 내용을 노트에 복습을
-                목적으로 기록합니다.
+                개발강의와 개발도서의 내용을 의식적 기록을 통해 학습하고 익힌
+                내용을 기록합니다.
               </p>
             </div>
             <div className={styles.note}>
@@ -24,19 +24,19 @@ function NoteInformation({ allNoteData }: INote) {
                   key={data.slug}
                   href={`/note/${data.slug}`}
                 >
-                  <p className={styles.noteName}>{data.title} </p>
-                  <p className={styles.noteDateBox}>
-                    <p className={styles.noteDate}>
-                      <p className={styles.noteStart}>start :&nbsp;</p>
-                      <p className={styles.day}>{data.date}</p>
-                    </p>
+                  <span className={styles.noteName}>{data.title} </span>
+                  <div className={styles.noteDateBox}>
+                    <div className={styles.noteDate}>
+                      <div className={styles.noteStart}>start :&nbsp;</div>
+                      <time className={styles.day}>{data.date}</time>
+                    </div>
                     {data.endDate && (
-                      <p className={styles.noteDate}>
-                        <p className={styles.noteEnd}> end :&nbsp;</p>
-                        <p className={styles.day}>{data.endDate}</p>
-                      </p>
+                      <div className={styles.noteDate}>
+                        <div className={styles.noteEnd}> end :&nbsp;</div>
+                        <time className={styles.day}>{data.endDate}</time>
+                      </div>
                     )}
-                  </p>
+                  </div>
                 </Link>
               ))}
             </div>
