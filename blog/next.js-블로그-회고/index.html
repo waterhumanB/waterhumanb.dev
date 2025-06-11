@@ -1,0 +1,287 @@
+<!DOCTYPE html><html lang="ko"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:site" content="@site"/><meta name="twitter:creator" content="@handle"/><link rel="canonical" href="https://waterhumanb-blog.vercel.app"/><title>Next.js 블로그 첫 번째 회고</title><meta name="robots" content="index,follow"/><meta name="description" content="Next.js 블로그 개발 기능 설명 및 첫 번째 회고"/><meta property="og:title" content="Next.js 블로그 첫 번째 회고"/><meta property="og:description" content="Next.js 블로그 개발 기능 설명 및 첫 번째 회고"/><meta property="og:url" content="https://waterhumanb-blog.vercel.app/blog/next.js-블로그-회고"/><meta property="og:type" content="website"/><meta property="og:image" content="/profile.jpg"/><meta property="og:image:alt" content="이미지"/><meta property="og:image:width" content="285"/><meta property="og:image:height" content="167"/><meta property="og:locale" content="ko_KR"/><meta property="og:site_name" content="waterhumanb.dev"/><meta name="next-head-count" content="19"/><meta name="google-site-verification" content="UBbrn6uYlvgqUuPSNz6397TblWqGKuSHzwf_e2jijxk"/><meta name="naver-site-verification" content="5b4676776e4bf7929cd196996b0da94331749653"/><link rel="preload" href="/waterhumanb.dev/_next/static/css/d8bed1e24432d094.css" as="style" crossorigin=""/><link rel="stylesheet" href="/waterhumanb.dev/_next/static/css/d8bed1e24432d094.css" crossorigin="" data-n-g=""/><link rel="preload" href="/waterhumanb.dev/_next/static/css/ae9d48751daeccdb.css" as="style" crossorigin=""/><link rel="stylesheet" href="/waterhumanb.dev/_next/static/css/ae9d48751daeccdb.css" crossorigin="" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" crossorigin="" nomodule="" src="/waterhumanb.dev/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/waterhumanb.dev/_next/static/chunks/webpack-43fb5a0a26324e60.js" defer="" crossorigin=""></script><script src="/waterhumanb.dev/_next/static/chunks/framework-e14092e0d084b50d.js" defer="" crossorigin=""></script><script src="/waterhumanb.dev/_next/static/chunks/main-3a956ec709fb3fb3.js" defer="" crossorigin=""></script><script src="/waterhumanb.dev/_next/static/chunks/pages/_app-2761a922bf39d8df.js" defer="" crossorigin=""></script><script src="/waterhumanb.dev/_next/static/chunks/664-4376551f6398547f.js" defer="" crossorigin=""></script><script src="/waterhumanb.dev/_next/static/chunks/675-bc6983e63bce51d5.js" defer="" crossorigin=""></script><script src="/waterhumanb.dev/_next/static/chunks/972-cbebcee7e82a5949.js" defer="" crossorigin=""></script><script src="/waterhumanb.dev/_next/static/chunks/pages/blog/%5Bslug%5D-50bc1117993ad35d.js" defer="" crossorigin=""></script><script src="/waterhumanb.dev/_next/static/yH5YUGQP37e_zlfcTWc-4/_buildManifest.js" defer="" crossorigin=""></script><script src="/waterhumanb.dev/_next/static/yH5YUGQP37e_zlfcTWc-4/_ssgManifest.js" defer="" crossorigin=""></script></head><body><div id="__next"><header class="header_header___ROMs"><div class="nav_nav__8z_BE"><div><a href="/waterhumanb.dev"><div class="">Home</div></a></div><nav class="nav_navLinks__n71QG"><a href="/waterhumanb.dev/blog/"><div class="nav_active__ZBV7z">Blog</div></a><a href="/waterhumanb.dev/note/"><div class="">Note</div></a></nav></div></header><main class="layout_container__12fKi"><div><div class="postLayout_postContainer__sy9uX"><aside class="sideBar_sideBarContainer___AvzN"><div class="sideBar_sideBar__xUXBW"><div>Blog<!-- --> Menu</div><a class="undefined " href="/waterhumanb.dev/blog/%EC%BD%94%EC%96%B4-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%A7%88%EB%AC%B8-%EB%A6%AC%EC%8A%A4%ED%8A%B8/">코어 자바스크립트 질문 리스트</a><a class="undefined " href="/waterhumanb.dev/blog/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-TDD-With-Next-Step/">자바스크립트 TDD와 jest 기본 사용법</a><a class="undefined sideBar_hovered__eF0xN" href="/waterhumanb.dev/blog/next.js-%EB%B8%94%EB%A1%9C%EA%B7%B8-%ED%9A%8C%EA%B3%A0">Next.js 블로그 첫 번째 회고</a><a class="undefined " href="/waterhumanb.dev/blog/%EC%A0%90%EC%A7%84%EC%A0%81%EA%B3%BC%EB%B6%80%ED%95%98-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%ED%9A%8C%EA%B3%A0/">점진적과부하 프로젝트 회고</a><a class="undefined " href="/waterhumanb.dev/blog/%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC-%EC%97%86%EC%9D%B4-%EC%BA%98%EB%A6%B0%EB%8D%94-%EB%A7%8C%EB%93%A4%EA%B8%B0/">라이브러리 없이 캘린더 만들기</a><a class="undefined " href="/waterhumanb.dev/blog/%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC-%EC%97%86%EC%9D%B4-%EA%B7%B8%EB%9E%98%ED%94%84,-%EC%B0%A8%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/">라이브러리 없이 그래프, 차트 만들기</a><a class="undefined " href="/waterhumanb.dev/blog/Redux%EC%99%80-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%95%EA%B7%9C%ED%99%94/">Redux와 데이터정규화</a><a class="undefined " href="/waterhumanb.dev/blog/var-let-const-hoisting/">var, let, const 특징 및 호이스팅</a><a class="undefined " href="/waterhumanb.dev/blog/StoryBook%EC%9C%BC%EB%A1%9C-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%ED%85%8C%EC%8A%A4%ED%8A%B8/">StoryBook으로 컴포넌트 테스트</a><a class="undefined " href="/waterhumanb.dev/blog/Controlled-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%99%80%20UnCotrolled-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90/">Controlled 컴포넌트와 UnControlled 컴포넌트 차이점</a><a class="undefined " href="/waterhumanb.dev/blog/React%EC%97%90%EC%84%9C-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%99%80-%EB%A1%9C%EC%A7%81-%EB%B6%84%EB%A6%AC%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95/">React에서 컴포넌트와 로직 분리하는 방법</a></div></aside><div class="postLayout_postBox__4BFa4"><header class="title_container__fhpAF"><h1>Next.js 블로그 첫 번째 회고</h1><span>2023년 6월 25일</span></header><article class="section_container__KqTMH"><article class="content_container__Kx6HO"><h2 id="nextjs-블로그">next.js 블로그</h2>
+<p><code>next.js</code>로 블로그를 구현 했고 README에 보면 내가 구현한 기능들과 앞으로 구현할 것들을 리스트로 만들었습니다.</p>
+<p>처음 시작은 <code>next.js</code> 학습을 하려고 <code>vercel</code> 페이지에 공식문서와 예제를 보면서 구현을 했고, 이왕 만든거 나의 블로그로 사용하고자 최소한의 모습으로 구현하였습니다.</p>
+<h3 id="블로그를-시작한-이유">블로그를 시작한 이유</h3>
+<p>단순 <code>next.js</code>에 시작했지만, 개발을 학습하는 방식의 변화를 주기 위해 블로그를 활용하기로 했고, 여러 페이지를 만들어 그 페이지 별로 어떻게 활용할 건지 정하게 되었습니다.</p>
+<p>지금 까지 개발 관련 책을 읽고, 프로젝트도 하고, 강의도 듣고 했지만, 정리를 따로 안하다 보니, 배웠던 것을 복습하는 것도 다시 구글링하고 <code>GitHub</code> 뒤지고, 조금 번거롭기도 했습니다.</p>
+<p>그래서 개발을 공부하고 정리하는 공간과 책이나 강의를 듣고 필기 할곳, 내가 만든 프로젝트를 소개할 곳, 나라는 개발자를 소개할 곳 등 이러한 것들의 필요성을 느끼고 조금씩 블로그를 구현하였습니다.</p>
+<h3 id="home-page">Home Page</h3>
+<p><a href="https://waterhumanb-blog.vercel.app" target="_blank" rel="noopener noreferrer">https://waterhumanb-blog.vercel.app</a></p>
+<p>첫 번째로 홈페이지 현재는 간단하게 나의 사진과 간단한 소개글을 적어 두었습니다.</p>
+<p>목표는 애플의 아이폰 소개 페이지 처럼 인터렉션한 디자인을 생각하고 있습니다.</p>
+<p>디자인 적인 것은 나의 욕심 같은 거라 급하게 생각하지 않고, 천천히 진행중입니다.</p>
+<h3 id="blog-page">Blog Page</h3>
+<p><a href="https://waterhumanb-blog.vercel.app/blog" target="_blank" rel="noopener noreferrer">https://waterhumanb-blog.vercel.app/blog</a></p>
+<p>블로그 페이지, 개발 관련된 것들의 대한 생각이나 배운 것들을 정리하려고 만든 공간입니다.</p>
+<p>확실히 블로그로 정리하고 다시 찾아보고 하면서, 복습도 되고, 새로운 것도 알게되면서 학습과 복습이 같이 할 수 있어 좋은것 같습니다.</p>
+<p>정리하는데 시간이 생각보다 많이 걸리지만 그만큼 공부를 한다는 생각이 들어 시간낭비라고 생각하지 않고 오히려 주위 개발자 분들에게 추천을 합니다.</p>
+<p>간단하게 기능을 설명하면, <code>Next.js</code> 파일 기반으로 <code>SSG</code>을 구현할 수 있어, 프로젝트 안에 <code>mark-up</code> 문서들을 <code>html</code>로 페이지를 만들어 웹에서 볼 수 있습니다.</p>
+<h3 id="note-page">Note Page</h3>
+<p><a href="https://waterhumanb-blog.vercel.app/note" target="_blank" rel="noopener noreferrer">https://waterhumanb-blog.vercel.app/note</a></p>
+<p>블로그 페이지는 배운 것들을 종합적으로 나의 생각과 느낀 것들을 정리하는 공간이라면,
+노트 페이지는 공부한 것을 필기하듯 정리하는 곳입니다.</p>
+<p>사이드바에 보면 책으로 배운 것과 강의로 배운 것 두개로 분리를 했습니다.</p>
+<p>현재는 바로 바로 정리하기 보단, 일단 책을 한번 편안하게 읽고 시작하는게 좋을 것 같아, 기능만 구현했고, 계속 차근 차근 쌓아갈 예정입니다.</p>
+<p>블로그 페이지와 같은 기술로 구현을 했습니다.</p>
+<h3 id="project-page">Project Page</h3>
+<p><a href="https://waterhumanb-blog.vercel.app/project" target="_blank" rel="noopener noreferrer">https://waterhumanb-blog.vercel.app/project</a></p>
+<p>프로젝트 페이지는 앞으로 이력서나 내가 구현한 프로젝트들을 정리한 곳 입니다.
+보이는 사진은 GIF로 만들었고, 데이터는 단순 <code>TS</code>파일로 만들어서 데이터를 보여주고 있습니다.</p>
+<p>블로그 처럼 글을 보여줄게 아니고 단순하게 다른 링크들을 연결시켜 놓을거라 굳이 <code>SSG</code>나 <code>SSR</code>로 정보를 받을 필요가 없다고 판단해 이렇게 구현했습니다.</p>
+<h2 id="nextjs-구현-기능">next.js 구현 기능</h2>
+<h3 id="기술-스택">기술 스택</h3>
+<p><strong>기술 스택 :</strong> <code>Next.js</code> <code>TypeScript</code> <code>SASS</code> <code>SWR</code></p>
+<p>기본적으로 위와 같은 기술을 사용했고 그 이외 <code>mark-up</code>관련 라이브러리 등 사용했고,</p>
+<p>스타일은 주로 <code>styled-component</code>와 <code>sass</code>를 사용하는데 이것도 한번 블로그에 정리를 하려고 합니다.</p>
+<p><code>SWR</code>은 빠르고, 가볍게, 재사용 가능한 데이터를 가져오기 위해 사용했다. <code>React-query</code>도 있지만 <code>Vercel</code>에서 만든 <code>SWR</code>이 좀더 잘 맞을거라 생각을 했기 때문에 사용했습니다.</p>
+<p>추가로 다른 <code>css in js</code>도 공부할 계획입니다.</p>
+<h3 id="폴더-구조">폴더 구조</h3>
+<p>이번 프로젝트의 폴더 구조와 간단한 설명입니다.</p>
+<ul>
+<li>posts : 마크업 파일</li>
+<li>public : 이미지</li>
+<li>src
+<ul>
+<li>components : UI 컴포넌트
+<ul>
+<li>domain : blog, note 같은 특정한 곳에 사용할 UI 컴포넌트</li>
+<li>Layout : 전체 UI 컴포넌트</li>
+</ul>
+</li>
+<li>constants : 상수 값들을 정리</li>
+<li>contexts : context api 모음</li>
+<li>data : project 데이터 등 다른 데이터들</li>
+<li>hooks : 커스텀 hook 모음</li>
+<li>lib : blog, note 파일 읽는 등의 로직</li>
+<li>pages : 사용자가 보는 페이지</li>
+<li>styles : 글로벌 스타일과 재사용 할 스타일</li>
+<li>utils : 재사용할 로직</li>
+</ul>
+</li>
+</ul>
+<h3 id="csr-vs-ssr-vs-ssg">CSR vs SSR vs SSG</h3>
+<ul>
+<li>
+<p><strong>CSR(Client-Side Rendering)</strong></p>
+<ul>
+<li>클라이언트(브라우저)인 웹페이지에서 렌더링을 하는 것을 의미한다. 우리가 사용하는 프론트엔드 라이브러리, 프레임워크 삼대장인 <code>React</code> <code>Vue</code> <code>Angular</code> 등이 이러한 방식으로 화면을 보여줍니다.</li>
+<li>동작 방식으로 사용자가 웹 페이지에 들어가면 그 때 <code>HTML</code> <code>CSS</code> <code>JavaScript</code> 파일들을 다운로드 한 뒤에 이용할 수 있는 뷰가 생겨난다. API로 받는 데이터가 있다면 받은 다음 뷰를 구성하기 때문에 처음 로딩 속도가 느리다.</li>
+<li>단점으로 <code>JavaScript</code>파일이 커질 수록 어플리케이션 속도가 느려지고, 모든 파일을 다운 받아야 화면을 구성하기 때문에 <code>SEO</code>측면에서도 취약한 문제가 있습니다.</li>
+<li>장점으로 처음 페이지가 렌더링 했을 때 모든 파일을 다운로드 했기 떄문에, 페이지이동, 인터렉션 같은 동작이 생겨도 필요한 부분만 추가 다운로드 해서 속도가 굉장히 빠른 것 입니다.</li>
+<li>그래서 사용자와 인터렉션이 많은 애플리케이션은 <code>CSR</code> 방식을 사용합니다.</li>
+</ul>
+</li>
+<li>
+<p><strong>SSR(Server-Side Rendering)</strong></p>
+<ul>
+<li>서버에서 미리 페이지를 구성하고 요청을 받으면 즉시 생성해서 반환해 주는 방식입니다. 이러한 방식은 <code>CSR</code> 과 다르게 사용자가 웹페이지에 들어가면 미리 만들어둔 화면을 보여주기 때문에 초기 로딩 속도가 빠르다는 장점이 있습니다.</li>
+<li>단점으로 페이지 전환시 깜빡이는 현상이 발생하는데 이는 페이지를 이동할 때 마다 서버에서 새로운 파일을 렌더링해서 발생하는 현상입니다. 그리고 계속 새로운 파일을 로드하기 때문에 클라이언트에서 데이터를 유지할 수 없습니다. <code>SSG</code>도 똑같습니다.</li>
+<li>장점으로 최초 로딩속도가 빠르고, <code>CSR</code> 과 다르게 서버에서 페이지를 생성해 주기 때문에, 검색엔진은 완성된 <code>HTML</code>문서를 수집할 수 있어 <code>SEO</code>에 최적화에 용이합니다.</li>
+</ul>
+</li>
+<li>
+<p><strong>SSG(Static Site Generation)</strong></p>
+<ul>
+<li><code>SSR</code>과 비슷하지만 조금 다른 점은 프로젝트를 빌드 할 때 페이지를 미리 만들어 렌더링 하는 방식입니다. <code>SSR</code>과 비슷한 것은 페이지를 미리 만들어서 요청이 있을 때 제공하는 방식이 비슷하지만, <code>SSR</code>은 API 요청을 했을 때 페이지를 만들어 보내주지만, <code>SSG</code>는 빌드할 때 만들어 놓는 다는 점입니다.</li>
+<li>그리고 빌드 시 페이지가 만들어져 있어, 요청시에 바로바로 클라이언트에게 페이지를 제공하기 때문에 렌더링 속도가 빠르고, 완성된 페이지는 <code>SEO</code> 최적화에 용이합니다.</li>
+<li>이러한 특성이 블로그 같은 정보성 페이지 등 정적인 데이터를 보여주는 사이트에 적합한 것이죠.</li>
+</ul>
+</li>
+</ul>
+<p><code>CSR</code> <code>SSR</code> <code>SSG</code>를 표로 한번 비교해서 보겠습니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th><strong>CSR</strong></th><th><strong>SSR</strong></th><th><strong>SSG</strong></th></tr></thead><tbody><tr><td>렌더링 방식</td><td>클라이언트에서 렌더링된 빈 HTML 파일</td><td>서버는 각 요청에 대해 HTML을 생성합니다</td><td>빌드 시 생성된 미리 렌더링된 HTML 파일</td></tr><tr><td>초기 로드 시간</td><td>빠르지만 가져오기 및 렌더링으로 인해 초기 로드가 느려질 수 있음</td><td>서버 처리로 인해 느려질 수 있음</td><td>미리 렌더링된 HTML을 제공할 준비가 되었기 때문에 빠름</td></tr><tr><td>SEO 친화성</td><td>동적 콘텐츠를 인덱싱하려면 검색 엔진에 추가 기술이 필요</td><td>완전히 렌더링된 HTML이 제공되므로 좋음</td><td>완전히 렌더링된 HTML이 제공되므로 좋음</td></tr><tr><td>동적 업데이트</td><td>클라이언트 측에서 실시간 업데이트 지원</td><td>각 요청에 대한 실시간 업데이트 지원</td><td>동적 콘텐츠에 대한 재검증 또는 클라이언트 측 렌더링 필요</td></tr><tr><td>서버 로드</td><td>렌더링이 클라이언트 측에서 처리되므로 더 낮음</td><td>서버가 각 요청을 렌더링함에 따라 더 높음</td><td>미리 렌더링된 HTML은 정적 파일로 제공될 수 있으므로 더 낮음</td></tr><tr><td>개발 복잡성</td><td>렌더링 및 데이터 가져오기는 클라이언트측 책임이므로 낮음</td><td>서버측 로직 필요로 보통</td><td>빌드 시 데이터 가져오기 및 구성 필요로 보통</td></tr><tr><td>성능 (후속 로드)</td><td>필요한 클라이언트측 렌더링 및 데이터 가져오기의 양에 따라 다름</td><td>필요한 클라이언트측 렌더링의 양에 따라 다름</td><td>HTML이 미리 렌더링되고 캐시되므로 빠름</td></tr></tbody></table>
+<h3 id="nextjs">Next.js</h3>
+<p><code>Next.js</code>는 위에 3가지 방법을 모두 사용할 수 있습니다.</p>
+<p>일단 <code>Next.js</code>는 <code>React</code>를 기반으로한 프레임워크이기 때문에 <code>CSR</code> 동작을 할 수 있고,</p>
+<p><code>SSG</code>는 기본적으로 빌드할 때 자동으로 생성이 되고 추가로 생성도 할 수 있습니다.</p>
+<p><code>SSR</code>도 마찬가지로 서버에서 데이터를 받고 싶을 때 사용할 수 있습니다.</p>
+<p><code>CSR</code>은 <code>React</code>의 <code>Hook</code>을 활용해서 사용하면 되고, <code>SSG</code>와 <code>SSR</code>은 <code>Next.js</code>의 내장함수를 사용해서 구현해야한다.</p>
+<pre><pre node="[object Object]" style="background:hsl(230, 1%, 98%);color:hsl(230, 8%, 24%);font-family:&quot;Fira Code&quot;, &quot;Fira Mono&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:0.5em 0;overflow:auto;border-radius:0.3em"><code class="language-ts" style="white-space:pre;background:hsl(230, 1%, 98%);color:hsl(230, 8%, 24%);font-family:&quot;Fira Code&quot;, &quot;Fira Mono&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;direction:ltr;text-align:left;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span class="token module" style="color:hsl(301, 63%, 40%)">export</span><span> </span><span class="token" style="color:hsl(301, 63%, 40%)">const</span><span> getStaticPaths</span><span class="token" style="color:hsl(221, 87%, 60%)">:</span><span> </span><span class="token function-variable maybe-class-name" style="color:hsl(221, 87%, 60%)">GetStaticPaths</span><span> </span><span class="token" style="color:hsl(221, 87%, 60%)">=</span><span> </span><span class="token" style="color:hsl(230, 8%, 24%)">(</span><span class="token" style="color:hsl(230, 8%, 24%)">)</span><span> </span><span class="token arrow" style="color:hsl(221, 87%, 60%)">=&gt;</span><span> </span><span class="token" style="color:hsl(230, 8%, 24%)">{</span><span>
+</span><span>  </span><span class="token" style="color:hsl(230, 4%, 64%);font-style:italic">// slug에 대한 가능한 값의 목록을 반환합니다.</span><span>
+</span><span>  </span><span class="token" style="color:hsl(301, 63%, 40%)">const</span><span> paths </span><span class="token" style="color:hsl(221, 87%, 60%)">=</span><span> </span><span class="token" style="color:hsl(221, 87%, 60%)">getAllPostSlugs</span><span class="token" style="color:hsl(230, 8%, 24%)">(</span><span class="token" style="color:hsl(230, 8%, 24%)">)</span><span>
+</span><span>  </span><span class="token control-flow" style="color:hsl(301, 63%, 40%)">return</span><span> </span><span class="token" style="color:hsl(230, 8%, 24%)">{</span><span>
+</span><span>    paths</span><span class="token" style="color:hsl(230, 8%, 24%)">,</span><span>
+</span><span>    fallback</span><span class="token" style="color:hsl(221, 87%, 60%)">:</span><span> </span><span class="token" style="color:hsl(35, 99%, 36%)">false</span><span class="token" style="color:hsl(230, 8%, 24%)">,</span><span>
+</span><span>  </span><span class="token" style="color:hsl(230, 8%, 24%)">}</span><span>
+</span><span></span><span class="token" style="color:hsl(230, 8%, 24%)">}</span><span>
+</span>
+<span></span><span class="token module" style="color:hsl(301, 63%, 40%)">export</span><span> </span><span class="token" style="color:hsl(301, 63%, 40%)">const</span><span> getStaticProps</span><span class="token" style="color:hsl(221, 87%, 60%)">:</span><span> </span><span class="token function-variable maybe-class-name" style="color:hsl(221, 87%, 60%)">GetStaticProps</span><span> </span><span class="token" style="color:hsl(221, 87%, 60%)">=</span><span> </span><span class="token" style="color:hsl(301, 63%, 40%)">async</span><span> </span><span class="token" style="color:hsl(230, 8%, 24%)">(</span><span class="token" style="color:hsl(230, 8%, 24%)">{</span><span> params </span><span class="token" style="color:hsl(230, 8%, 24%)">}</span><span class="token" style="color:hsl(221, 87%, 60%)">:</span><span> </span><span class="token" style="color:hsl(119, 34%, 47%)">any</span><span class="token" style="color:hsl(230, 8%, 24%)">)</span><span> </span><span class="token arrow" style="color:hsl(221, 87%, 60%)">=&gt;</span><span> </span><span class="token" style="color:hsl(230, 8%, 24%)">{</span><span>
+</span><span>  </span><span class="token" style="color:hsl(230, 4%, 64%);font-style:italic">// params.slug를 사용하여 블로그 게시물에 필요한 데이터를 가져옵니다.</span><span>
+</span><span>  </span><span class="token" style="color:hsl(301, 63%, 40%)">const</span><span> postData </span><span class="token" style="color:hsl(221, 87%, 60%)">=</span><span> </span><span class="token control-flow" style="color:hsl(301, 63%, 40%)">await</span><span> </span><span class="token" style="color:hsl(221, 87%, 60%)">getPostData</span><span class="token" style="color:hsl(230, 8%, 24%)">(</span><span>params</span><span class="token" style="color:hsl(230, 8%, 24%)">.</span><span class="token property-access">slug</span><span class="token" style="color:hsl(230, 8%, 24%)">)</span><span>
+</span><span>  </span><span class="token control-flow" style="color:hsl(301, 63%, 40%)">return</span><span> </span><span class="token" style="color:hsl(230, 8%, 24%)">{</span><span>
+</span><span>    props</span><span class="token" style="color:hsl(221, 87%, 60%)">:</span><span> </span><span class="token" style="color:hsl(230, 8%, 24%)">{</span><span>
+</span><span>      slug</span><span class="token" style="color:hsl(221, 87%, 60%)">:</span><span> postData</span><span class="token" style="color:hsl(230, 8%, 24%)">.</span><span class="token property-access">slug</span><span class="token" style="color:hsl(230, 8%, 24%)">,</span><span>
+</span><span>      fallback</span><span class="token" style="color:hsl(221, 87%, 60%)">:</span><span> </span><span class="token" style="color:hsl(230, 8%, 24%)">{</span><span>
+</span><span>        </span><span class="token" style="color:hsl(230, 8%, 24%)">[</span><span class="token" style="color:hsl(221, 87%, 60%)">unstableSerialize</span><span class="token" style="color:hsl(230, 8%, 24%)">(</span><span class="token" style="color:hsl(230, 8%, 24%)">[</span><span class="token" style="color:hsl(119, 34%, 47%)">&quot;Props&quot;</span><span class="token" style="color:hsl(230, 8%, 24%)">,</span><span> postData</span><span class="token" style="color:hsl(230, 8%, 24%)">.</span><span class="token property-access">slug</span><span class="token" style="color:hsl(230, 8%, 24%)">]</span><span class="token" style="color:hsl(230, 8%, 24%)">)</span><span class="token" style="color:hsl(230, 8%, 24%)">]</span><span class="token" style="color:hsl(221, 87%, 60%)">:</span><span> postData</span><span class="token" style="color:hsl(230, 8%, 24%)">,</span><span>
+</span><span>      </span><span class="token" style="color:hsl(230, 8%, 24%)">}</span><span class="token" style="color:hsl(230, 8%, 24%)">,</span><span>
+</span><span>    </span><span class="token" style="color:hsl(230, 8%, 24%)">}</span><span class="token" style="color:hsl(230, 8%, 24%)">,</span><span>
+</span><span>  </span><span class="token" style="color:hsl(230, 8%, 24%)">}</span><span>
+</span><span></span><span class="token" style="color:hsl(230, 8%, 24%)">}</span></code></pre></pre>
+<ul>
+<li><strong>SSG</strong>
+<ul>
+<li>위에 코드는 현재 블로그 페이지에서 게시글을 <code>SSG</code>로 받아오는 방법입니다.</li>
+<li><code>getStaticProps</code>를 통해 정적 페이지를 생성해서 해당 컴포넌트에서 <code>Props</code>로 받아 UI를 만들 수 있습니다.</li>
+<li>또한 <code>getStaticPaths</code>를 통해 정적으로 생성할 경로 목록을 지정해서 해당 경로를 정적으로 사전 렌더링을 해서, 보다 빠르게 페이지를 받아서 볼 수 있습니다.</li>
+</ul>
+</li>
+</ul>
+<pre><pre node="[object Object]" style="background:hsl(230, 1%, 98%);color:hsl(230, 8%, 24%);font-family:&quot;Fira Code&quot;, &quot;Fira Mono&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:0.5em 0;overflow:auto;border-radius:0.3em"><code class="language-ts" style="white-space:pre;background:hsl(230, 1%, 98%);color:hsl(230, 8%, 24%);font-family:&quot;Fira Code&quot;, &quot;Fira Mono&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;direction:ltr;text-align:left;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span class="token module" style="color:hsl(301, 63%, 40%)">import</span><span> </span><span class="token" style="color:hsl(301, 63%, 40%)">type</span><span> </span><span class="token" style="color:hsl(230, 8%, 24%)">{</span><span> </span><span class="token maybe-class-name">InferGetServerSidePropsType</span><span class="token" style="color:hsl(230, 8%, 24%)">,</span><span> </span><span class="token maybe-class-name">GetServerSideProps</span><span> </span><span class="token" style="color:hsl(230, 8%, 24%)">}</span><span> </span><span class="token module" style="color:hsl(301, 63%, 40%)">from</span><span> </span><span class="token" style="color:hsl(119, 34%, 47%)">&quot;next&quot;</span><span>
+</span>
+<span></span><span class="token" style="color:hsl(301, 63%, 40%)">type</span><span> </span><span class="token maybe-class-name" style="color:hsl(35, 99%, 36%)">Repo</span><span> </span><span class="token" style="color:hsl(221, 87%, 60%)">=</span><span> </span><span class="token" style="color:hsl(230, 8%, 24%)">{</span><span>
+</span><span>  name</span><span class="token" style="color:hsl(221, 87%, 60%)">:</span><span> </span><span class="token" style="color:hsl(119, 34%, 47%)">string</span><span>
+</span><span>  stargazers_count</span><span class="token" style="color:hsl(221, 87%, 60%)">:</span><span> </span><span class="token" style="color:hsl(119, 34%, 47%)">number</span><span>
+</span><span></span><span class="token" style="color:hsl(230, 8%, 24%)">}</span><span>
+</span>
+<span></span><span class="token module" style="color:hsl(301, 63%, 40%)">export</span><span> </span><span class="token" style="color:hsl(301, 63%, 40%)">const</span><span> getServerSideProps</span><span class="token" style="color:hsl(221, 87%, 60%)">:</span><span> </span><span class="token maybe-class-name">GetServerSideProps</span><span class="token" style="color:hsl(221, 87%, 60%)">&lt;</span><span class="token" style="color:hsl(230, 8%, 24%)">{</span><span>
+</span><span>  repo</span><span class="token" style="color:hsl(221, 87%, 60%)">:</span><span> </span><span class="token maybe-class-name">Repo</span><span>
+</span><span></span><span class="token" style="color:hsl(230, 8%, 24%)">}</span><span class="token" style="color:hsl(221, 87%, 60%)">&gt;</span><span> </span><span class="token" style="color:hsl(221, 87%, 60%)">=</span><span> </span><span class="token" style="color:hsl(301, 63%, 40%)">async</span><span> </span><span class="token" style="color:hsl(230, 8%, 24%)">(</span><span class="token" style="color:hsl(230, 8%, 24%)">)</span><span> </span><span class="token arrow" style="color:hsl(221, 87%, 60%)">=&gt;</span><span> </span><span class="token" style="color:hsl(230, 8%, 24%)">{</span><span>
+</span><span>  </span><span class="token" style="color:hsl(301, 63%, 40%)">const</span><span> res </span><span class="token" style="color:hsl(221, 87%, 60%)">=</span><span> </span><span class="token control-flow" style="color:hsl(301, 63%, 40%)">await</span><span> </span><span class="token" style="color:hsl(221, 87%, 60%)">fetch</span><span class="token" style="color:hsl(230, 8%, 24%)">(</span><span class="token" style="color:hsl(119, 34%, 47%)">&quot;https://api.github.com/repos/vercel/next.js&quot;</span><span class="token" style="color:hsl(230, 8%, 24%)">)</span><span>
+</span><span>  </span><span class="token" style="color:hsl(301, 63%, 40%)">const</span><span> repo </span><span class="token" style="color:hsl(221, 87%, 60%)">=</span><span> </span><span class="token control-flow" style="color:hsl(301, 63%, 40%)">await</span><span> res</span><span class="token" style="color:hsl(230, 8%, 24%)">.</span><span class="token method property-access" style="color:hsl(221, 87%, 60%)">json</span><span class="token" style="color:hsl(230, 8%, 24%)">(</span><span class="token" style="color:hsl(230, 8%, 24%)">)</span><span>
+</span><span>  </span><span class="token control-flow" style="color:hsl(301, 63%, 40%)">return</span><span> </span><span class="token" style="color:hsl(230, 8%, 24%)">{</span><span> props</span><span class="token" style="color:hsl(221, 87%, 60%)">:</span><span> </span><span class="token" style="color:hsl(230, 8%, 24%)">{</span><span> repo </span><span class="token" style="color:hsl(230, 8%, 24%)">}</span><span> </span><span class="token" style="color:hsl(230, 8%, 24%)">}</span><span>
+</span><span></span><span class="token" style="color:hsl(230, 8%, 24%)">}</span><span>
+</span>
+<span></span><span class="token module" style="color:hsl(301, 63%, 40%)">export</span><span> </span><span class="token module" style="color:hsl(301, 63%, 40%)">default</span><span> </span><span class="token" style="color:hsl(301, 63%, 40%)">function</span><span> </span><span class="token maybe-class-name" style="color:hsl(221, 87%, 60%)">Page</span><span class="token" style="color:hsl(230, 8%, 24%)">(</span><span class="token" style="color:hsl(230, 8%, 24%)">{</span><span>
+</span><span>  repo</span><span class="token" style="color:hsl(230, 8%, 24%)">,</span><span>
+</span><span></span><span class="token" style="color:hsl(230, 8%, 24%)">}</span><span class="token" style="color:hsl(221, 87%, 60%)">:</span><span> </span><span class="token maybe-class-name">InferGetServerSidePropsType</span><span class="token" style="color:hsl(221, 87%, 60%)">&lt;</span><span class="token" style="color:hsl(301, 63%, 40%)">typeof</span><span> getServerSideProps</span><span class="token" style="color:hsl(221, 87%, 60%)">&gt;</span><span class="token" style="color:hsl(230, 8%, 24%)">)</span><span> </span><span class="token" style="color:hsl(230, 8%, 24%)">{</span><span>
+</span><span>  </span><span class="token control-flow" style="color:hsl(301, 63%, 40%)">return</span><span> repo</span><span class="token" style="color:hsl(230, 8%, 24%)">.</span><span class="token property-access">stargazers_count</span><span>
+</span><span></span><span class="token" style="color:hsl(230, 8%, 24%)">}</span></code></pre></pre>
+<ul>
+<li><strong>SSR</strong>
+<ul>
+<li><code>getServerSideProps</code>를 사용하여 서버로 부터 데이터를 받아 <code>Props</code>로 컴포넌트에서 사용할 수 있습니다.</li>
+<li><code>SSG</code>는 배포시 미리 정적 페이지를 만들지만 <code>SSR</code>은 요청할 때 데이터를 반환하기 때문에 속도 측면에서 차이가 생깁니다.</li>
+<li>이번 블로그에서는 모두 <code>SSG</code>로 구현했기 때문에 코드는 공식문서에서 가져왔습니다.</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://nextjs.org/docs/pages/building-your-application/data-fetching/get-static-props" target="_blank" rel="noopener noreferrer">Next.js 에서 데이터를 가져오는 방법</a></p>
+<h3 id="seo-search-engine-optimization">SEO (Search Engine Optimization)</h3>
+<p>검색엔진 최적화라는 의미로 구글이나 네이버 같은 포털사이트에서 나의 블로그, 사이트 등 내가 만든 웹 페이지가 검색시 최상단에서 노출하는 것을 말합니다.</p>
+<p><code>SEO</code> 최적화 방법은 여러개가 있습니다. 프론트엔드 개발자가 알아야할 최적화 방법만 소개하겠습니다.</p>
+<ul>
+<li><strong>시멘틱 태그 (Semantic Tag)</strong>
+<ul>
+<li>무분별한 <code>div</code>의 사용으로 웹문서에서 원하는 정보를 찾기 힘들어져 <code>HTML</code> 구조를 설계하는데 있어 각 위치별로 태그에 의미를 부여해서 사이트의 구조를 파악하기 용이하게 만들어진 태그들 입니다.</li>
+<li>사이트를 만들 때 그 목적에 맞게 <code>tag</code>들로 구조를 잡으면 검색 엔진이 사이트를 보다 빨리 파악할 수 있어 검색 결과 노출에 유리합니다.</li>
+</ul>
+</li>
+</ul>
+<pre><pre node="[object Object]" style="background:hsl(230, 1%, 98%);color:hsl(230, 8%, 24%);font-family:&quot;Fira Code&quot;, &quot;Fira Mono&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:0.5em 0;overflow:auto;border-radius:0.3em"><code class="language-ts" style="white-space:pre;background:hsl(230, 1%, 98%);color:hsl(230, 8%, 24%);font-family:&quot;Fira Code&quot;, &quot;Fira Mono&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;direction:ltr;text-align:left;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span class="token" style="color:hsl(301, 63%, 40%)">const</span><span> </span><span class="token" style="color:hsl(35, 99%, 36%)">META_DATA</span><span> </span><span class="token" style="color:hsl(221, 87%, 60%)">=</span><span> </span><span class="token" style="color:hsl(230, 8%, 24%)">{</span><span>
+</span><span>  title</span><span class="token" style="color:hsl(221, 87%, 60%)">:</span><span> </span><span class="token" style="color:hsl(119, 34%, 47%)">&quot;Blog&quot;</span><span class="token" style="color:hsl(230, 8%, 24%)">,</span><span>
+</span><span>  description</span><span class="token" style="color:hsl(221, 87%, 60%)">:</span><span>
+</span><span>    </span><span class="token" style="color:hsl(119, 34%, 47%)">&quot;개발하면서 느낀점, 생각 등을 공유하거나 복습하고 싶은 기술들을정리하는 곳입니다.&quot;</span><span class="token" style="color:hsl(230, 8%, 24%)">,</span><span>
+</span><span>  openGraph</span><span class="token" style="color:hsl(221, 87%, 60%)">:</span><span> </span><span class="token" style="color:hsl(230, 8%, 24%)">{</span><span>
+</span><span>    type</span><span class="token" style="color:hsl(221, 87%, 60%)">:</span><span> </span><span class="token" style="color:hsl(119, 34%, 47%)">&quot;website&quot;</span><span class="token" style="color:hsl(230, 8%, 24%)">,</span><span>
+</span><span>    locale</span><span class="token" style="color:hsl(221, 87%, 60%)">:</span><span> </span><span class="token" style="color:hsl(119, 34%, 47%)">&quot;ko_KR&quot;</span><span class="token" style="color:hsl(230, 8%, 24%)">,</span><span>
+</span><span>    url</span><span class="token" style="color:hsl(221, 87%, 60%)">:</span><span> </span><span class="token" style="color:hsl(119, 34%, 47%)">&quot;waterhumanb-blog.vercel.app/blog&quot;</span><span class="token" style="color:hsl(230, 8%, 24%)">,</span><span>
+</span><span>    title</span><span class="token" style="color:hsl(221, 87%, 60%)">:</span><span>
+</span><span>      </span><span class="token" style="color:hsl(119, 34%, 47%)">&quot;개발하면서 느낀점, 생각 등을 공유하거나 복습하고 싶은 기술들을정리하는 곳입니다.&quot;</span><span class="token" style="color:hsl(230, 8%, 24%)">,</span><span>
+</span><span>    site_name</span><span class="token" style="color:hsl(221, 87%, 60%)">:</span><span> </span><span class="token" style="color:hsl(119, 34%, 47%)">&quot;waterhumanb.dev&quot;</span><span class="token" style="color:hsl(230, 8%, 24%)">,</span><span>
+</span><span>    images</span><span class="token" style="color:hsl(221, 87%, 60%)">:</span><span> </span><span class="token" style="color:hsl(230, 8%, 24%)">[</span><span>
+</span><span>      </span><span class="token" style="color:hsl(230, 8%, 24%)">{</span><span>
+</span><span>        url</span><span class="token" style="color:hsl(221, 87%, 60%)">:</span><span> </span><span class="token" style="color:hsl(119, 34%, 47%)">&quot;../../public/thumbnail.png&quot;</span><span class="token" style="color:hsl(230, 8%, 24%)">,</span><span>
+</span><span>        width</span><span class="token" style="color:hsl(221, 87%, 60%)">:</span><span> </span><span class="token" style="color:hsl(35, 99%, 36%)">285</span><span class="token" style="color:hsl(230, 8%, 24%)">,</span><span>
+</span><span>        height</span><span class="token" style="color:hsl(221, 87%, 60%)">:</span><span> </span><span class="token" style="color:hsl(35, 99%, 36%)">167</span><span class="token" style="color:hsl(230, 8%, 24%)">,</span><span>
+</span><span>        alt</span><span class="token" style="color:hsl(221, 87%, 60%)">:</span><span> </span><span class="token" style="color:hsl(119, 34%, 47%)">&quot;이미지&quot;</span><span class="token" style="color:hsl(230, 8%, 24%)">,</span><span>
+</span><span>      </span><span class="token" style="color:hsl(230, 8%, 24%)">}</span><span class="token" style="color:hsl(230, 8%, 24%)">,</span><span>
+</span><span>    </span><span class="token" style="color:hsl(230, 8%, 24%)">]</span><span class="token" style="color:hsl(230, 8%, 24%)">,</span><span>
+</span><span>  </span><span class="token" style="color:hsl(230, 8%, 24%)">}</span><span class="token" style="color:hsl(230, 8%, 24%)">,</span><span>
+</span><span></span><span class="token" style="color:hsl(230, 8%, 24%)">}</span></code></pre></pre>
+<ul>
+<li><strong>Meta Tag 활용</strong>
+<ul>
+<li>시멘틱 태그로 웹문서의 구조를 파악할 수 있게 했다면, 이제 웹문서의 정보를 제공해야 한다. 우리는 <code>meta tag</code>를 활용해서 사이트의 다양한 정보들을 제공할 수 있습니다.</li>
+<li>위 코드는 블로그의 메인 페이지에서 사용하고 있는 <code>meta tag</code>에 활용할 데이터 입니다.</li>
+<li><code>next.js</code>에서 제공하는 <code>next-seo</code>를 활용하면 이 웹사이트 전체 기본으로 <code>meta tag</code>를 설정하고 페이지 별로 다른 <code>meta tag</code>를 설정해서, 페이지 마다 다른 정보를 제공해주고 있습니다.</li>
+</ul>
+</li>
+<li><strong>빠른 렌더링</strong>
+<ul>
+<li>렌더링 되는 속도가 빨라야합니다. 한군인은 빨리빨리라는 말처럼, 웹페이지가 로딩되는 속도에 따라 방문자들이 조금만 느려도 바로 나가버리기 때문에, <code>SEO</code>측면에서 페이지 로딩 속도가 느리면 좋은 사이트로 판단하지 않습니다.</li>
+<li>렌더링 속도를 빠르게 하려면 <code>CSR</code>같은 방식보다는 <code>SSG</code>방식이 속도가 더 빠르기에 유리하고, <code>CSR</code>은 앞에 말했던, 빈 <code>HTML</code>문서만 있기 때문에 검색봇이 사이트를 판단하지 못하기 때문에 <code>SEO</code>측면에서 어떻게 보면 최악이죠. 그렇기 때문에, 미리 웹문서를 만들어 화면에 보여주는 방식이 속도 측면과 <code>SEO</code> 측면에서 효과적입니다.</li>
+<li>그리고 사이트의 크기를 줄여야 합니다. 아무래도 메모리를 많이 잡아 먹으면 그만큼 속도가 느려지고, 그만큼 페이지를 늦게 로딩하겠죠? 큰 영상과 이미지등의 크기를 줄이는 방법이 제일 효과적이고 <code>LightHouse</code> 등 도구를 활용하면 페이지의 로딩 속도가 느린 이유들을 알 수 있어 활용하면 좋습니다.</li>
+</ul>
+</li>
+<li><strong>그 밖의 참고할 것</strong>
+<ul>
+<li>페이지가 선정적이거나 불법적인 내용이면 당연히 안좋겠죠.</li>
+<li>사이트 목적에 따른 도메인주소도 도움이 된다고 합니다.</li>
+<li><code>sitemap</code> 같은 파일도 미리 만들어 내 사이트를 검색 봇이 빨리 파악 할 수 있게 도와줍니다.</li>
+<li><code>next.js</code>에서는 <code>next/img</code> 같은 내장함수로 이미지를 최적화 하는 방법도 있습니다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="앞으로-구현-할-기능">앞으로 구현 할 기능</h3>
+<p>TOC라는 기능도 만들고 README에 있는 기능들도 구현할 예정들이다.</p>
+<p>사이트가 단순하게 구현했는데, 좀더 인터렉티브한 웹으로 구성하고 싶고,</p>
+<p>다른 블로그들을 봤을 떄 이러한 기능들이 재미있는 것들을 구현하고 계획입니다.</p>
+<p>추가 페이지는 저를 소개하는 페이지와 저의 이력서 관련 페이지도 만들어</p>
+<p>블로그 겸 저의 포토폴리오, 이력서를 구현하는게 제 최종 목표입니다.</p>
+<h2 id="회고">회고</h2>
+<p>아직 next.js의 다양한 기능들도 많이 사용하지 않았다. next.js를 활용한 다른 프로젝트도 하지 않았고,</p>
+<p>시도해 볼만한게 많을 것 같다. 몇몇 강의를 보면 next.js를 활용한 풀스텍 개발이라는 강의들도 보이고</p>
+<p>다양한 프로젝트에 시도할 수 있을 것 같다.</p>
+<p>SEO는 내가 디지털 마케팅을 독학 했을 때 공부했던 것들이 이렇게 도움될줄 몰랐다.</p>
+<p>SSR, CSR, SSG는 완전히 이해를 했다고 못하지만, 어느정도 이해가 되었고, 조금 자리를 잡은 것 같다.</p>
+<p>블로그에 기록하는 이유는 언제든지 내가 정리한 것들을 보기 위해서 정리를 하고 있으니 기억이 안나고 헷갈리면</p>
+<p>다시 보면 된다.</p>
+<p>앞으로 계획 한것들 열심히 하자 블로그도 열심히 해보자!</p>
+<h4 id="참고-자료">참고 자료</h4>
+<ul>
+<li><a href="https://swr.vercel.app/ko" target="_blank" rel="noopener noreferrer">https://swr.vercel.app/ko</a></li>
+<li><a href="https://nextjs.org/docs/pages/building-your-application/data-fetching/get-static-props" target="_blank" rel="noopener noreferrer">https://nextjs.org/docs/pages/building-your-application/data-fetching/get-static-props</a></li>
+</ul></article></article><div class="postLayout_comment__mmog_"><section></section></div></div><aside class="TOC_tocContainer__xG3B8"><div class="TOC_toc__bb4qM"><div>Table of Content</div><a class="TOC_mainHead__UCw15 " href="/waterhumanb.dev/blog/next.js-%EB%B8%94%EB%A1%9C%EA%B7%B8-%ED%9A%8C%EA%B3%A0#nextjs-%EB%B8%94%EB%A1%9C%EA%B7%B8">next.js 블로그</a><a class="TOC_subHead__zXtIP " href="/waterhumanb.dev/blog/next.js-%EB%B8%94%EB%A1%9C%EA%B7%B8-%ED%9A%8C%EA%B3%A0#%EB%B8%94%EB%A1%9C%EA%B7%B8%EB%A5%BC-%EC%8B%9C%EC%9E%91%ED%95%9C-%EC%9D%B4%EC%9C%A0">블로그를 시작한 이유</a><a class="TOC_subHead__zXtIP " href="/waterhumanb.dev/blog/next.js-%EB%B8%94%EB%A1%9C%EA%B7%B8-%ED%9A%8C%EA%B3%A0#home-page">Home Page</a><a class="TOC_subHead__zXtIP " href="/waterhumanb.dev/blog/next.js-%EB%B8%94%EB%A1%9C%EA%B7%B8-%ED%9A%8C%EA%B3%A0#blog-page">Blog Page</a><a class="TOC_subHead__zXtIP " href="/waterhumanb.dev/blog/next.js-%EB%B8%94%EB%A1%9C%EA%B7%B8-%ED%9A%8C%EA%B3%A0#note-page">Note Page</a><a class="TOC_subHead__zXtIP " href="/waterhumanb.dev/blog/next.js-%EB%B8%94%EB%A1%9C%EA%B7%B8-%ED%9A%8C%EA%B3%A0#project-page">Project Page</a><a class="TOC_mainHead__UCw15 " href="/waterhumanb.dev/blog/next.js-%EB%B8%94%EB%A1%9C%EA%B7%B8-%ED%9A%8C%EA%B3%A0#nextjs-%EA%B5%AC%ED%98%84-%EA%B8%B0%EB%8A%A5">next.js 구현 기능</a><a class="TOC_subHead__zXtIP " href="/waterhumanb.dev/blog/next.js-%EB%B8%94%EB%A1%9C%EA%B7%B8-%ED%9A%8C%EA%B3%A0#%EA%B8%B0%EC%88%A0-%EC%8A%A4%ED%83%9D">기술 스택</a><a class="TOC_subHead__zXtIP " href="/waterhumanb.dev/blog/next.js-%EB%B8%94%EB%A1%9C%EA%B7%B8-%ED%9A%8C%EA%B3%A0#%ED%8F%B4%EB%8D%94-%EA%B5%AC%EC%A1%B0">폴더 구조</a><a class="TOC_subHead__zXtIP " href="/waterhumanb.dev/blog/next.js-%EB%B8%94%EB%A1%9C%EA%B7%B8-%ED%9A%8C%EA%B3%A0#csr-vs-ssr-vs-ssg">CSR vs SSR vs SSG</a><a class="TOC_subHead__zXtIP " href="/waterhumanb.dev/blog/next.js-%EB%B8%94%EB%A1%9C%EA%B7%B8-%ED%9A%8C%EA%B3%A0#nextjs">Next.js</a><a class="TOC_subHead__zXtIP " href="/waterhumanb.dev/blog/next.js-%EB%B8%94%EB%A1%9C%EA%B7%B8-%ED%9A%8C%EA%B3%A0#seo-search-engine-optimization">SEO (Search Engine Optimization)</a><a class="TOC_subHead__zXtIP " href="/waterhumanb.dev/blog/next.js-%EB%B8%94%EB%A1%9C%EA%B7%B8-%ED%9A%8C%EA%B3%A0#%EC%95%9E%EC%9C%BC%EB%A1%9C-%EA%B5%AC%ED%98%84-%ED%95%A0-%EA%B8%B0%EB%8A%A5">앞으로 구현 할 기능</a><a class="TOC_mainHead__UCw15 " href="/waterhumanb.dev/blog/next.js-%EB%B8%94%EB%A1%9C%EA%B7%B8-%ED%9A%8C%EA%B3%A0#%ED%9A%8C%EA%B3%A0">회고</a><a class="TOC_subHead__zXtIP " href="/waterhumanb.dev/blog/next.js-%EB%B8%94%EB%A1%9C%EA%B7%B8-%ED%9A%8C%EA%B3%A0#%EC%B0%B8%EA%B3%A0-%EC%9E%90%EB%A3%8C">참고 자료</a></div></aside></div></div></main><footer class="footer_footerContainer__M6t1B"><div class="footer_copy__6DxmK">Copyright © 2024 WaterHumanB</div><div class="footer_devBox__UPiww"><a class="footer_dev__wo6Qp" target="_blank" href="https://github.com/waterhumanB/waterhumanb.dev"><div>WaterHumanB.dev</div></a></div></footer></div><script id="__NEXT_DATA__" type="application/json" crossorigin="">{"props":{"pageProps":{"slug":"next.js-블로그-회고","allBlogData":[{"slug":"코어-자바스크립트-질문-리스트","title":"코어 자바스크립트 질문 리스트","date":"2024년 11월 25일","description":"코어 자바스크립트를 읽고 프론트엔드 개발자로 생각 할 수 있는 기술면접 질문 리스트","thumbnail":"","category":"JavaScript"},{"slug":"자바스크립트-TDD-With-Next-Step","title":"자바스크립트 TDD와 jest 기본 사용법","date":"2023년 7월 23일","description":"자바스크립트 TDD와 Jest 기본 사용 법 및 Next Step 시작","thumbnail":"","category":"JavaScript"},{"slug":"next.js-블로그-회고","title":"Next.js 블로그 첫 번째 회고","date":"2023년 6월 25일","description":"Next.js 블로그 개발 기능 설명 및 첫 번째 회고","thumbnail":"/profile.jpg","category":"Next.js"},{"slug":"점진적과부하-프로젝트-회고","title":"점진적과부하 프로젝트 회고","date":"2023년 5월 22일","description":"점진적과부하 개인 프로젝트 설명 및 회고","thumbnail":"","category":"React"},{"slug":"라이브러리-없이-캘린더-만들기","title":"라이브러리 없이 캘린더 만들기","date":"2023년 5월 15일","description":"라이브러리 없이 Date 메소드 활용 캘린더 만들기","thumbnail":"/assets/images/blog/calendar.png","category":"React"},{"slug":"라이브러리-없이-그래프,-차트-만들기","title":"라이브러리 없이 그래프, 차트 만들기","date":"2023년 5월 08일","description":"라이브러리 없이 SVG 태그를 활용 막대 그래프와 도넛 차트를 만드는 방법","thumbnail":"/assets/images/blog/SVG tag graphs and charts.png","category":"HTML"},{"slug":"Redux와-데이터정규화","title":"Redux와 데이터정규화","date":"2023년 5월 03일","description":"점진적 과부하 프로젝트에서 사용했던 리덕스와 데이터 정규화","thumbnail":"","category":"DataBase"},{"slug":"var-let-const-hoisting","title":"var, let, const 특징 및 호이스팅","date":"2023년 4월 25일","description":"var, let, const 키워드들의 특징과 차이점과 호이스팅에 대한 정리","thumbnail":"","category":"JavaScript"},{"slug":"StoryBook으로-컴포넌트-테스트","title":"StoryBook으로 컴포넌트 테스트","date":"2023년 4월 18일","description":"StoryBook을 사용하여 React에서 컴포넌트 테스트를 해보자!","thumbnail":"","category":"Storybook"},{"slug":"Controlled-컴포넌트와 UnCotrolled-컴포넌트의-차이점","title":"Controlled 컴포넌트와 UnControlled 컴포넌트 차이점","date":"2023년 4월 12일","description":"React에서 Controlled 컴포넌트와 UnControlled 컴포넌트의 차이점을 알아보자","thumbnail":"","category":"React"},{"slug":"React에서-컴포넌트와-로직-분리하는-방법","title":"React에서 컴포넌트와 로직 분리하는 방법","date":"2023년 4월 03일","description":"React에서 Hook, Utils, Domain으로 컴포넌트와 로직 분리하는 이유와 방법","thumbnail":"","category":"React"}],"fallback":{"@\"Props\",\"next.js-블로그-회고\",":{"slug":"next.js-블로그-회고","content":"\n## next.js 블로그\n\n`next.js`로 블로그를 구현 했고 README에 보면 내가 구현한 기능들과 앞으로 구현할 것들을 리스트로 만들었습니다.\n\n처음 시작은 `next.js` 학습을 하려고 `vercel` 페이지에 공식문서와 예제를 보면서 구현을 했고, 이왕 만든거 나의 블로그로 사용하고자 최소한의 모습으로 구현하였습니다.\n\n### 블로그를 시작한 이유\n\n단순 `next.js`에 시작했지만, 개발을 학습하는 방식의 변화를 주기 위해 블로그를 활용하기로 했고, 여러 페이지를 만들어 그 페이지 별로 어떻게 활용할 건지 정하게 되었습니다.\n\n지금 까지 개발 관련 책을 읽고, 프로젝트도 하고, 강의도 듣고 했지만, 정리를 따로 안하다 보니, 배웠던 것을 복습하는 것도 다시 구글링하고 `GitHub` 뒤지고, 조금 번거롭기도 했습니다.\n\n그래서 개발을 공부하고 정리하는 공간과 책이나 강의를 듣고 필기 할곳, 내가 만든 프로젝트를 소개할 곳, 나라는 개발자를 소개할 곳 등 이러한 것들의 필요성을 느끼고 조금씩 블로그를 구현하였습니다.\n\n### Home Page\n\nhttps://waterhumanb-blog.vercel.app\n\n첫 번째로 홈페이지 현재는 간단하게 나의 사진과 간단한 소개글을 적어 두었습니다.\n\n목표는 애플의 아이폰 소개 페이지 처럼 인터렉션한 디자인을 생각하고 있습니다.\n\n디자인 적인 것은 나의 욕심 같은 거라 급하게 생각하지 않고, 천천히 진행중입니다.\n\n### Blog Page\n\nhttps://waterhumanb-blog.vercel.app/blog\n\n블로그 페이지, 개발 관련된 것들의 대한 생각이나 배운 것들을 정리하려고 만든 공간입니다.\n\n확실히 블로그로 정리하고 다시 찾아보고 하면서, 복습도 되고, 새로운 것도 알게되면서 학습과 복습이 같이 할 수 있어 좋은것 같습니다.\n\n정리하는데 시간이 생각보다 많이 걸리지만 그만큼 공부를 한다는 생각이 들어 시간낭비라고 생각하지 않고 오히려 주위 개발자 분들에게 추천을 합니다.\n\n간단하게 기능을 설명하면, `Next.js` 파일 기반으로 `SSG`을 구현할 수 있어, 프로젝트 안에 `mark-up` 문서들을 `html`로 페이지를 만들어 웹에서 볼 수 있습니다.\n\n### Note Page\n\nhttps://waterhumanb-blog.vercel.app/note\n\n블로그 페이지는 배운 것들을 종합적으로 나의 생각과 느낀 것들을 정리하는 공간이라면,\n노트 페이지는 공부한 것을 필기하듯 정리하는 곳입니다.\n\n사이드바에 보면 책으로 배운 것과 강의로 배운 것 두개로 분리를 했습니다.\n\n현재는 바로 바로 정리하기 보단, 일단 책을 한번 편안하게 읽고 시작하는게 좋을 것 같아, 기능만 구현했고, 계속 차근 차근 쌓아갈 예정입니다.\n\n블로그 페이지와 같은 기술로 구현을 했습니다.\n\n### Project Page\n\nhttps://waterhumanb-blog.vercel.app/project\n\n프로젝트 페이지는 앞으로 이력서나 내가 구현한 프로젝트들을 정리한 곳 입니다.\n보이는 사진은 GIF로 만들었고, 데이터는 단순 `TS`파일로 만들어서 데이터를 보여주고 있습니다.\n\n블로그 처럼 글을 보여줄게 아니고 단순하게 다른 링크들을 연결시켜 놓을거라 굳이 `SSG`나 `SSR`로 정보를 받을 필요가 없다고 판단해 이렇게 구현했습니다.\n\n## next.js 구현 기능\n\n### 기술 스택\n\n**기술 스택 :** `Next.js` `TypeScript` `SASS` `SWR`\n\n기본적으로 위와 같은 기술을 사용했고 그 이외 `mark-up`관련 라이브러리 등 사용했고,\n\n스타일은 주로 `styled-component`와 `sass`를 사용하는데 이것도 한번 블로그에 정리를 하려고 합니다.\n\n`SWR`은 빠르고, 가볍게, 재사용 가능한 데이터를 가져오기 위해 사용했다. `React-query`도 있지만 `Vercel`에서 만든 `SWR`이 좀더 잘 맞을거라 생각을 했기 때문에 사용했습니다.\n\n추가로 다른 `css in js`도 공부할 계획입니다.\n\n### 폴더 구조\n\n이번 프로젝트의 폴더 구조와 간단한 설명입니다.\n\n- posts : 마크업 파일\n- public : 이미지\n- src\n  - components : UI 컴포넌트\n    - domain : blog, note 같은 특정한 곳에 사용할 UI 컴포넌트\n    - Layout : 전체 UI 컴포넌트\n  - constants : 상수 값들을 정리\n  - contexts : context api 모음\n  - data : project 데이터 등 다른 데이터들\n  - hooks : 커스텀 hook 모음\n  - lib : blog, note 파일 읽는 등의 로직\n  - pages : 사용자가 보는 페이지\n  - styles : 글로벌 스타일과 재사용 할 스타일\n  - utils : 재사용할 로직\n\n### CSR vs SSR vs SSG\n\n- **CSR(Client-Side Rendering)**\n\n  - 클라이언트(브라우저)인 웹페이지에서 렌더링을 하는 것을 의미한다. 우리가 사용하는 프론트엔드 라이브러리, 프레임워크 삼대장인 `React` `Vue` `Angular` 등이 이러한 방식으로 화면을 보여줍니다.\n  - 동작 방식으로 사용자가 웹 페이지에 들어가면 그 때 `HTML` `CSS` `JavaScript` 파일들을 다운로드 한 뒤에 이용할 수 있는 뷰가 생겨난다. API로 받는 데이터가 있다면 받은 다음 뷰를 구성하기 때문에 처음 로딩 속도가 느리다.\n  - 단점으로 `JavaScript`파일이 커질 수록 어플리케이션 속도가 느려지고, 모든 파일을 다운 받아야 화면을 구성하기 때문에 `SEO`측면에서도 취약한 문제가 있습니다.\n  - 장점으로 처음 페이지가 렌더링 했을 때 모든 파일을 다운로드 했기 떄문에, 페이지이동, 인터렉션 같은 동작이 생겨도 필요한 부분만 추가 다운로드 해서 속도가 굉장히 빠른 것 입니다.\n  - 그래서 사용자와 인터렉션이 많은 애플리케이션은 `CSR` 방식을 사용합니다.\n\n- **SSR(Server-Side Rendering)**\n\n  - 서버에서 미리 페이지를 구성하고 요청을 받으면 즉시 생성해서 반환해 주는 방식입니다. 이러한 방식은 `CSR` 과 다르게 사용자가 웹페이지에 들어가면 미리 만들어둔 화면을 보여주기 때문에 초기 로딩 속도가 빠르다는 장점이 있습니다.\n  - 단점으로 페이지 전환시 깜빡이는 현상이 발생하는데 이는 페이지를 이동할 때 마다 서버에서 새로운 파일을 렌더링해서 발생하는 현상입니다. 그리고 계속 새로운 파일을 로드하기 때문에 클라이언트에서 데이터를 유지할 수 없습니다. `SSG`도 똑같습니다.\n  - 장점으로 최초 로딩속도가 빠르고, `CSR` 과 다르게 서버에서 페이지를 생성해 주기 때문에, 검색엔진은 완성된 `HTML`문서를 수집할 수 있어 `SEO`에 최적화에 용이합니다.\n\n- **SSG(Static Site Generation)**\n  - `SSR`과 비슷하지만 조금 다른 점은 프로젝트를 빌드 할 때 페이지를 미리 만들어 렌더링 하는 방식입니다. `SSR`과 비슷한 것은 페이지를 미리 만들어서 요청이 있을 때 제공하는 방식이 비슷하지만, `SSR`은 API 요청을 했을 때 페이지를 만들어 보내주지만, `SSG`는 빌드할 때 만들어 놓는 다는 점입니다.\n  - 그리고 빌드 시 페이지가 만들어져 있어, 요청시에 바로바로 클라이언트에게 페이지를 제공하기 때문에 렌더링 속도가 빠르고, 완성된 페이지는 `SEO` 최적화에 용이합니다.\n  - 이러한 특성이 블로그 같은 정보성 페이지 등 정적인 데이터를 보여주는 사이트에 적합한 것이죠.\n\n`CSR` `SSR` `SSG`를 표로 한번 비교해서 보겠습니다.\n\n|                  | **CSR**                                                         | **SSR**                                     | **SSG**                                                     |\n| ---------------- | --------------------------------------------------------------- | ------------------------------------------- | ----------------------------------------------------------- |\n| 렌더링 방식      | 클라이언트에서 렌더링된 빈 HTML 파일                            | 서버는 각 요청에 대해 HTML을 생성합니다     | 빌드 시 생성된 미리 렌더링된 HTML 파일                      |\n| 초기 로드 시간   | 빠르지만 가져오기 및 렌더링으로 인해 초기 로드가 느려질 수 있음 | 서버 처리로 인해 느려질 수 있음             | 미리 렌더링된 HTML을 제공할 준비가 되었기 때문에 빠름       |\n| SEO 친화성       | 동적 콘텐츠를 인덱싱하려면 검색 엔진에 추가 기술이 필요         | 완전히 렌더링된 HTML이 제공되므로 좋음      | 완전히 렌더링된 HTML이 제공되므로 좋음                      |\n| 동적 업데이트    | 클라이언트 측에서 실시간 업데이트 지원                          | 각 요청에 대한 실시간 업데이트 지원         | 동적 콘텐츠에 대한 재검증 또는 클라이언트 측 렌더링 필요    |\n| 서버 로드        | 렌더링이 클라이언트 측에서 처리되므로 더 낮음                   | 서버가 각 요청을 렌더링함에 따라 더 높음    | 미리 렌더링된 HTML은 정적 파일로 제공될 수 있으므로 더 낮음 |\n| 개발 복잡성      | 렌더링 및 데이터 가져오기는 클라이언트측 책임이므로 낮음        | 서버측 로직 필요로 보통                     | 빌드 시 데이터 가져오기 및 구성 필요로 보통                 |\n| 성능 (후속 로드) | 필요한 클라이언트측 렌더링 및 데이터 가져오기의 양에 따라 다름  | 필요한 클라이언트측 렌더링의 양에 따라 다름 | HTML이 미리 렌더링되고 캐시되므로 빠름                      |\n\n### Next.js\n\n`Next.js`는 위에 3가지 방법을 모두 사용할 수 있습니다.\n\n일단 `Next.js`는 `React`를 기반으로한 프레임워크이기 때문에 `CSR` 동작을 할 수 있고,\n\n`SSG`는 기본적으로 빌드할 때 자동으로 생성이 되고 추가로 생성도 할 수 있습니다.\n\n`SSR`도 마찬가지로 서버에서 데이터를 받고 싶을 때 사용할 수 있습니다.\n\n`CSR`은 `React`의 `Hook`을 활용해서 사용하면 되고, `SSG`와 `SSR`은 `Next.js`의 내장함수를 사용해서 구현해야한다.\n\n```ts\nexport const getStaticPaths: GetStaticPaths = () =\u003e {\n  // slug에 대한 가능한 값의 목록을 반환합니다.\n  const paths = getAllPostSlugs()\n  return {\n    paths,\n    fallback: false,\n  }\n}\n\nexport const getStaticProps: GetStaticProps = async ({ params }: any) =\u003e {\n  // params.slug를 사용하여 블로그 게시물에 필요한 데이터를 가져옵니다.\n  const postData = await getPostData(params.slug)\n  return {\n    props: {\n      slug: postData.slug,\n      fallback: {\n        [unstableSerialize([\"Props\", postData.slug])]: postData,\n      },\n    },\n  }\n}\n```\n\n- **SSG**\n  - 위에 코드는 현재 블로그 페이지에서 게시글을 `SSG`로 받아오는 방법입니다.\n  - `getStaticProps`를 통해 정적 페이지를 생성해서 해당 컴포넌트에서 `Props`로 받아 UI를 만들 수 있습니다.\n  - 또한 `getStaticPaths`를 통해 정적으로 생성할 경로 목록을 지정해서 해당 경로를 정적으로 사전 렌더링을 해서, 보다 빠르게 페이지를 받아서 볼 수 있습니다.\n\n```ts\nimport type { InferGetServerSidePropsType, GetServerSideProps } from \"next\"\n\ntype Repo = {\n  name: string\n  stargazers_count: number\n}\n\nexport const getServerSideProps: GetServerSideProps\u003c{\n  repo: Repo\n}\u003e = async () =\u003e {\n  const res = await fetch(\"https://api.github.com/repos/vercel/next.js\")\n  const repo = await res.json()\n  return { props: { repo } }\n}\n\nexport default function Page({\n  repo,\n}: InferGetServerSidePropsType\u003ctypeof getServerSideProps\u003e) {\n  return repo.stargazers_count\n}\n```\n\n- **SSR**\n  - `getServerSideProps`를 사용하여 서버로 부터 데이터를 받아 `Props`로 컴포넌트에서 사용할 수 있습니다.\n  - `SSG`는 배포시 미리 정적 페이지를 만들지만 `SSR`은 요청할 때 데이터를 반환하기 때문에 속도 측면에서 차이가 생깁니다.\n  - 이번 블로그에서는 모두 `SSG`로 구현했기 때문에 코드는 공식문서에서 가져왔습니다.\n\n[Next.js 에서 데이터를 가져오는 방법](https://nextjs.org/docs/pages/building-your-application/data-fetching/get-static-props)\n\n### SEO (Search Engine Optimization)\n\n검색엔진 최적화라는 의미로 구글이나 네이버 같은 포털사이트에서 나의 블로그, 사이트 등 내가 만든 웹 페이지가 검색시 최상단에서 노출하는 것을 말합니다.\n\n`SEO` 최적화 방법은 여러개가 있습니다. 프론트엔드 개발자가 알아야할 최적화 방법만 소개하겠습니다.\n\n- **시멘틱 태그 (Semantic Tag)**\n  - 무분별한 `div`의 사용으로 웹문서에서 원하는 정보를 찾기 힘들어져 `HTML` 구조를 설계하는데 있어 각 위치별로 태그에 의미를 부여해서 사이트의 구조를 파악하기 용이하게 만들어진 태그들 입니다.\n  - 사이트를 만들 때 그 목적에 맞게 `tag`들로 구조를 잡으면 검색 엔진이 사이트를 보다 빨리 파악할 수 있어 검색 결과 노출에 유리합니다.\n\n```ts\nconst META_DATA = {\n  title: \"Blog\",\n  description:\n    \"개발하면서 느낀점, 생각 등을 공유하거나 복습하고 싶은 기술들을정리하는 곳입니다.\",\n  openGraph: {\n    type: \"website\",\n    locale: \"ko_KR\",\n    url: \"waterhumanb-blog.vercel.app/blog\",\n    title:\n      \"개발하면서 느낀점, 생각 등을 공유하거나 복습하고 싶은 기술들을정리하는 곳입니다.\",\n    site_name: \"waterhumanb.dev\",\n    images: [\n      {\n        url: \"../../public/thumbnail.png\",\n        width: 285,\n        height: 167,\n        alt: \"이미지\",\n      },\n    ],\n  },\n}\n```\n\n- **Meta Tag 활용**\n  - 시멘틱 태그로 웹문서의 구조를 파악할 수 있게 했다면, 이제 웹문서의 정보를 제공해야 한다. 우리는 `meta tag`를 활용해서 사이트의 다양한 정보들을 제공할 수 있습니다.\n  - 위 코드는 블로그의 메인 페이지에서 사용하고 있는 `meta tag`에 활용할 데이터 입니다.\n  - `next.js`에서 제공하는 `next-seo`를 활용하면 이 웹사이트 전체 기본으로 `meta tag`를 설정하고 페이지 별로 다른 `meta tag`를 설정해서, 페이지 마다 다른 정보를 제공해주고 있습니다.\n- **빠른 렌더링**\n  - 렌더링 되는 속도가 빨라야합니다. 한군인은 빨리빨리라는 말처럼, 웹페이지가 로딩되는 속도에 따라 방문자들이 조금만 느려도 바로 나가버리기 때문에, `SEO`측면에서 페이지 로딩 속도가 느리면 좋은 사이트로 판단하지 않습니다.\n  - 렌더링 속도를 빠르게 하려면 `CSR`같은 방식보다는 `SSG`방식이 속도가 더 빠르기에 유리하고, `CSR`은 앞에 말했던, 빈 `HTML`문서만 있기 때문에 검색봇이 사이트를 판단하지 못하기 때문에 `SEO`측면에서 어떻게 보면 최악이죠. 그렇기 때문에, 미리 웹문서를 만들어 화면에 보여주는 방식이 속도 측면과 `SEO` 측면에서 효과적입니다.\n  - 그리고 사이트의 크기를 줄여야 합니다. 아무래도 메모리를 많이 잡아 먹으면 그만큼 속도가 느려지고, 그만큼 페이지를 늦게 로딩하겠죠? 큰 영상과 이미지등의 크기를 줄이는 방법이 제일 효과적이고 `LightHouse` 등 도구를 활용하면 페이지의 로딩 속도가 느린 이유들을 알 수 있어 활용하면 좋습니다.\n- **그 밖의 참고할 것**\n  - 페이지가 선정적이거나 불법적인 내용이면 당연히 안좋겠죠.\n  - 사이트 목적에 따른 도메인주소도 도움이 된다고 합니다.\n  - `sitemap` 같은 파일도 미리 만들어 내 사이트를 검색 봇이 빨리 파악 할 수 있게 도와줍니다.\n  - `next.js`에서는 `next/img` 같은 내장함수로 이미지를 최적화 하는 방법도 있습니다.\n\n### 앞으로 구현 할 기능\n\nTOC라는 기능도 만들고 README에 있는 기능들도 구현할 예정들이다.\n\n사이트가 단순하게 구현했는데, 좀더 인터렉티브한 웹으로 구성하고 싶고,\n\n다른 블로그들을 봤을 떄 이러한 기능들이 재미있는 것들을 구현하고 계획입니다.\n\n추가 페이지는 저를 소개하는 페이지와 저의 이력서 관련 페이지도 만들어\n\n블로그 겸 저의 포토폴리오, 이력서를 구현하는게 제 최종 목표입니다.\n\n## 회고\n\n아직 next.js의 다양한 기능들도 많이 사용하지 않았다. next.js를 활용한 다른 프로젝트도 하지 않았고,\n\n시도해 볼만한게 많을 것 같다. 몇몇 강의를 보면 next.js를 활용한 풀스텍 개발이라는 강의들도 보이고\n\n다양한 프로젝트에 시도할 수 있을 것 같다.\n\nSEO는 내가 디지털 마케팅을 독학 했을 때 공부했던 것들이 이렇게 도움될줄 몰랐다.\n\nSSR, CSR, SSG는 완전히 이해를 했다고 못하지만, 어느정도 이해가 되었고, 조금 자리를 잡은 것 같다.\n\n블로그에 기록하는 이유는 언제든지 내가 정리한 것들을 보기 위해서 정리를 하고 있으니 기억이 안나고 헷갈리면\n\n다시 보면 된다.\n\n앞으로 계획 한것들 열심히 하자 블로그도 열심히 해보자!\n\n#### 참고 자료\n\n- https://swr.vercel.app/ko\n- https://nextjs.org/docs/pages/building-your-application/data-fetching/get-static-props\n","title":"Next.js 블로그 첫 번째 회고","date":"2023년 6월 25일","description":"Next.js 블로그 개발 기능 설명 및 첫 번째 회고","thumbnail":"/profile.jpg","category":"Next.js"}}},"__N_SSG":true},"page":"/blog/[slug]","query":{"slug":"next.js-블로그-회고"},"buildId":"yH5YUGQP37e_zlfcTWc-4","assetPrefix":"/waterhumanb.dev","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>
