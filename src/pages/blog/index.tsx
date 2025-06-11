@@ -13,7 +13,7 @@ const META_DATA = {
   openGraph: {
     type: "website",
     locale: "ko_KR",
-    url: "https://waterhumanb.github.io/waterhumanb.dev/blog",
+    url: "https://waterhumanb.github.io/blog",
     title:
       "개발하면서 느낀점, 생각 등을 공유하거나 복습하고 싶은 기술들을정리하는 곳입니다.",
     site_name: "waterhumanb.dev",
