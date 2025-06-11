@@ -23,7 +23,7 @@ export default function Post({ slug, allNoteData }: Props) {
     openGraph: {
       type: "website",
       locale: "ko_KR",
-      url: `waterhumanb-blog.vercel.app/blog/${noteData?.slug}`,
+      url: `https://waterhumanb-blog.vercel.app/note/${noteData?.slug}`,
       title: noteData?.title,
       site_name: "waterhumanb.dev",
       images: [
