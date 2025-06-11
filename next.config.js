@@ -6,8 +6,6 @@ const nextConfig = {
   output: "export",
   distDir: "out",
   trailingSlash: true,
-  basePath: "/waterhumanb.dev",
-  assetPrefix: "/waterhumanb.dev",
   images: {
     unoptimized: true,
   },
